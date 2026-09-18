@@ -18,7 +18,7 @@ These must be resolved before DNS cutover.
 | # | Input | Where it lands | What happens without it today |
 |---|-------|----------------|-------------------------------|
 | 1 | **Approved logo files** — SVG master, PNG on cream, PNG on black, square mark | `public/brand/`, then flip `hasApprovedAsset` in `components/Logo.tsx` | A plain typographic wordmark renders. The logo is **not** generated or redrawn — Volume 1 forbids it. |
-| 2 | **Favicon** generated from the approved mark | `app/layout.tsx` `icons` field (currently omitted) | No favicon is declared, so no 404 is shipped. Volume 1 s.15 requires one. |
+| 2 | **Favicon** generated from the approved mark | `app/layout.tsx` `icons` field (currently omitted) | No favicon is declared. Browsers still request `/favicon.ico` unprompted, so every page logs one console 404 and Lighthouse best-practices sits at 96 instead of 100 — above the 95 gate, but this is the reason it is not 100. A generic mark is not substituted: Volume 1 forbids inventing one. |
 | 3 | **Legal entity name**, registered address, public phone, public email | `content/site.ts` | Footer, contact and terms omit these entirely. Organization schema omits `legalName` and `contactPoint`. |
 | 4 | **Public office address — or confirmation there is none** | `content/site.ts` → `contact.address.isPublic` | Treated as a service-area business. No address is published and `LocalBusiness` schema is not emitted. Volume 2 s.18: never list a virtual office or co-working mailbox. |
 | 5 | **Privacy jurisdictions** and consent-banner configuration, reviewed by counsel | `app/(marketing)/privacy/page.tsx` | A pending note is shown. The rest of the policy is accurate to the actual tracking footprint. |

@@ -7,6 +7,29 @@ Newest first.
 
 ---
 
+## 2026-09-18 — Consent defaults live at the top of `<body>`, not in `<head>`
+
+Rendering an explicit `<head>` in the App Router root layout made React drop
+Next's injected metadata during hydration. The served HTML was correct — so the
+build-output audits all passed — but in the live DOM `<title>`, `lang`, the meta
+description and the canonical were all gone after hydration. Lighthouse caught
+it as a missing title on the service pages.
+
+The consent script is now the first node in `<body>`, which still runs before
+GTM (injected `afterInteractive`) and leaves Next's metadata alone.
+
+Worth remembering: the metadata audits read build output, so they cannot see a
+post-hydration regression. Lighthouse is the check that covers that gap.
+
+**Label:** tracking, seo-critical.
+
+## 2026-09-18 — Logo link has no aria-label
+
+The visible wordmark reads "Bold.Clicks"; an `aria-label` of "Bold Clicks -
+home" replaced it with a name that does not contain the visible text, which is a
+WCAG 2.5.3 label-in-name failure. The visible text is now the accessible name.
+When the approved asset lands, the image's alt text supplies it instead.
+
 ## 2026-09-18 — Lead rate limit is best-effort, and set to 10/min
 
 Found by the E2E suite returning 429 mid-run. Two problems with the original

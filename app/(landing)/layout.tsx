@@ -16,7 +16,9 @@ export default function LandingLayout({ children }: { children: React.ReactNode 
       <header className="bg-black py-4">
         <Container>
           <div className="flex items-center justify-between">
-            <Link href="/" aria-label="Bold Clicks - home">
+            {/* See components/Logo.tsx: the visible wordmark is the accessible
+                name; an aria-label here would override it and fail WCAG 2.5.3. */}
+            <Link href="/">
               <Logo tone="light" />
             </Link>
             <p className="hidden text-small-lg text-mist sm:block">{site.tagline}</p>

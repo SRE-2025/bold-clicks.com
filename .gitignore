@@ -27,3 +27,6 @@ Thumbs.db
 
 # Local Playwright artifacts
 /test-results/
+
+# Local Lighthouse temp dir (Windows chrome-launcher workaround)
+/.lhtmp/

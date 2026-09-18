@@ -13,8 +13,7 @@
       ],
       "numberOfRuns": 3,
       "settings": {
-        "preset": "desktop",
-        "emulatedFormFactor": "mobile",
+        "_comment": "Mobile is the default form factor and the one Google indexes, so no preset is applied - `preset: desktop` would override the mobile emulation and throttling and quietly report easier numbers.",
         "throttlingMethod": "simulate",
         "budgetsPath": "./budgets.json"
       }

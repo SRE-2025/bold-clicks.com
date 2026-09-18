@@ -38,11 +38,17 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <head>
-        {/* Must execute before GTM. See components/ConsentDefaults.tsx. */}
-        <ConsentDefaults />
-      </head>
       <body>
+        {/*
+          Consent defaults must run before GTM, and GTM is injected
+          afterInteractive - so the first node in <body> is early enough.
+
+          It deliberately does NOT go in an explicit <head>: rendering one in an
+          App Router root layout makes React drop Next's injected metadata on
+          hydration, which silently stripped <title>, lang, the meta description
+          and the canonical from the live DOM.
+        */}
+        <ConsentDefaults />
         <a href="#main" className="skip-link">
           Skip to content
         </a>

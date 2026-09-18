@@ -39,9 +39,16 @@ export function Logo({ tone = 'dark', className }: { tone?: 'dark' | 'light'; cl
   );
 }
 
+/**
+ * No aria-label on the wordmark branch: the visible text is already the
+ * accessible name, and an aria-label of "Bold Clicks - home" overrode it with a
+ * string that does not contain the visible "Bold.Clicks" - a WCAG 2.5.3
+ * label-in-name failure, which Lighthouse flags. When the approved asset lands,
+ * the image's alt text supplies the name instead.
+ */
 export function LogoLink({ tone = 'dark', className }: { tone?: 'dark' | 'light'; className?: string }) {
   return (
-    <Link href="/" className={cx('inline-flex items-center', className)} aria-label="Bold Clicks - home">
+    <Link href="/" className={cx('inline-flex items-center', className)}>
       <Logo tone={tone} />
     </Link>
   );
