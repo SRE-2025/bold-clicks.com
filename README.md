@@ -58,6 +58,21 @@ every script name is identical under either tool.
 
 The audits read build output, so run `npm run build` first.
 
+### Running the E2E suite locally on Windows
+
+`npx playwright install` may stall partway through extracting Chromium — it
+writes `chrome.dll` and then stops, usually antivirus scanning the archive. If
+that happens, kill the install, delete
+`%LOCALAPPDATA%\ms-playwright\__dirlock` and the partial `chromium-*` folder,
+and run against an installed Chrome or Edge instead:
+
+```bash
+npx playwright test -c playwright.local.config.ts
+```
+
+Same specs, same assertions, system browser. CI always uses
+`playwright.config.ts` with the bundled browser, and that is the run to trust.
+
 ## How this repo is organised
 
 ```
