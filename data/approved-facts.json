@@ -1,0 +1,4 @@
+{
+  "_comment": "Volume 2 s.26 rule 3: a number appears in published copy only if it exists here (owner-confirmed) or carries a public citation URL. The no-fabrication linter resolves every numeric claim against this file by fact id. Empty until the owner approves the first figures.",
+  "facts": []
+}

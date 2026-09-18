@@ -1,0 +1,40 @@
+{
+  "_comment": "Lighthouse CI - Volume 2 s.33. Mobile budgets on the pages that carry the conversion and the primary intents. Performance >= 90, Accessibility >= 95, Best Practices >= 95, SEO = 100.",
+  "ci": {
+    "collect": {
+      "startServerCommand": "npm run start",
+      "startServerReadyPattern": "Ready in",
+      "url": [
+        "http://127.0.0.1:3000/",
+        "http://127.0.0.1:3000/free-ad-audit/",
+        "http://127.0.0.1:3000/google-ads-management/",
+        "http://127.0.0.1:3000/industries/home-services/",
+        "http://127.0.0.1:3000/austin-ppc-agency/"
+      ],
+      "numberOfRuns": 3,
+      "settings": {
+        "preset": "desktop",
+        "emulatedFormFactor": "mobile",
+        "throttlingMethod": "simulate",
+        "budgetsPath": "./budgets.json"
+      }
+    },
+    "assert": {
+      "assertions": {
+        "categories:performance": ["error", { "minScore": 0.9 }],
+        "categories:accessibility": ["error", { "minScore": 0.95 }],
+        "categories:best-practices": ["error", { "minScore": 0.95 }],
+        "categories:seo": ["error", { "minScore": 1 }],
+        "largest-contentful-paint": ["error", { "maxNumericValue": 2000 }],
+        "cumulative-layout-shift": ["error", { "maxNumericValue": 0.1 }],
+        "total-blocking-time": ["warn", { "maxNumericValue": 200 }],
+        "unsized-images": "error",
+        "uses-responsive-images": "warn",
+        "font-display": "error"
+      }
+    },
+    "upload": {
+      "target": "temporary-public-storage"
+    }
+  }
+}

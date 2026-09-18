@@ -1,0 +1,145 @@
+name: CI
+
+# Volume 2 s.33: required checks on every pull request. A PR cannot merge - and
+# therefore cannot publish - until all of these pass. If it matters, it is a
+# failing check, not a reminder.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: '22'
+  # Previews and CI builds must never be indexable.
+  NOINDEX: 'true'
+
+jobs:
+  static:
+    name: Lint, types and content
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      # Content schemas + no-fabrication linter (Volume 2 s.26). This is the
+      # check that blocks invented numbers, unbacked proof claims and
+      # placeholders from ever reaching a published page.
+      - name: Content and no-fabrication lint
+        run: npm run lint:content
+
+  build-and-audit:
+    name: Build and SEO audits
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Metadata audit
+        run: npm run audit:meta
+
+      - name: Structured data audit
+        run: npm run audit:schema
+
+      - name: Internal link check
+        run: npm run audit:links
+
+      # Volume 2 s.18: a location page that only swaps the city name is a
+      # doorway page and must be rejected in code review.
+      - name: Doorway-page rejection test
+        run: npm run audit:doorway
+
+      - name: Pre-launch crawl
+        run: npm run crawl:prelaunch
+
+      - name: Upload build output
+        uses: actions/upload-artifact@v4
+        with:
+          name: next-build
+          path: .next
+          retention-days: 1
+
+  e2e:
+    name: End-to-end and accessibility
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Build
+        run: npm run build
+
+      # Covers form submit -> thank-you -> generate_lead fired once, keyboard
+      # traversal, axe (zero serious/critical), consent behaviour with consent
+      # denied, noindex on thank-you, and a real 404 status.
+      - name: Playwright
+        run: npm run e2e
+
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7
+
+  lighthouse:
+    name: Lighthouse budgets
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      # Performance >= 90, Accessibility >= 95, Best Practices >= 95, SEO = 100,
+      # plus the JS and page-weight budgets in budgets.json.
+      - name: Lighthouse CI
+        run: npm run lhci
+
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: lighthouse-report
+          path: .lighthouseci/
+          retention-days: 7

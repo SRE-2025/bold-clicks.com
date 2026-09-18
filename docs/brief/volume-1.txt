@@ -1,0 +1,963 @@
+
+===== PAGE 1 =====
+BOLD CLICKS  /  WEBSITE MASTER BUILD BRIEF
+bold-clicks.com  |  Build brief prepared September 18, 2026
+MASTER WEBSITE BUILD BRIEF
+BOLD
+ CLICKS
+bold-clicks.com
+Instructions for Claude to design and build an elite, conversion-first, 
+search-ready website for an ads-only agency.
+The job is not to make a generic marketing-agency site. The job is to make Bold Clicks feel like the 
+specialized paid-media arm of the Stoneridge family: same DNA, sharper focus, more black, restrained forest
+green, and a small amount of gold.
+NON-NEGOTIABLE
+Use the approved Bold Clicks logo asset exactly as supplied by the owner. Do not redraw it, reinterpret it, or create a 
+new logo. The website should make the relationship to Stoneridge visually obvious without looking like a duplicate 
+site.
+Primary objective
+Turn qualified businesses already spending - or ready to spend - on paid advertising into booked audits / strategy calls, while 
+building long-term organic authority around PPC and paid-media services.
+Research basis: Google Search Central, web.dev, Google Ads Help, W3C/WCAG, Stoneridge Digital, Stoneridge Equity, and current paid-media agency sites. Sources are 
+listed at the end of this brief.
+DOMAIN STATUS - SEPTEMBER 18, 2026
+A public check of bold-clicks.com did not return an indexable live site at the time of research. Treat this as a 
+greenfield build unless the owner provides an existing codebase, DNS/deployment target, or production content that 
+must be preserved.
+
+===== PAGE 2 =====
+BOLD CLICKS  /  WEBSITE MASTER BUILD BRIEF
+bold-clicks.com  |  Build brief prepared September 18, 2026
+01  /  EXECUTIVE DIRECTION
+What Bold Clicks should be
+POSITIONING IN ONE SENTENCE
+Bold Clicks is the specialist paid-media agency: we run ads, track what happens after the click, and optimize toward 
+real business outcomes - not vanity metrics.
+
+This is an ads-only brand. Do not position Bold Clicks as a general SEO, website-design, social-media-management, 
+email, reputation, or automation agency.
+
+The narrow specialization is a strength. The site should repeatedly communicate: specialists, not generalists.
+
+The core conversion offer should be a free paid-media / ad-account audit or strategy call. Pick one primary CTA sitewide 
+and keep it consistent.
+
+The site must feel premium and serious enough for healthcare, legal, home-services, and established local businesses - 
+but fast and direct enough for an operator to understand in seconds.
+
+Every claim must be provable. Never invent ROAS, revenue, client counts, partner badges, case-study numbers, 
+testimonials, awards, or platform certifications.
+What success looks like
+ITEM
+REQUIREMENT
+Business
+Qualified inbound leads and booked calls from businesses with meaningful ad 
+budgets.
+Brand
+Immediate visual connection to Stoneridge, but a distinct paid-media identity.
+SEO
+Strong crawlability, clear topical architecture, original expert content, and 
+indexable pages aligned to real search intent.
+CRO
+Clear offer, proof, low-friction forms, visible CTA, strong mobile experience, and 
+message match between ads and landing pages.
+Measurement
+Every form, call, booked meeting, qualified lead, and closed customer can be 
+attributed back to source/campaign where legally and technically appropriate.
+Performance
+Fast mobile experience with Core Web Vitals in Google's "good" range on real-
+user data wherever feasible.
+What current research says
+Google continues to emphasize helpful, reliable, people-first content; crawlable links; strong page experience; and technical 
+accessibility to Googlebot. Google also says the same core SEO practices apply to AI Overviews and AI Mode - there is no 
+separate magic "GEO" shortcut. Current strong paid-media agency sites commonly lead with a concrete outcome, proof, a free 
+audit/consultation offer, case studies, service specificity, and measurement language.
+02  /  BRAND SYSTEM
+Visual direction
+ITEM
+REQUIREMENT
+Primary black
+#0B0D0C - use as the visual anchor: hero backgrounds, headers, strong type, 
+cards.
+
+===== PAGE 3 =====
+BOLD CLICKS  /  WEBSITE MASTER BUILD BRIEF
+bold-clicks.com  |  Build brief prepared September 18, 2026
+Stoneridge forest
+#2F4428 - sampled from the current Stoneridge Digital mark; use for key accents 
+and continuity.
+Stoneridge sage
+#6C815F - secondary green for charts, dividers, icons, hover states.
+Warm cream
+#F3F2E7 - use instead of pure white in selected sections to preserve the 
+Stoneridge family feel.
+Gold accent
+#C6A15B - use sparingly for small highlights, rules, click indicators, or premium 
+detail. Gold should never dominate.
+Typography
+Bold geometric sans for headlines; clean, highly legible sans for body. Keep 
+weights limited and self-host only the font files actually used if custom fonts are 
+chosen.
+Design language
+
+High contrast, spacious, modern, and minimal. More black than Stoneridge Digital, but unmistakably related through green,
+cream, and restrained gold.
+
+Flat, crisp brand graphics. Avoid shiny 3D logos, neon gradients, generic stock "marketing" illustrations, rocket ships, fake 
+dashboards, and overdone glow effects.
+
+Use subtle ridge / upward-motion geometry as a supporting motif, not as a repeated mountain graphic on every section.
+
+Buttons: primary = forest green or cream-on-black depending on background; secondary = outline. Gold can be a micro-
+accent, not a full gold button everywhere.
+
+Motion should be subtle and purposeful: small hover lift, number count-up only if values are real, lightweight reveal 
+transitions. No heavy parallax or autoplay background video.
+
+Use authentic team/client/work imagery when available. If no real photography exists, use typography, diagrams, platform 
+UI crops, and tasteful abstract brand geometry rather than stock handshake photos.
+Voice
+VOICE TEST
+If the copy could be pasted onto 100 other agencies and still work, rewrite it.
+
+Short, confident, specific sentences. Plain English. Operator-to-operator.
+
+Use the language buyers use: ad spend, qualified leads, booked calls, CAC, cost per lead, revenue, ROAS, tracking, 
+landing pages, wasted spend.
+
+Avoid empty phrases such as "unlock your potential," "360-degree marketing," "cutting-edge solutions," "synergy," and 
+"results-driven" unless followed by concrete proof.
+
+Do not promise guaranteed ROAS or guaranteed growth.
+
+Preferred brand line to test: "We run ads. That's it. We get obsessive about making them work."
+03  /  SITE ARCHITECTURE
+Launch sitemap
+ITEM
+REQUIREMENT
+/
+Homepage - positioning, proof, services, process, case studies, industries, CTA.
+/services/
+Paid Media Services hub.
+/google-ads-management/
+Primary commercial-intent page.
+/meta-ads-management/
+Facebook + Instagram / Meta paid social.
+
+===== PAGE 4 =====
+BOLD CLICKS  /  WEBSITE MASTER BUILD BRIEF
+bold-clicks.com  |  Build brief prepared September 18, 2026
+/microsoft-ads-management/
+Microsoft Ads / Bing paid search.
+/youtube-ads-management/
+YouTube / video advertising.
+/conversion-tracking/
+Measurement, attribution, call tracking, enhanced conversions, CRM feedback 
+loop.
+/industries/
+Industry expertise hub.
+/industries/dental/
+Only if the team can support with real expertise/proof.
+/industries/orthodontics/
+Same standard: unique content, not a spun template.
+/industries/podiatry/
+Vertical-specific paid media page.
+/industries/ent-sinus/
+Vertical-specific paid media page.
+/industries/primary-care/
+Vertical-specific paid media page.
+/industries/med-spa/
+Vertical-specific paid media page.
+/industries/legal/
+Vertical-specific paid media page.
+/industries/home-services/
+Vertical-specific paid media page.
+/case-studies/
+Proof hub with only verified client results.
+/about/
+Team, philosophy, Stoneridge connection, platform experience.
+/insights/
+Helpful paid-media content and original analysis.
+/free-ad-audit/
+Dedicated conversion page; low distraction.
+/contact/
+Contact + booking.
+Legal
+Privacy Policy, Terms, and cookie/consent page if required for actual tracking 
+footprint/jurisdictions.
+SEO WARNING
+Do not launch dozens or hundreds of near-duplicate city pages. Google explicitly treats substantially similar regional 
+pages that funnel users to the same destination as potential doorway abuse. Location pages should exist only when 
+there is genuine local relevance, unique proof, and useful local content.
+Navigation
+
+Services
+
+Industries
+
+Case Studies
+
+Insights
+
+About
+
+Get a Free Audit
+Desktop navigation should stay compact. On mobile, use a simple menu and keep the primary CTA visible. Do not bury the 
+conversion action inside a mega-menu.
+
+===== PAGE 5 =====
+BOLD CLICKS  /  WEBSITE MASTER BUILD BRIEF
+bold-clicks.com  |  Build brief prepared September 18, 2026
+Page-level SEO + intent map
+ITEM
+REQUIREMENT
+Homepage
+Title direction: Paid Media Agency for Lead Generation | Bold Clicks. Intent: broad 
+commercial. H1 can remain brand-led if the supporting copy clearly states paid-
+media/PPC agency services.
+Google Ads
+Title: Google Ads Management | Bold Clicks. Intent: Google Ads agency / 
+management. Include Search, PMax where appropriate, bidding, negatives, 
+conversion quality, and account ownership.
+Meta Ads
+Title: Meta Ads Management | Bold Clicks. Intent: Facebook/Instagram advertising
+management. Emphasize creative testing, audience strategy, lead quality, and 
+CRM feedback.
+Microsoft Ads
+Title: Microsoft Ads Management | Bold Clicks. Intent: Bing/Microsoft paid search. 
+Explain when it fits and how it complements Google.
+YouTube Ads
+Title: YouTube Ads Management | Bold Clicks. Intent: video advertising 
+management. Explain audience, creative, measurement, and funnel role.
+Conversion Tracking
+Title: PPC Conversion Tracking & Attribution | Bold Clicks. Intent: conversion 
+tracking / offline lead quality / CRM attribution.
+Industries hub
+Title: Paid Media by Industry | Bold Clicks. Route users to only the verticals where 
+Bold Clicks has real experience and differentiated insight.
+Case Studies
+Title: Paid Media Case Studies | Bold Clicks. Every case study needs context, 
+actions, timeframe, and verified outcomes.
+Insights
+Title: PPC & Paid Media Insights | Bold Clicks. Publish original, expert-reviewed 
+content that supports service pages and buyer questions.
+Free Audit
+Title: Free PPC / Ad Account Audit | Bold Clicks. Keep distraction low; one 
+conversion goal; preserve source data into CRM.
+KEYWORD RULE
+Map one primary search intent to each commercial page. Do not make multiple near-duplicate pages fight for the 
+same keyword. Use supporting terms naturally; do not force exact-match phrases into every heading.
+04  /  HOMEPAGE BLUEPRINT
+Homepage should answer five questions fast
+1.
+What do you do?
+2.
+Who is it for?
+3.
+Why should I trust you?
+4.
+What makes you different?
+5.
+What should I do next?
+Recommended section order
+1. Hero
+Eyebrow: PAID MEDIA, BUILT TO PERFORM.
+H1 direction: "We run ads. That's it."
+
+===== PAGE 6 =====
+BOLD CLICKS  /  WEBSITE MASTER BUILD BRIEF
+bold-clicks.com  |  Build brief prepared September 18, 2026
+Subhead: Google, Meta, Microsoft and YouTube campaigns built around qualified leads, booked calls and revenue - with 
+tracking that shows what actually worked.
+Primary CTA: Get My Free Ad Audit. Secondary: See How We Work.
+2. Proof strip
+Client logos, platform badges, spend managed, leads generated, or results - only if verified. If proof is not ready, use credible 
+process proof rather than filler numbers.
+3. The problem
+Call out wasted spend, weak tracking, generic agencies, and reports that stop at clicks/leads instead of business outcomes.
+4. What we manage
+Four or five clean cards for Google Ads, Meta Ads, Microsoft Ads, YouTube Ads, and Conversion Tracking / Attribution.
+5. Why Bold Clicks
+Specialists not generalists; direct accountability; clear tracking; business-outcome focus; transparent access to accounts and 
+data.
+6. How it works
+Audit -> Build / Rebuild -> Launch -> Optimize -> Scale. Each step should explain what the client gets.
+7. Case studies
+Show 2-4 real cases. Each card: client type, starting problem, actions, verified outcome, time period. Link to full case study.
+8. Industries
+Show the industries where the team already understands lead economics, compliance, customer intent, and sales cycles.
+9. Measurement
+Explain call tracking, CRM connection, qualified-lead feedback, and why "a lead" is not the final metric.
+10. FAQ
+Answer objections: pricing, minimum ad spend, ownership of ad accounts, contract structure, how quickly campaigns launch, 
+what platforms are managed, whether clients keep their accounts/data.
+11. Final CTA
+Strong dark section: "Want to know where your ad spend is leaking?" + audit form / booking button.
+Homepage copy rules
+
+Do not stuff the homepage with every keyword. Give the homepage a broad paid-media / PPC agency topic and let service
+pages target specific intent.
+
+Keep the first viewport clean: one main promise, one short subhead, one primary CTA, one supporting CTA, and at most 
+one compact proof line.
+
+No slider/carousel in the hero. No modal before the visitor can read the page.
+
+Use real screenshots or anonymized account visuals only when client confidentiality allows.
+Paid campaign landing-page system
+
+Build a reusable landing-page template for paid campaigns with tight message match between ad, keyword/audience, 
+headline, proof, and CTA.
+
+Keep paid landing pages focused: minimal navigation, fast load, one primary conversion action, clear trust signals, and no 
+unnecessary exits.
+
+Preserve UTMs and click identifiers through forms and booking flows. The thank-you state must fire the correct event only 
+after a real submission/booking.
+
+Default duplicate campaign variants to noindex or canonical handling unless a page is intentionally unique enough to serve
+organic search. Do not flood the index with thin ad variants.
+
+Create industry/offer variants only when the copy, proof, qualification questions, and conversion logic are genuinely 
+different.
+05  /  SERVICE PAGE TEMPLATE
+
+===== PAGE 7 =====
+BOLD CLICKS  /  WEBSITE MASTER BUILD BRIEF
+bold-clicks.com  |  Build brief prepared September 18, 2026
+Every service page needs a distinct job
+Each commercial page should satisfy the search intent better than a generic service blurb. It should be useful enough to stand 
+on its own, with concrete deliverables, process, proof, FAQs, and an obvious next step.
+ITEM
+REQUIREMENT
+Title tag
+Unique, concise, descriptive. Example: Google Ads Management | Bold Clicks.
+H1
+One clear primary heading describing the service and outcome.
+Above fold
+Who it is for, what is managed, why Bold Clicks, CTA.
+Deliverables
+Campaign audit/build, keyword/audience strategy, ad creative, 
+negatives/exclusions, bidding, budget allocation, testing, optimization, reporting.
+Measurement
+Conversion setup, calls/forms, CRM handoff, qualified-lead/closed-sale feedback 
+where possible.
+Proof
+Relevant case study, real testimonial, benchmark, or process evidence.
+Process
+What happens in week 1, launch, ongoing optimization, reporting cadence.
+FAQ
+Answer real sales questions. Keep FAQ visible to users regardless of schema 
+decisions.
+CTA
+Free audit / strategy call with message match to the service page.
+Internal links
+Link to related industry pages, case studies, conversion tracking, and helpful 
+insights using descriptive anchor text.
+Google Ads page - content to cover
+
+Search campaigns
+
+Performance Max where appropriate
+
+Shopping / feed strategy if the client is ecommerce
+
+Keyword and negative-keyword control
+
+Ad copy and assets
+
+Geo/device/daypart/budget strategy
+
+Call and form tracking
+
+Landing-page alignment
+
+Search-term review and waste reduction
+
+Qualified-lead and revenue feedback loop
+Meta Ads page - content to cover
+
+Prospecting vs remarketing
+
+Creative testing system
+
+Audience strategy
+
+Offer and funnel fit
+
+Lead forms vs website conversion
+
+Pixel + Conversions API where appropriate
+
+Frequency / fatigue monitoring
+
+Lead quality feedback and CRM outcome tracking
+06  /  INDUSTRY PAGES + CASE STUDIES
+
+===== PAGE 8 =====
+BOLD CLICKS  /  WEBSITE MASTER BUILD BRIEF
+bold-clicks.com  |  Build brief prepared September 18, 2026
+Industry pages must be genuinely different
+The Stoneridge team already presents experience in healthcare, legal, and home-services verticals. Bold Clicks can use that 
+expertise, but the page must demonstrate how paid media differs by vertical - not swap the industry name into the same 
+template.
+ITEM
+REQUIREMENT
+Healthcare
+Lead value, appointment intent, location radius, call handling, privacy/compliance 
+considerations, service-line economics.
+Dental / Ortho
+Emergency vs elective intent, treatment-value differences, call/booking quality, 
+geographic competition.
+Med Spa
+Offer fatigue, creative velocity, audience quality, lead follow-up speed, treatment 
+economics.
+Legal
+Case-type value, high CPCs, qualification, call quality, geographic and practice-
+area targeting.
+Home Services
+Urgency, service radius, seasonality, call conversion, Local Services Ads 
+relationship where relevant.
+DO NOT CREATE THIN VERTICAL PAGES
+An industry page should contain specific audience/search behavior, campaign structure, common waste patterns, KPI
+choices, objections, proof, and FAQs. If Bold Clicks cannot say something distinct and useful, do not publish the page
+yet.
+Case study template
+
+Client profile: industry, geography, business model. Use the client name only with permission.
+
+Starting point: what was wrong or constrained before the engagement.
+
+Objective: qualified leads, appointments, purchases, revenue, CAC, ROAS, etc.
+
+What Bold Clicks changed: campaign structure, tracking, audiences, creatives, landing pages, budget allocation.
+
+Measured outcome: actual verified figures with date range and definition of metric.
+
+Context: note material conditions such as ad spend change, seasonality, or offer changes so the case study is not 
+misleading.
+
+CTA to get an audit.
+07  /  SEO + SEARCH STRATEGY
+Primary organic search themes
+Start with service-intent queries and build topical depth over time. Do not create pages solely because a keyword exists; each 
+page needs a clear user purpose.
+ITEM
+REQUIREMENT
+Core
+paid media agency; PPC agency; PPC management; paid search agency; paid 
+advertising agency.
+Google
+Google Ads agency; Google Ads management; Google PPC management; paid 
+search management.
+Meta
+Meta Ads agency; Facebook Ads management; Instagram Ads management; paid
+social agency.
+
+===== PAGE 9 =====
+BOLD CLICKS  /  WEBSITE MASTER BUILD BRIEF
+bold-clicks.com  |  Build brief prepared September 18, 2026
+Microsoft
+Microsoft Ads management; Bing Ads agency.
+YouTube
+YouTube Ads management; YouTube advertising agency.
+Vertical
+Google Ads for dentists; dental PPC agency; med spa PPC; legal PPC; home 
+services PPC; plus other vertical combinations only where Bold Clicks has real 
+expertise.
+Education
+PPC management cost; Google Ads budget; why Google Ads leads are low 
+quality; how to track qualified leads; PMax vs Search; what a good PPC agency 
+should report.
+On-page SEO rules
+
+Unique title and meta description for every indexable page; descriptive titles, not keyword lists.
+
+One clear visual H1; logical H2/H3 hierarchy; headings should help users scan.
+
+Use the phrases buyers actually use naturally in titles, headings, body copy, alt text, and internal-link anchors where 
+relevant.
+
+Descriptive URLs using hyphens; keep them short and stable.
+
+Every important page should have crawlable HTML links from at least one relevant hub or navigation path.
+
+Use descriptive internal anchor text; avoid "click here" as the default.
+
+Write useful image alt text for meaningful images. Decorative imagery should use empty alt attributes.
+
+Do not publish AI-generated filler. Google's policies target scaled, unoriginal content created primarily to manipulate 
+rankings, regardless of whether AI produced it.
+Content moat
+
+Original ad-account teardown lessons and anonymized screenshots.
+
+Real case studies with spend ranges and outcomes when permissible.
+
+Industry-specific benchmarks generated from Bold Clicks client data, only when sample size is sufficient and methodology 
+is disclosed.
+
+Useful calculators: break-even CPL / CAC, required close rate, budget planning. Tools should actually work and not exist 
+only for SEO.
+
+Platform update analysis that explains what changed, who it affects, and what the team is doing differently.
+
+Expert commentary from the people actually managing accounts.
+08  /  TECHNICAL SEO + PERFORMANCE
+Build for speed and crawlability first
+ITEM
+REQUIREMENT
+Rendering
+Prefer server-rendered or statically generated HTML for core marketing content. 
+Do not require a click or client-side API call to reveal primary copy.
+Responsive
+One responsive site on the same URLs. Google uses the mobile version for 
+indexing and ranking.
+Core Web Vitals
+Target good field performance at the 75th percentile: LCP <= 2.5s, INP <= 200ms,
+CLS <= 0.1.
+JavaScript
+Keep JS lean. Avoid animation libraries or page builders that add large runtime 
+cost without a conversion benefit.
+Images
+Use AVIF/WebP where practical; responsive srcset/sizes; explicit width/height; 
+lazy-load below-fold images; do not lazy-load the main hero/LCP image.
+
+===== PAGE 10 =====
+BOLD CLICKS  /  WEBSITE MASTER BUILD BRIEF
+bold-clicks.com  |  Build brief prepared September 18, 2026
+Fonts
+Use system fonts or self-hosted WOFF2; preload only essential above-fold font 
+files; avoid loading many weights.
+Third-party scripts
+Load calendar/chat/heatmap widgets on interaction or after critical content where 
+feasible. Audit every third-party script.
+Status codes
+Indexable pages return 200. Permanently moved URLs use server-side 301 
+redirects. Custom useful 404 page.
+HTTPS
+HTTPS everywhere; one canonical host; redirect HTTP and alternate host 
+variants.
+Required technical SEO
+
+Self-referencing canonical on every canonical indexable page.
+
+XML sitemap containing canonical indexable URLs only; submit in Google Search Console.
+
+robots.txt that permits important pages/resources. Do not use robots.txt as a substitute for noindex.
+
+Noindex staging, thank-you/test pages, internal search pages, and other pages that should not appear in search. Ensure 
+Google can crawl pages where noindex must be seen.
+
+Open Graph / social metadata for share previews.
+
+Stable favicon and site-name signals.
+
+Breadcrumbs on service, industry, insight, and case-study pages.
+PERFORMANCE ACCEPTANCE TARGET
+Before launch, test representative pages on mobile and desktop. Performance must be measured in both lab tools 
+and real-user field data after traffic begins; Lighthouse alone cannot prove INP field performance.
+09  /  STRUCTURED DATA + AI SEARCH
+Structured data
+
+Organization JSON-LD on the homepage with official name, URL, logo, contact details, sameAs profiles, and address only 
+if it is a real public business location.
+
+BreadcrumbList on hierarchical pages.
+
+Article / BlogPosting markup on editorial content when fields are accurate.
+
+Service / ProfessionalService schema can be used semantically where valid, but do not promise a special Google rich 
+result from it.
+
+Only mark up information that is visible and true. Validate JSON-LD before launch.
+
+Do not rely on FAQPage schema for a marketing-agency rich result. Google says FAQ rich results are generally limited to 
+well-known authoritative government and health sites. Still include helpful visible FAQs for users.
+AI Overviews / AI Mode
+Google's 2026 guidance says normal SEO fundamentals remain the foundation for generative AI Search. Build content that is 
+crawlable, useful, original, and non-commodity. Claude should optimize for clarity and evidence, not chase gimmicks.
+
+Answer important questions directly near the top, then support them with specifics, examples, and proof.
+
+Use clear entity language: Bold Clicks, what it does, the platforms it manages, industries served, and how its process 
+works.
+
+Make original evidence easy to find: case studies, methodology, data, screenshots, named experts, dates.
+
+Keep important content in HTML and crawlable without user interaction.
+
+Do not create unnecessary AI-only files or gimmicks as a substitute for strong content. Google says no new machine-
+readable AI text files or special schema are required to appear in AI Overviews or AI Mode.
+10  /  CONVERSION-FIRST UX
+
+===== PAGE 11 =====
+BOLD CLICKS  /  WEBSITE MASTER BUILD BRIEF
+bold-clicks.com  |  Build brief prepared September 18, 2026
+The website should behave like a great landing page
+Google Ads guidance emphasizes relevance, usefulness, ease of navigation, mobile experience, and message match between 
+the ad and landing page. Bold Clicks should demonstrate those principles on its own site.
+Primary CTA system
+
+Use one main sitewide CTA: "Get a Free Ad Audit" (or another final owner-approved phrase).
+
+Keep the CTA in the header, hero, after major proof sections, and near the footer.
+
+On mobile, consider a restrained sticky bottom CTA after the user scrolls past the hero.
+
+The audit page should reduce navigation distraction and focus on one conversion action.
+
+Forms should be short. Ask only what is needed to qualify and route the lead. Additional qualification can happen after 
+initial conversion or in a second step.
+Form fields to test
+ITEM
+REQUIREMENT
+Required
+Name; business email; company / website; primary ad platform or need.
+Optional qualifier
+Approximate monthly ad spend range; industry; phone.
+Hidden tracking
+UTM source/medium/campaign/content/term; gclid; gbraid/wbraid where available;
+landing page; referrer; first-touch + last-touch fields if infrastructure supports them.
+Thank-you
+Dedicated confirmation state/page with calendar option, next steps, and a tracked 
+conversion event.
+Proof hierarchy
+
+Verified case-study results
+
+Real client logos with permission
+
+Real testimonials with attribution
+
+Platform certifications/partner status only if current and provable
+
+Transparent process
+
+Team expertise and account ownership model
+11  /  ANALYTICS + ATTRIBUTION
+Track the business outcome, not just the form submit
+ITEM
+REQUIREMENT
+Tag layer
+Google Tag Manager or an equivalent governed tag layer.
+Analytics
+GA4 with recommended lead-generation events where appropriate: 
+generate_lead, qualify_lead, working_lead, close_convert_lead, etc.
+Google Ads
+Native conversion actions for critical leads; enhanced conversions when 
+consent/policy requirements are met.
+Offline outcomes
+Feed qualified lead and closed-customer outcomes back to ad platforms where 
+technically and legally appropriate. Google now emphasizes Data Manager for 
+enhanced-conversions/offline workflows.
+Calls
+Track click-to-call and, if using call tracking, meaningful calls rather than every dial
+
+===== PAGE 12 =====
+BOLD CLICKS  /  WEBSITE MASTER BUILD BRIEF
+bold-clicks.com  |  Build brief prepared September 18, 2026
+as equal.
+CRM
+Preferred: send website leads into the same GoHighLevel workflow used in 
+current Stoneridge operations, preserving original source, UTM data, landing 
+page, and click IDs. If Bold Clicks uses a different CRM, preserve this exact data 
+model.
+Privacy
+Implement consent and privacy controls appropriate to the actual jurisdictions, 
+tags, cookies, and advertising platforms. Do not hard-code tracking that ignores 
+consent requirements.
+Events Claude should expose to the data layer
+
+cta_click
+
+form_start
+
+generate_lead
+
+phone_click
+
+calendar_open
+
+appointment_booked
+
+case_study_view
+
+pricing_or_qualifier_interaction
+MEASUREMENT RULE
+Every CTA and form must have a defined event name, trigger condition, and destination. The site is not "done" if the 
+UI works but attribution is ambiguous.
+12  /  ACCESSIBILITY + TRUST + SECURITY
+Build to WCAG 2.2 AA principles
+
+Keyboard-accessible navigation, forms, accordions, dialogs, and menus.
+
+Visible focus states. Do not remove outlines without replacing them with a clearly visible focus treatment.
+
+Text/background contrast that meets accessibility requirements; do not use gold or sage for low-contrast body text.
+
+Comfortable tap targets; WCAG 2.2 adds a minimum target-size criterion of 24x24 CSS px with defined exceptions, but use
+larger practical touch targets for primary actions.
+
+Form labels, instructions, accessible error messages, autocomplete attributes, and logical tab order.
+
+Reduced-motion preference respected for animation.
+
+Meaningful alt text; decorative elements excluded from screen-reader noise.
+Trust + security
+
+Real legal business details in footer/contact pages.
+
+Privacy policy and terms linked in footer.
+
+Secure HTTPS forms; server-side validation; anti-spam protection that does not create excessive friction.
+
+No exposed API keys or secrets in client-side code.
+
+If testimonials or case-study screenshots contain client data, obtain permission and redact sensitive information.
+
+Account ownership language should be explicit: client retains ownership/access to ad accounts and data unless the actual 
+commercial agreement says otherwise.
+13  /  CONTENT SYSTEM
+Do not build a content farm
+The site should grow through a small number of strong, expert pages, not hundreds of generic AI articles. Every article needs a 
+reason to exist: answer a buyer question, demonstrate expertise, support a service page, earn links, or help an existing client.
+
+===== PAGE 13 =====
+BOLD CLICKS  /  WEBSITE MASTER BUILD BRIEF
+bold-clicks.com  |  Build brief prepared September 18, 2026
+Best content formats for Bold Clicks
+
+Ad-spend budget guides by platform or vertical.
+
+Break-even CPL/CAC calculators and accompanying methodology pages.
+
+Search-term waste checklists and account-audit frameworks.
+
+Platform update explainers with a "what we are changing in accounts" section.
+
+Landing-page teardown articles.
+
+Case studies and before/after account structures.
+
+Industry-specific paid-media playbooks based on real experience.
+
+Measurement guides: tracking qualified leads, offline conversions, call tracking, CRM feedback loops.
+Editorial template
+
+Answer first: give the reader the direct answer in the opening section.
+
+Add original experience/data: what Bold Clicks has seen, tested, or measured.
+
+Show methodology and limitations when publishing benchmarks.
+
+Add a named reviewer/author when there is a real expert behind the content.
+
+Link naturally to the most relevant service, case study, and related article.
+
+Update date only when content materially changes; do not fake freshness.
+13A /  AUTHORITY + DISTRIBUTION
+Ranking well requires authority, not just on-page SEO
+
+Earn links and mentions through real work: client case studies, partner/vendor directories, guest expert commentary, 
+original benchmarks, useful tools, podcasts, and trade publications.
+
+Create link-worthy assets that deserve citations: benchmark reports with methodology, ad-budget calculators, tracking 
+templates, teardown frameworks, and original survey/data studies.
+
+Ask willing clients and portfolio companies to link to relevant case studies or partnership pages when it is natural and 
+accurate.
+
+Keep business profiles and major directory information consistent. If Bold Clicks establishes a public office and local search
+is strategically important, build one factual location page and manage the matching business profile - do not fake offices or 
+service-area pages.
+
+Do not buy bulk backlinks, use private blog networks, publish spun guest posts, or participate in link schemes. Treat 
+outreach as distribution of genuinely useful assets, not a volume link quota.
+EXPERIENCE SIGNALS
+Show real operators, real process, real screenshots, real dates, and real outcomes. Named authors/reviewers and 
+first-hand evidence strengthen trust. Do not claim that E-E-A-T is a single ranking score or fabricate credentials to 
+imitate it.
+14  /  BUILD RULES FOR CLAUDE
+Recommended implementation characteristics
+Claude may choose the exact framework based on the deployment environment, but the implementation must satisfy the 
+following. If using Next.js or a similar framework, default to static/server-rendered marketing pages and minimize client-side 
+components.
+
+Component system: reusable Hero, ProofStrip, ServiceCard, CaseStudyCard, ProcessSteps, CTASection, FAQAccordion, 
+LeadForm, Breadcrumbs, AuthorCard.
+
+Central content/data objects for nav, services, industries, case studies, testimonials, FAQs, and SEO metadata. Avoid copy
+duplicated across hard-coded components.
+
+CMS only if the owner needs frequent non-developer edits. Do not add a heavy CMS solely because it is fashionable.
+
+Clean semantic HTML: header, nav, main, section, article, aside, footer as appropriate.
+
+Progressive enhancement: primary content and navigation work without relying on heavy client-side JavaScript.
+
+No layout shifts from images, fonts, banners, forms, or embeds.
+
+Lazy-load Calendly/booking, chat, heatmaps, and other third parties when feasible.
+
+Create a reusable SEO metadata function and JSON-LD helpers; validate outputs.
+
+Generate sitemap.xml and robots.txt programmatically from the canonical route set.
+
+===== PAGE 14 =====
+BOLD CLICKS  /  WEBSITE MASTER BUILD BRIEF
+bold-clicks.com  |  Build brief prepared September 18, 2026
+
+Staging environment must be noindex and protected from accidental public indexing.
+
+Add clear README / deployment notes so another developer can maintain the site.
+Do not do these things
+
+Do not copy competitor copy or design.
+
+Do not fabricate results, logos, certifications, or reviews.
+
+Do not hide important SEO copy in interactions that require clicks to load.
+
+Do not generate hundreds of templated city or service pages.
+
+Do not make all text animate in on scroll.
+
+Do not use giant videos, 4K background media, or huge JavaScript bundles for decoration.
+
+Do not add a chatbot or popup before the core page content is usable.
+
+Do not ship lorem ipsum, placeholder metrics, or dead buttons.
+15  /  LAUNCH ACCEPTANCE CHECKLIST
+The site is ready only when all of this passes
+  Approved Bold Clicks logo used exactly; favicon created from approved mark.☐
+  Brand colors match this brief; black dominant, forest green supporting, gold restrained.☐
+  All primary navigation and CTA links work on desktop and mobile.☐
+  Every indexable page has unique title, meta description, H1, canonical, Open Graph tags.☐
+  XML sitemap generated and submitted to Google Search Console.☐
+  robots.txt reviewed; staging/test routes are not indexable.☐
+  Organization and Breadcrumb structured data validated where used.☐
+  No FAQ rich-result promises; visible FAQs remain useful to humans.☐
+  Representative pages pass mobile responsiveness QA.☐
+  Core Web Vitals are designed to meet good thresholds; lab performance is strong before launch.☐
+  Images have explicit dimensions; hero image is optimized; below-fold images lazy-load.☐
+  Keyboard navigation and focus states tested.☐
+  Forms validate cleanly, submit successfully, and show a clear confirmation state.☐
+  Lead source / UTM / click ID data reaches the CRM where supported.☐
+  GA4 and ad-platform events verified in debug/test modes.☐
+  Phone links and booking links are tracked.☐
+  Consent/privacy implementation matches actual tracking footprint and jurisdictions.☐
+  404 page works; HTTP/HTTPS and host variants redirect to one canonical host.☐
+  No placeholder claims, fake stats, stock testimonials, fake logos, or unverified partner badges.☐
+  Search Console property verified; launch crawl/indexing checks completed.☐
+  Backup / rollback plan exists before DNS or production deploy.☐
+16  /  COPY-PASTE DIRECTIVE FOR CLAUDE
+Use this as the build instruction
+CLAUDE DIRECTIVE
+Build bold-clicks.com as a premium, conversion-first paid-media agency website using the approved Bold Clicks logo.
+Bold Clicks runs ads - do not turn it into a full-service marketing agency. The visual system should clearly belong to 
+the Stoneridge family: dominant black, forest green #2F4428, supporting sage #6C815F, warm cream #F3F2E7, and 
+very restrained gold #C6A15B. Keep the design modern, spacious, fast, and serious. The primary sitewide 
+conversion should be a free paid-media/ad-account audit. Build the pages, components, content structure, technical 
+SEO, analytics hooks, structured data, accessibility, and performance requirements defined in this brief. Do not 
+fabricate proof. If a metric, testimonial, certification, client logo, address, pricing number, or case-study result has not 
+been supplied, create a clearly labeled content placeholder in the content model - never publish invented data.
+
+===== PAGE 15 =====
+BOLD CLICKS  /  WEBSITE MASTER BUILD BRIEF
+bold-clicks.com  |  Build brief prepared September 18, 2026
+Then execute in this order
+1.  Create the information architecture and route map.
+2.  Build the global design system and reusable components.
+3.  Build the homepage and free-audit page first; validate mobile UX and performance.
+4.  Build the services hub + platform service pages.
+5.  Build industries and case-study templates with unique content requirements.
+6.  Implement forms + CRM/measurement hooks.
+7.  Implement metadata, canonicals, sitemap, robots, JSON-LD, breadcrumbs, favicon, social cards.
+8.  Run accessibility and performance QA.
+9.  Run a crawl-style QA: broken links, duplicate titles/descriptions, missing canonicals, accidental noindex, redirect chains.
+10.  Provide a final launch checklist and list of any owner-supplied content still required.
+17  /  RESEARCH NOTES + SOURCES
+Why these requirements are in the brief
+Google Search fundamentals
+Google says successful sites should create helpful, reliable, people-first content; use the words people search for in prominent 
+places; make links crawlable; and ensure images, video, structured data, and JavaScript are understandable to Search.
+Performance
+web.dev defines the current Core Web Vitals "good" thresholds as LCP <= 2.5 seconds, INP <= 200 ms, and CLS <= 0.1.
+Mobile-first
+Google uses the mobile version of content for indexing/ranking and recommends responsive design.
+AI Search
+Google says the same SEO foundations apply to AI Overviews and AI Mode. There are no extra technical requirements or 
+special schema for inclusion; useful, unique content and normal crawlability/indexability fundamentals remain the priority.
+Landing-page quality
+Google Ads documentation emphasizes relevance, usefulness, ease of navigation, mobile experience, speed, and strong 
+message match between ads and landing pages.
+Scaled pages
+Google's spam policies warn against doorway pages and scaled, low-value content - a reason to avoid mass-generated 
+city/industry templates.
+Structured data
+Google supports Organization and Breadcrumb structured data. FAQ rich results are generally limited to authoritative 
+government and health sites.
+Measurement
+Google Ads and Analytics documentation supports enhanced conversions and lead-funnel events; in 2026 Google expanded 
+Data Manager as a key route for enhanced-conversion/offline data.
+Accessibility
+WCAG 2.2 adds focus and target-size requirements that support keyboard and touch users.
+Competitive pattern
+Current sites from Disruptive Advertising, HawkSEM, WebFX, and Single Grain consistently use concrete offers, proof/case 
+studies, specific paid-media capabilities, strong CTA repetition, and measurement language. Bold Clicks should use the pattern 
+without copying their design or copy.
+
+===== PAGE 16 =====
+BOLD CLICKS  /  WEBSITE MASTER BUILD BRIEF
+bold-clicks.com  |  Build brief prepared September 18, 2026
+Source links
+Google Search Essentials: 
+https://developers.google.com/search/docs/essentials
+Google SEO Starter Guide: 
+https://developers.google.com/search/docs/fundamentals/seo-starter-guide
+Google spam policies: 
+https://developers.google.com/search/docs/essentials/spam-policies
+Google mobile-first indexing: 
+https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-sites-mobile-first-indexing
+Google - AI features and your website: 
+https://developers.google.com/search/docs/appearance/ai-features
+Google Search Central - 2026 generative AI optimization resource: 
+https://developers.google.com/search/blog/2026/05/a-new-resource-for-optimizing
+Google Organization structured data: 
+https://developers.google.com/search/docs/appearance/structured-data/organization
+Google Breadcrumb structured data: 
+https://developers.google.com/search/docs/appearance/structured-data/breadcrumb
+Google FAQ rich-result change: 
+https://developers.google.com/search/blog/2023/08/howto-faq-changes
+web.dev - Web Vitals: 
+https://web.dev/articles/vitals
+Google Ads - landing page: 
+https://support.google.com/google-ads/answer/14086
+Google Ads - optimize ads and landing pages: 
+https://support.google.com/google-ads/answer/6238826
+Google Ads - enhanced conversions for leads: 
+https://support.google.com/google-ads/answer/15713840
+Google Ads - Data Manager with enhanced conversions for leads: 
+https://support.google.com/google-ads/answer/15707550
+GA4 recommended events: 
+https://support.google.com/analytics/answer/9267735
+W3C - WCAG 2.2 updates: 
+https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/
+Stoneridge Digital: 
+https://stoneridgedigital.com/
+Stoneridge Equity: 
+https://stoneridge-equity.com/
+Disruptive Advertising PPC: 
+https://disruptiveadvertising.com/advertising-services/ppc-management/
+HawkSEM: 
+https://hawksem.com/
+WebFX PPC management: 
+https://www.webfx.com/ppc/services/
+Single Grain PPC: 
+https://www.singlegrain.com/ppc-agency/
+IMPORTANT
+No website brief can guarantee rankings. This plan is designed to maximize the controllable inputs: relevance, 
+technical quality, crawlability, page experience, original expertise, conversion clarity, measurement, and authority 
+building.
+

@@ -1,0 +1,24 @@
+[
+  {
+    "_comment": "Performance budgets - Volume 2 s.33. JS <= 150 KB gzipped on marketing routes; total page weight <= 600 KB. Sizes here are in kilobytes as Lighthouse reports transfer size.",
+    "path": "/*",
+    "resourceSizes": [
+      { "resourceType": "script", "budget": 150 },
+      { "resourceType": "stylesheet", "budget": 60 },
+      { "resourceType": "font", "budget": 120 },
+      { "resourceType": "image", "budget": 200 },
+      { "resourceType": "third-party", "budget": 100 },
+      { "resourceType": "total", "budget": 600 }
+    ],
+    "resourceCounts": [
+      { "resourceType": "script", "budget": 12 },
+      { "resourceType": "font", "budget": 2 },
+      { "resourceType": "third-party", "budget": 6 }
+    ],
+    "timings": [
+      { "metric": "largest-contentful-paint", "budget": 2000 },
+      { "metric": "cumulative-layout-shift", "budget": 0.1 },
+      { "metric": "total-blocking-time", "budget": 200 }
+    ]
+  }
+]

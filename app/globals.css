@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Font variables are set by next/font in app/layout.tsx. Until the owner
+       approves a family (docs/owner-inputs.md), both resolve to the system
+       stack declared in tailwind.config.ts. */
+    --font-display: '';
+    --font-body: '';
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream font-body text-body text-ink antialiased;
+  }
+
+  @screen md {
+    body {
+      @apply text-body-lg;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-black;
+    /* Volume 2 s.29: headline sizes are tight, so word-level wrapping matters. */
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Volume 1 s.12: never remove focus outlines without a clearly visible
+     replacement. Gold alone fails contrast on cream, so the ring pairs gold
+     with a dark offset. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-gold ring-offset-2 ring-offset-cream;
+    box-shadow: 0 0 0 4px #0b0d0c;
+  }
+
+  .bg-black :focus-visible,
+  .bg-forest :focus-visible {
+    @apply ring-offset-black;
+    box-shadow: 0 0 0 4px #f3f2e7;
+  }
+
+  /* Volume 2 s.29: honour prefers-reduced-motion by disabling transforms. */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Skip link - visible only on keyboard focus. */
+  .skip-link {
+    @apply absolute left-4 top-4 z-50 -translate-y-24 rounded bg-black px-4 py-3 text-cream transition;
+  }
+
+  .skip-link:focus {
+    @apply translate-y-0;
+  }
+
+  /* Body copy inside long-form sections. Measure capped at 68ch (s.29). */
+  .prose-bc {
+    @apply max-w-measure space-y-4;
+  }
+
+  .prose-bc a {
+    @apply text-forest underline underline-offset-4 hover:text-black;
+  }
+
+  .bg-black .prose-bc a,
+  .bg-forest .prose-bc a {
+    @apply text-gold hover:text-cream;
+  }
+}

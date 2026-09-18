@@ -1,0 +1,3346 @@
+
+===== PAGE 1 =====
+WEBSITE BUILD BRIEF  -  VOLUME 2
+Ranking, Content
+& Automation
+How bold-clicks.com wins Austin, then Texas, then the surrounding
+states - and keeps winning without manual upkeep.
+Prepared for: Bold Clicks (Stoneridge family)
+Intended reader: Claude Code (build agent) and the site owner
+Companion to: Bold Clicks Website Master Build Brief (Volume 1)
+Date: September 18, 2026
+WHAT THIS VOLUME ADDS
+Geographic ranking strategy  |  Full keyword and content map  |  12-month editorial calendar  |  Self-running
+monitoring and alerting  |  Scheduled automation jobs  |  Technical stack, design tokens, page copy  |  Lead routing,
+analytics and CRM spec  |  CI/QA gates  |  Launch plan  |  Claude Code operating instructions
+
+===== PAGE 2 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 2
+00 / READ THIS FIRST
+How to use Volume 2
+This document extends the Master Website Build Brief. It does not replace it.
+Volume 1 defined what Bold Clicks is, the brand system, the launch sitemap, the homepage blueprint, the
+service-page template, the technical SEO baseline, and the launch acceptance checklist. Volume 2 answers the
+questions Volume 1 left open: how the site actually ranks in Austin, across Texas, and in the surrounding states;
+what content gets produced, when, and by whom; and how the whole system runs itself so the owner never
+has to wonder whether tracking, indexing, performance, or forms are working.
+PRECEDENCE RULES
+1. If Volume 1 and Volume 2 conflict on a brand, logo, or 'do not fabricate' rule, Volume 1 wins.
+2. If they conflict on SEO strategy, automation, content cadence, or implementation detail, Volume 2 wins (it is the
+more specific document).
+3. Anything marked [OWNER] in either volume is a required input from the owner. Claude Code must create a
+clearly labeled placeholder in the content model and list it in the final hand-off report - never invent it, never ship it as
+visible copy.
+4. Automation may draft, test, measure, and propose. Automation never publishes public content or changes
+tracking without an approval step.
+The goal, stated plainly
+Bold Clicks intends to be the number-one paid-media agency in the country. Nobody ranks nationally on day one, and
+a site that tries to rank everywhere at once usually ranks nowhere. So the ranking strategy is sequenced: own
+Austin first (where the operators, the proof, and the business address are), then Texas (Dallas-Fort Worth, Houston,
+San Antonio), then the surrounding states (Oklahoma, Louisiana, Arkansas, New Mexico), and only then compete
+on national head terms. Each tier unlocks when the previous tier produces measurable proof - rankings, leads, and
+case studies - that can be reused in the next tier.
+Tier
+Geography
+Primary lever
+Unlock condition
+Tier 1
+Austin metro (Austin, Round Rock,
+Cedar Park, Georgetown, Pflugerville,
+Leander, Lakeway, San Marcos, Kyle,
+Buda)
+Google Business Profile + one strong
+Austin page + local citations + reviews +
+Austin-specific insights
+Site live, GBP verified, tracking
+verified
+Tier 2
+Texas metros (Dallas-Fort Worth,
+Houston, San Antonio) and statewide
+'Texas' modifiers
+Texas hub page + industry pages with
+Texas proof + case studies with Texas
+clients + state-level content
+At least 3 verified case studies,
+top-10 Austin positions on core
+terms for 60+ days
+Tier 3
+Oklahoma, Louisiana, Arkansas, New
+Mexico
+Regional case studies, industry playbooks,
+benchmark reports, PR/links from regional
+trade groups
+Tier 2 sustained, 6+ case
+studies, referring domains
+growing month over month
+Tier 4
+National head terms ('PPC agency',
+'Google Ads agency')
+Original data studies, tools, named
+experts, authority links, brand search
+volume
+Tier 3 sustained and brand
+search demand visible in Search
+Console
+
+===== PAGE 3 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 3
+Document map
+Section
+What it covers
+Who acts on it
+18
+Geographic ranking strategy: Austin, Texas, surrounding states
+Claude Code (pages), Owner (GBP, citations,
+reviews)
+19
+Automated competitive intelligence protocol
+Claude Code (scripts), runs unattended
+20
+Full keyword and intent map by page cluster
+Claude Code (page targeting), automation (rank
+tracking)
+21
+12-month editorial calendar
+Automation drafts, Owner approves
+22
+Content refresh and freshness system
+Automation detects, Owner approves
+23
+Automation architecture: the site runs itself
+Claude Code builds it
+24
+Monitoring and alerting specification
+Claude Code builds; alerts go to Owner
+25
+Scheduled jobs (cron) specification
+Claude Code builds; GitHub Actions runs
+26
+AI content guardrails
+Everyone
+27
+Owner reporting: weekly digest, monthly report, dashboard
+Automation produces
+28
+Technical stack, repository layout, content schemas
+Claude Code
+29
+Design system tokens and component specifications
+Claude Code
+30
+Page copy drafts (homepage, free audit, Google Ads, Austin, About)
+Claude Code implements; Owner edits
+31
+Lead capture, routing, and CRM specification
+Claude Code + Owner (GoHighLevel)
+32
+Analytics, tag manager, and attribution implementation
+Claude Code + Owner (account IDs)
+33
+CI/QA pipeline and pre-launch crawl
+Claude Code
+34
+Launch plan and post-launch 30/60/90
+Claude Code + Owner
+35
+Owner-supplied inputs checklist
+Owner
+36
+Claude Code operating instructions (CLAUDE.md, commands,
+definition of done)
+Claude Code
+37
+Risk register and anti-patterns
+Everyone
+A-C
+Appendices: geography reference, event/schema reference, KPI
+glossary
+Reference
+
+===== PAGE 4 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 4
+18 / GEOGRAPHIC RANKING STRATEGY
+Own Austin. Then own Texas.
+Local and regional search for agency services is won with a small number of strong pages plus off-site
+signals - not with city-page sprawl.
+Why geography is the first fight
+When someone in Texas searches 'PPC agency' or 'Google Ads management,' Google usually localizes the results:
+a map pack of nearby agencies, then organic results that lean toward businesses with local relevance. National
+agencies with huge authority still show up, but a local specialist with a verified Google Business Profile, consistent
+citations, real reviews, and a page that speaks to the local market can outrank them for the localized version of the
+query. That is the opening. Bold Clicks is in Austin, which is also one of the most competitive local markets in the
+country for home services, med spas, dental, and legal - exactly the verticals Bold Clicks serves.
+The three local ranking systems to win
+System
+What Google looks at
+What Bold Clicks does
+Map pack (Google
+Business Profile)
+Relevance of categories/services, distance from
+searcher, prominence (reviews, citations, links,
+brand mentions)
+Verified GBP with correct primary category,
+complete services, weekly posts, review flow from
+real clients, Q&A seeded with real buyer questions
+Localized organic results
+Location relevance on the page, entity
+consistency (name, address, phone), local links
+and mentions, topical authority
+One authoritative Austin page, Austin-specific
+insights content, Organization schema with real
+address (if public), consistent NAP across the web
+Regional / statewide
+organic
+Topical authority, case studies and proof tied to
+the region, links from regional sources
+Texas hub page, industry pages that reference
+Texas market conditions with real data, case
+studies naming Texas metros (with permission)
+Location page rules (the anti-doorway standard)
+Volume 1 already warned against mass city pages. This is the positive version of that rule: build very few location
+pages and make each one the best page on the internet for that market.
+Route
+Build when
+Must contain (all required)
+/austin-ppc-agency/
+At launch
+Austin-specific market commentary (CPC ranges by vertical from Bold Clicks'
+own accounts once available, seasonality, competitive density); map + service
+radius; Austin case studies or, pre-proof, Austin account teardown lessons;
+local FAQs (minimum spend in Austin, which platforms work for Austin home
+services, etc.); embedded GBP link; real address if public; named operator;
+internal links to every service page
+/texas-ppc-agency/
+After Tier 1 unlock
+(see section 00)
+Statewide framing: DFW vs Houston vs San Antonio vs Austin differences in
+CPC, competition, and lead value; Texas case studies; Texas-specific
+compliance notes for legal and healthcare advertising; TDLR/state-licensing
+language for home services where relevant; links to industry pages
+/dallas-ppc-agency/,
+/houston-ppc-agency/, /s
+an-antonio-ppc-agency/
+Only after a verified
+client in that metro
+exists
+Same standard as Austin. If the page cannot cite a real client, real spend
+range, or real metro-specific data, do not publish it. A page that only swaps the
+city name is a doorway page and must be rejected in code review.
+
+===== PAGE 5 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 5
+Route
+Build when
+Must contain (all required)
+Surrounding-state pages
+Never at launch.
+Revisit at Tier 3
+Regional demand is served through industry pages, case studies, and
+benchmark content that mention the state naturally. A state page exists only if
+the team can say something genuinely useful about advertising in that state.
+DOORWAY-PAGE REJECTION TEST (run in code review and in the monthly SEO audit)
+A location page fails if any of these is true: (a) more than 60% of its body text is shared with another location page;
+(b) it contains no figure, screenshot, client reference, or observation that could only be true for that market; (c) it
+exists only to funnel to the same form with no unique buyer questions answered. Failing pages get noindex and a
+rewrite ticket - they do not get published.
+Google Business Profile playbook [OWNER sets up; automation maintains]
+
+Primary category: Advertising agency. Secondary: Marketing agency, Internet marketing service. Do not add
+unrelated categories to chase volume.
+
+Name: Bold Clicks - exactly the legal/brand name, no keywords stuffed into the name (this is a suspension risk).
+
+Address vs service area: If Bold Clicks has a real, staffed Austin address, list it. If not, set a service-area
+business covering the Austin metro and hide the address. Never use a virtual office or co-working mailbox as a
+listed address.
+
+Services list: Google Ads management, Meta Ads management, Microsoft Ads management, YouTube Ads
+management, Conversion tracking and attribution, Free ad-account audit. Each with a short real description.
+
+Description: Reuse the positioning line from Volume 1. Mention Austin, Texas, and the platforms managed. No
+superlatives that cannot be proven.
+
+Reviews: Every closed client enters a GoHighLevel review-request workflow at day 45 and day 120. Respond to
+every review within 48 hours (automation drafts, owner sends).
+
+Posts: One post per week, drafted automatically from newly published Insights, case studies, or platform-update
+explainers. Owner approves in the weekly digest.
+
+Q&A: Seed 8-10 real buyer questions (minimum spend, contract length, account ownership, reporting cadence,
+which industries) with honest answers.
+
+Photos: Real team, real office/workspace, real screenshots (redacted). Refresh quarterly.
+
+UTM the website link: ?utm_source=google&utm_medium=organic&utm_campaign=gbp so GBP traffic is
+attributable.
+Citation and profile consistency
+Consistency of name, address, and phone (NAP) across the web is a prominence signal and a trust signal. Build
+these once, record them in the repo (content/citations.json), and let automation check them quarterly for drift.
+Priority
+Where
+Notes
+Core
+Google Business Profile, Bing Places, Apple Business
+Connect, Yelp, BBB, LinkedIn Company Page, Facebook
+Page, Instagram
+Identical NAP, identical logo asset, identical
+description, tracked website link
+Agency
+directories
+Clutch, UpCity, DesignRush, GoodFirms, Sortlist, The
+Manifest, Agency Spotter
+Complete profiles; collect verified client reviews on
+Clutch and UpCity specifically - they rank for 'best
+PPC agency austin' queries themselves
+
+===== PAGE 6 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 6
+Priority
+Where
+Notes
+Platform
+directories
+Google Partners directory (only once Partner status is
+actually earned), Meta Business Partners (only if earned),
+Microsoft Advertising Partners (only if earned)
+Never claim status that is not current. Automation
+checks the badge status quarterly and flags expiry.
+Local
+Austin Chamber of Commerce, Greater Austin Black
+Chamber / Hispanic Chamber (if applicable), Austin
+Business Journal Book of Lists submissions, Texas
+Association of Business, local networking groups
+Chamber memberships typically include a directory
+link - these are legitimate local links
+Vertical
+Dental/ortho practice-management vendor partner pages,
+med-spa software partner directories, legal marketing
+directories, home-services franchise vendor lists
+Only where Bold Clicks has a genuine relationship
+or client; these double as industry-relevant links
+Austin-specific content angles (feed these into the calendar in section 21)
+
+What Google Ads actually costs in Austin by vertical - built from Bold Clicks account data with methodology
+disclosed; until then, framed as 'what we see' with ranges, never fake precision.
+
+Austin home-services seasonality: HVAC and roofing demand curves, storm-season spikes, and how bids should
+move with them.
+
+Med spa advertising in Austin: creative fatigue in a saturated market and what actually differentiates offers.
+
+Austin dental and orthodontic paid search: emergency vs elective intent, the Round Rock / Cedar Park suburban
+competition pattern.
+
+Legal PPC in Travis County: case-type CPC reality, intake-quality problems, and call-tracking lessons.
+
+Landing-page teardowns of anonymized Austin businesses (with permission or fully anonymized).
+
+Austin event-driven demand (SXSW, ACL, F1 weekend) and whether it matters for local service advertisers - an
+honest analysis, not hype.
+Texas and surrounding-state expansion signals
+Rather than building state pages, the site accumulates regional relevance through content and proof. Automation
+tracks Search Console queries containing each metro or state name and reports them monthly so the owner can see
+which regions are already generating demand. When a region shows organic impressions plus at least one signed
+client, that region is a candidate for its own page (section 18, location page rules).
+Region
+Demand signal to watch
+Content lever before a page exists
+Dallas-Fort Worth
+GSC queries containing dallas, fort worth, dfw, plano,
+frisco, arlington
+Industry pages reference DFW competition; case
+studies with DFW clients
+Houston
+houston, the woodlands, katy, sugar land, pearland
+Home-services and legal content referencing Houston
+CPC and storm seasonality
+San Antonio
+san antonio, new braunfels, boerne
+Healthcare and dental content; proximity to Austin
+makes shared case studies natural
+Oklahoma
+oklahoma city, tulsa, okc
+Benchmark reports segmented by state; regional
+trade-group contributions
+Louisiana
+new orleans, baton rouge, lafayette, shreveport
+Home-services (roofing, storm restoration) playbooks
+Arkansas
+little rock, fayetteville, bentonville
+Med-spa and dental playbooks; Northwest Arkansas
+growth-market commentary
+
+===== PAGE 7 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 7
+Region
+Demand signal to watch
+Content lever before a page exists
+New Mexico
+albuquerque, santa fe, las cruces
+Healthcare paid-media content; bilingual campaign
+lessons where real
+
+===== PAGE 8 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 8
+19 / COMPETITIVE INTELLIGENCE PROTOCOL
+Never guess who you are competing with
+The competitive set changes as the site moves through tiers. Automation keeps the list current;
+humans decide what to do about it.
+Volume 1 named four national agencies as pattern references. Those are not the competitors Bold Clicks meets on
+an Austin SERP. The Austin and Texas competitive set will include local PPC shops, full-service agencies with strong
+local SEO, and directory sites (Clutch, UpCity, Yelp) that rank for 'best PPC agency austin' themselves. This section
+defines a script, not a static list, so the competitive picture is always current and never based on stale assumptions.
+Monthly SERP scan (automated)
+1.
+For every query in the tracked set (section 20, priority P1 and P2, with and without geographic modifiers), fetch
+the top 20 organic results and the map-pack entries using a SERP data provider [OWNER chooses:
+DataForSEO, SerpApi, or Semrush API - the repo must support any of them behind one adapter].
+2.
+Store results in data/serp/YYYY-MM/ as JSON, committed to the repo so history is diffable.
+3.
+Classify each result domain: local agency, national agency, directory/aggregator, platform doc (Google),
+publisher, other.
+4.
+Compute share of voice per query group and per geography tier.
+5.
+For any domain appearing in the top 10 for three or more P1 queries, run a page-level profile: title, H1, word
+count, presence of case studies, offer type, form fields, schema types, estimated Core Web Vitals via the
+PageSpeed Insights API.
+6.
+Produce docs/competitive/YYYY-MM.md: what changed since last month, new entrants, who lost positions, and
+which competitor pages Bold Clicks' equivalents are weaker than (and on which dimension).
+7.
+Open a GitHub issue labeled 'competitive-gap' for each concrete, actionable gap. Include the evidence.
+What to capture per competitor page
+Dimension
+Why it matters
+Bold Clicks response rule
+Offer
+Free audit vs consultation vs pricing page - the offer
+sets conversion expectations for the SERP
+Match or beat clarity; never match with a fake offer
+Proof density
+Number of case studies with numbers, named clients,
+review count and rating
+Gap = case study production priority (section 21)
+Topical depth
+Do they have platform pages, industry pages,
+calculators, benchmark content?
+Prioritize the missing asset type that section 20 already
+planned
+Local signals
+Address, service-area language, GBP presence and
+review count
+Feed into GBP review-request cadence
+Page
+experience
+PSI mobile score, LCP/INP/CLS field data
+Bold Clicks must stay in the 'good' band; a competitor
+with faster pages is a red flag
+Links
+Referring domains count and notable sources (via the
+chosen API)
+Informs link-worthy asset priorities (section 13A in
+Volume 1)
+
+===== PAGE 9 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 9
+RULE
+Competitive intelligence informs priorities. It never licenses copying design, copy, or structure. Any output from this
+protocol that reads like 'replicate competitor X' is wrong; the right output is 'competitor X proves buyers want Y; build
+Bold Clicks' original version of Y.'
+
+===== PAGE 10 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 10
+20 / KEYWORD AND INTENT MAP
+One page, one primary intent, unlimited
+supporting depth
+Priorities: P1 = launch, P2 = first 90 days, P3 = months 4-12. Volumes are not listed because they
+must be pulled live at build time and stored in data/keywords.json.
+KEYWORD DATA RULE
+Claude Code must pull current volume, CPC, and difficulty from the chosen keyword API at build time and store
+them in data/keywords.json with a pulled_at date. This brief supplies the map (which terms, which page, which
+intent, which priority). It deliberately does not supply numbers that would be stale within weeks.
+Cluster 1: Core agency terms
+Primary term
+Supporting terms
+Target page
+Intent
+Priorit
+y
+ppc agency austin
+austin ppc agency, ppc management
+austin tx, paid search agency austin
+/austin-ppc-agency/
+Local commercial
+P1
+google ads agency
+austin
+austin google ads management, google
+adwords agency austin
+/austin-ppc-agency/ (H2
+section) +
+/google-ads-management/
+Local commercial
+P1
+paid media agency
+paid advertising agency, paid media
+management, performance marketing
+agency
+/ (homepage)
+Commercial, broad
+P1
+ppc management
+services
+ppc management company, pay per
+click management
+/services/
+Commercial
+P1
+ppc agency texas
+texas ppc agency, google ads agency
+texas, paid search texas
+/texas-ppc-agency/
+Regional
+commercial
+P2
+ppc agency dallas /
+houston / san
+antonio
+google ads management dallas, etc.
+Metro pages (only when
+unlocked)
+Local commercial
+P3
+best ppc agency
+top ppc agencies, best google ads
+agencies
+Case studies hub + directory
+profiles (Clutch/UpCity)
+Commercial
+investigation
+P3
+
+===== PAGE 11 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 11
+Cluster 2: Platform terms
+Primary term
+Supporting terms
+Target page
+Intent
+Priorit
+y
+google ads
+management
+google ads management services,
+google ads management company,
+adwords management
+/google-ads-management/
+Commercial
+P1
+performance max
+management
+pmax agency, performance max vs
+search
+/google-ads-management/
+(section) + Insight article
+Commercial +
+informational
+P2
+meta ads
+management
+facebook ads management, instagram
+ads agency, facebook ads agency, paid
+social agency
+/meta-ads-management/
+Commercial
+P1
+microsoft ads
+management
+bing ads management, bing ads agency,
+microsoft advertising agency
+/microsoft-ads-management/
+Commercial
+P2
+youtube ads
+management
+youtube advertising agency, youtube
+ads agency, video ads management
+/youtube-ads-management/
+Commercial
+P2
+google local services
+ads management
+lsa management, local services ads
+agency
+Home-services industry page
+section; standalone page only
+if demand is proven
+Commercial
+P3
+Cluster 3: Measurement terms
+Primary term
+Supporting terms
+Target page
+Intent
+Priorit
+y
+ppc conversion
+tracking
+google ads conversion tracking setup,
+conversion tracking agency
+/conversion-tracking/
+Commercial +
+informational
+P1
+offline conversion
+tracking google ads
+enhanced conversions for leads, google
+ads crm integration, data manager
+google ads
+/conversion-tracking/ + Insight
+guide
+Informational (high
+intent)
+P2
+call tracking for
+google ads
+ppc call tracking, callrail google ads
+Insight guide -> links to
+/conversion-tracking/
+Informational
+P2
+how to track qualified
+leads
+lead quality tracking, qualified lead vs
+lead
+Insight guide
+Informational
+P2
+gohighlevel google
+ads integration
+ghl google ads conversion, gohighlevel
+attribution
+Insight guide (Bold Clicks has
+first-hand experience here)
+Informational
+P3
+
+===== PAGE 12 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 12
+Cluster 4: Industry terms
+Primary term
+Supporting terms
+Target page
+Intent
+Priorit
+y
+dental ppc agency
+google ads for dentists, dental google
+ads management, dental ppc
+/industries/dental/
+Commercial
+P2
+orthodontist ppc
+orthodontic marketing google ads,
+invisalign google ads
+/industries/orthodontics/
+Commercial
+P3
+podiatry marketing
+google ads
+podiatrist ppc, foot and ankle google ads
+/industries/podiatry/
+Commercial
+P3
+ent marketing ppc
+sinus google ads, ent google ads
+/industries/ent-sinus/
+Commercial
+P3
+primary care google
+ads
+medical practice ppc, doctor ppc agency
+/industries/primary-care/
+Commercial
+P3
+med spa ppc agency
+med spa google ads, medical spa
+facebook ads, aesthetics ppc
+/industries/med-spa/
+Commercial
+P2
+legal ppc agency
+law firm google ads, attorney ppc,
+personal injury google ads
+/industries/legal/
+Commercial
+P2
+home services ppc
+hvac google ads, roofing ppc, plumber
+google ads, roofing google ads agency
+/industries/home-services/
+Commercial
+P1 (Sto
+neridge
+has
+roofing
+proof)
+Cluster 5: Educational / buyer-question terms
+Primary term
+Format
+Supports
+Priority
+how much does ppc management
+cost
+Pricing-model explainer with honest ranges and
+what changes the price
+/services/, /free-ad-audit/
+P1
+google ads budget for small
+business
+Budget planning guide + break-even calculator
+/google-ads-management/
+P2
+why are my google ads leads low
+quality
+Diagnostic article with search-term, landing-page,
+and tracking causes
+/conversion-tracking/
+P1
+performance max vs search
+campaigns
+Decision framework with account examples
+/google-ads-management/
+P2
+what should a ppc agency report
+Reporting standard article (Bold Clicks' own
+template shown)
+/about/, /services/
+P2
+google ads account audit
+checklist
+Audit framework (the same one the free audit
+uses)
+/free-ad-audit/
+P1
+cost per lead benchmarks by
+industry
+Benchmark report (only when sample size and
+methodology are real)
+Industry pages
+P3
+facebook ads vs google ads for
+leads
+Platform-fit article
+/meta-ads-management/
+P2
+
+===== PAGE 13 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 13
+Cluster 6: Brand and navigational
+'bold clicks', 'bold clicks agency', 'bold clicks austin', 'bold clicks reviews'. Homepage, About, and Case Studies own
+these. Automation tracks brand-query impressions monthly as the leading indicator of Tier 4 readiness. Register
+bold-clicks and boldclicks handles on every major platform at launch even if unused, to protect the brand SERP.
+Keyword-to-page assignment rules
+
+Each commercial page has exactly one primary term in the title tag and H1 family. Supporting terms appear in
+H2s, body, FAQs, and internal anchors - naturally.
+
+Geographic modifiers live on location pages. Service pages mention Austin and Texas in copy and schema but do
+not chase 'austin' in their titles; that would cannibalize the Austin page.
+
+Educational articles never target a term already owned by a commercial page. If an article starts ranking for a
+commercial term, the automation flags it and the fix is an internal link plus a canonical decision - not a second
+commercial page.
+
+Rank tracking is by query group (cluster) and by page, not by a single vanity keyword.
+
+===== PAGE 14 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 14
+21 / 12-MONTH EDITORIAL CALENDAR
+Fewer pieces, each one earning its place
+Cadence: 2 substantial Insights per month, 1 case study per month once clients exist, 1
+platform-update explainer whenever Google or Meta ships a material change, 1 quarterly benchmark
+or data asset.
+Month 1 begins at launch. Every item lists the target query it supports and the page it feeds internal links to.
+Automation drafts the first version from the outline plus any Bold Clicks account data the owner has approved for use;
+the owner or a named operator adds first-hand experience and approves. Nothing on this calendar publishes without
+that approval (section 26).
+Mo
+Piece
+Target query
+Feeds
+Format
+1
+Google Ads Account Audit Checklist (the Bold
+Clicks framework)
+google ads account audit
+checklist
+/free-ad-audit/
+Framework +
+downloadable
+1
+Why Your Google Ads Leads Are Low Quality
+(and the 7 places we look first)
+why are my google ads
+leads low quality
+/conversion-tracking/
+Diagnostic
+2
+What PPC Management Costs in 2026: pricing
+models, what changes the price, what to avoid
+how much does ppc
+management cost
+/services/
+Pricing
+explainer
+2
+Austin Home-Services Paid Search: seasonality,
+storm spikes, and bid timing
+roofing google ads agency
+austin / hvac google ads
+austin
+/industries/home-services
+/, /austin-ppc-agency/
+Local
+playbook
+3
+Performance Max vs Search: a decision
+framework from real accounts
+performance max vs search
+campaigns
+/google-ads-management
+/
+Decision
+guide
+3
+How We Track Qualified Leads (GoHighLevel +
+Google Ads offline conversions walkthrough)
+how to track qualified leads /
+gohighlevel google ads
+integration
+/conversion-tracking/
+Technical
+guide
+3
+Case Study #1 [OWNER: first verified client]
+brand + industry term
+/case-studies/
+Case study
+4
+Break-even CPL / CAC Calculator +
+methodology page
+google ads budget for small
+business
+/google-ads-management
+/
+Interactive
+tool
+4
+Med Spa Advertising: creative fatigue and offer
+testing in saturated markets
+med spa ppc agency / med
+spa facebook ads
+/industries/med-spa/
+Vertical
+playbook
+4
+Case Study #2
+vertical term
+/case-studies/
+Case study
+5
+Facebook Ads vs Google Ads for Lead Gen:
+when each wins
+facebook ads vs google ads
+for leads
+/meta-ads-management/
+Platform-fit
+guide
+5
+Legal PPC: case-type economics, intake quality,
+and call tracking
+legal ppc agency / law firm
+google ads
+/industries/legal/
+Vertical
+playbook
+5
+Case Study #3
+vertical term
+/case-studies/
+Case study
+6
+What a PPC Agency Should Report Every
+Month (our template, explained)
+what should a ppc agency
+report
+/about/, /services/
+Standards
+piece
+6
+Dental and Orthodontic Paid Search:
+emergency vs elective intent
+dental ppc agency / google
+ads for dentists
+/industries/dental/,
+/industries/orthodontics/
+Vertical
+playbook
+6
+Quarterly data asset: Austin CPC ranges by
+vertical (only if sample size supports it)
+google ads cost austin
+/austin-ppc-agency/
+Benchmark
+
+===== PAGE 15 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 15
+Mo
+Piece
+Target query
+Feeds
+Format
+7
+Search-Term Waste Checklist: 25
+negative-keyword patterns we add on day one
+google ads negative
+keywords list
+/google-ads-management
+/
+Checklist
+7
+Microsoft Ads for Local Service Businesses:
+when it is worth it
+microsoft ads management /
+bing ads agency
+/microsoft-ads-managem
+ent/
+Platform guide
+7
+Case Study #4
+vertical term
+/case-studies/
+Case study
+8
+Landing-Page Teardown: three anonymized
+Texas service businesses
+ppc landing page best
+practices
+/services/
+Teardown
+8
+Call Tracking for Google Ads: setup, pitfalls, and
+what counts as a real lead
+call tracking for google ads
+/conversion-tracking/
+Technical
+guide
+9
+YouTube Ads for Lead Gen: audience, creative,
+and where it sits in the funnel
+youtube ads management
+/youtube-ads-manageme
+nt/
+Platform guide
+9
+Texas Paid Media: DFW vs Houston vs San
+Antonio vs Austin - what actually differs
+ppc agency texas
+/texas-ppc-agency/ (if
+unlocked)
+Regional
+analysis
+9
+Case Study #5
+vertical term
+/case-studies/
+Case study
+10
+Google Ads for Podiatry / ENT / Primary Care:
+service-line economics
+podiatry marketing google
+ads / ent marketing ppc
+Healthcare industry
+pages
+Vertical
+playbook
+10
+Quarterly data asset: cost-per-lead ranges by
+vertical (Texas)
+cost per lead benchmarks by
+industry
+Industry pages
+Benchmark
+11
+Local Services Ads vs Search for Home
+Services
+google local services ads
+management
+/industries/home-services
+/
+Platform guide
+11
+Enhanced Conversions and Data Manager: a
+practical setup guide
+enhanced conversions for
+leads
+/conversion-tracking/
+Technical
+guide
+11
+Case Study #6
+vertical term
+/case-studies/
+Case study
+12
+Year-One Review: what we changed across
+accounts and why (original data)
+brand
+/about/
+Authority
+piece
+12
+Annual benchmark report (if data supports) +
+PR distribution
+ppc benchmarks texas
+Industry pages, /insights/
+Link asset
+Standing series (event-driven, not calendar-driven)
+
+Platform update explainers. Automation watches the Google Ads, Google Search Central, Meta for Business,
+and Microsoft Advertising blogs (RSS). When a post matches material-change keywords (bidding, attribution,
+conversion, Performance Max, privacy, policy, consent), it drafts an explainer with a mandatory 'what we are
+changing in client accounts' section that the owner must fill. Published only after approval.
+
+Case studies. Triggered by the CRM: when a client passes 90 days and the owner marks results as verified in
+GoHighLevel, automation drafts the case study from the template in Volume 1 section 06 and opens a review PR.
+
+Austin market notes. Short monthly note on what changed in Austin CPCs and lead volume in Bold Clicks
+accounts. Only published if the owner confirms the numbers.
+
+===== PAGE 16 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 16
+22 / CONTENT REFRESH AND FRESHNESS SYSTEM
+Content decays. The system notices before the
+owner does.
+Every indexable page carries a review cadence and a set of decay triggers. Automation opens a
+refresh task when either fires.
+Page type
+Scheduled
+review
+Decay triggers (any one opens a task)
+What a refresh includes
+Homepage
+Quarterly
+Clicks down 20%+ over 8 weeks vs prior 8; CTR
+down 25%+; new case study published;
+positioning line changed
+Proof strip update, case-study cards, FAQ
+additions from real sales calls, CTA copy
+test
+Platform service
+pages
+Quarterly
+Position for primary term drops 3+ places for 4
+weeks; platform ships a material feature change;
+competitor page outranks on the same term
+Deliverables list, process section, new
+FAQs, platform-specific screenshots,
+internal links to new insights
+Industry pages
+Semi-annual
+ly
+New vertical case study; benchmark asset
+updated; impressions rising with no click growth
+Add the case study, update KPI ranges, add
+objections heard on sales calls
+Location pages
+Quarterly
+GBP insights shift; local competitor enters top 3;
+new local client
+Market commentary, local proof, local FAQ
+Insights articles
+Annually, or
+on trigger
+Clicks down 30%+ over 12 weeks; the
+referenced platform feature changes; broken
+external link; article age > 18 months
+Update facts, add new first-hand data, fix
+links, update 'last reviewed' date only if
+material change was made
+Case studies
+On trigger
+Client relationship ends; results materially
+change; permission revoked
+Update, anonymize, or unpublish (with 410
+or 301 to the hub) - never leave stale claims
+live
+Calculators /
+tools
+Quarterly
+Input assumptions (industry defaults) older than
+6 months; error rate in logs
+Recalibrate defaults with methodology note
+Legal pages
+Annually
+and on
+tracking
+change
+Any new tag, cookie, or vendor added
+Privacy policy vendor list and consent copy
+Decay detection (automated, weekly)
+1.
+Pull Search Console performance by page and by query group for the trailing 16 weeks (Search Console API).
+2.
+Compare the most recent 8 weeks with the prior 8 weeks for clicks, impressions, CTR, and average position.
+3.
+Apply the trigger thresholds above per page type. Ignore pages with fewer than 50 impressions in the window
+(too noisy).
+4.
+For triggered pages, gather context: top losing queries, competitor pages now above (from the section 19 SERP
+data), and any recent commits touching the page.
+5.
+Open a GitHub issue labeled 'content-refresh' with the evidence and a proposed refresh scope. If the page is an
+Insight article, also draft the refreshed version in a branch and attach a preview link.
+6.
+Summarize all triggered pages in the weekly digest (section 27).
+
+===== PAGE 17 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 17
+FRESHNESS HONESTY RULE
+Do not bump 'updated' dates, sitemap lastmod, or Article dateModified unless the content materially changed. Fake
+freshness is detectable and erodes trust with both Google and buyers. The CI pipeline blocks a lastmod change on
+any file whose content diff is under 5% unless the commit is tagged 'material-update'.
+Pruning rules
+
+A page with zero clicks and under 100 impressions for 6 months is a candidate for consolidation (301 to the
+strongest related page) or improvement. Automation lists candidates quarterly; the owner decides.
+
+Never delete a page that has external links pointing to it without a 301 to the most relevant replacement.
+
+Thin drafts that were never approved are deleted from the branch after 90 days so the backlog stays honest.
+
+===== PAGE 18 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 18
+23 / AUTOMATION ARCHITECTURE
+The site runs itself. The owner approves, not
+operates.
+Design principle: automate observation, drafting, testing, and reporting completely; keep publishing
+and tracking changes behind a one-click human approval.
+Operating principles
+1.
+One inbox, one digest. The owner receives one weekly digest email/SMS (via GoHighLevel) that lists everything
+needing a decision, plus immediate alerts only for outages, broken forms, or tracking failures. Nothing else pings
+the owner.
+2.
+Every job is idempotent and logged. A job can run twice without doing damage, and every run writes a JSON
+log to data/runs/ committed to the repo, so 'is it working?' is answerable from Git history.
+3.
+Automation proposes through pull requests. Content drafts, refresh rewrites, meta-description fixes,
+internal-link suggestions, and schema corrections arrive as PRs with a preview deployment. Approving the PR is
+the publish action.
+4.
+Guardrails are code, not policy. CI blocks fabricated numbers (see section 26 linter), placeholder text, lastmod
+abuse, missing metadata, and accessibility regressions. If it is important, it is a failing check, not a reminder.
+5.
+Fail loudly, degrade gracefully. If a data provider is down, the job reports 'skipped: provider unavailable' rather
+than silently producing an empty report that looks like good news.
+6.
+No silent dependencies on one person. All credentials live in GitHub Actions secrets or the hosting provider's
+environment; the README documents how to rotate every one of them.
+
+===== PAGE 19 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 19
+Layers
+Layer
+Responsibility
+Implemented with
+Hosting + deploy
+Static/SSR build, preview deployments per PR,
+atomic production deploys, instant rollback
+Vercel (recommended) or Cloudflare Pages; GitHub
+as source of truth
+Scheduling
+Runs every job on a cron; retries; secrets
+GitHub Actions workflows (schedule: cron); optionally
+a lightweight queue on Cloudflare Workers if jobs
+exceed Actions limits
+Data collection
+Search Console, GA4, PageSpeed Insights / CrUX,
+uptime, SERP provider, RSS, GBP performance (via
+API where available)
+Node/TypeScript scripts in /automation with a
+provider adapter pattern; results written to /data as
+JSON
+Analysis
+Decay detection, competitive diffs, anomaly detection,
+freshness checks, keyword cannibalization detection
+TypeScript with simple statistical rules (no ML
+needed); Claude Code invoked via the Claude Code
+GitHub Action for narrative analysis and drafting
+Generation
+Content drafts, refresh rewrites, GBP posts, weekly
+digest narrative, meta fixes
+Claude Code GitHub Action with the repo's
+CLAUDE.md, brand voice file, and 'no fabrication'
+linter
+QA
+Lint, typecheck, build, Lighthouse CI, axe, link check,
+schema validation, metadata uniqueness,
+no-fabrication lint
+GitHub Actions on every PR; required checks before
+merge
+Approval +
+publish
+PR review; merge deploys production
+GitHub PR with preview link in the digest
+Reporting
+Weekly digest, monthly report, always-on dashboard
+GoHighLevel email/SMS for digest; Looker Studio
+dashboard on GA4 + GSC + a BigQuery or Google
+Sheet fed by /data exports
+Data flow (read left to right)
+ SOURCES:  Search Console API | GA4 Data API | PSI / CrUX API | Uptime probe
+           SERP provider      | RSS feeds    | GBP API        | GoHighLevel API
+                                     |
+                       /automation/collect/*   (nightly)
+                                     |
+                           /data/**/*.json  (committed to Git)
+                                     |
+          +--------------------------+--------------------------+
+          |                          |                          |
+ /automation/analyze/*     /automation/generate/*     /automation/report/*
+ decay, cannibalization,   drafts via Claude Code,    weekly digest, monthly
+ competitive diff,         GBP posts, meta fixes,     report, dashboard export
+ anomalies                 refresh rewrites
+          |                          |                          |
+   GitHub issues             Pull requests             GoHighLevel -> owner
+   (labeled)                 + preview deploy          Looker Studio
+                                     |
+                           owner approves (merge)
+                                     |
+                             production deploy
+
+===== PAGE 20 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 20
+What the owner actually touches
+Moment
+Owner action
+Time
+Weekly (Monday 7am CT
+digest)
+Read digest; approve or reject listed PRs by clicking merge/close; answer
+any [OWNER] questions
+10-15 minutes
+Immediate alert (rare)
+Read the alert; if it is a site outage, tracking failure, or broken form, the
+runbook link in the alert says exactly what to do
+As needed
+Monthly
+Read the monthly report; confirm any numbers automation wants to publish
+(benchmarks, case-study figures)
+20 minutes
+Quarterly
+Review pruning candidates, citation drift report, partner-badge status, and
+the competitive summary
+30 minutes
+DEFINITION OF 'AUTOMATED'
+A task is automated only when it runs on a schedule without a human starting it, writes a log the owner can find,
+reports its own failure, and either takes a safe action or opens a clearly labeled PR/issue. A script that exists but
+must be remembered is not automation.
+
+===== PAGE 21 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 21
+24 / MONITORING AND ALERTING SPECIFICATION
+'Is it working?' must always have an answer
+Each monitor lists the tool, cadence, threshold, automatic action, and where the alert goes. Severity:
+S1 = immediate SMS + email; S2 = same-day email; S3 = weekly digest only.
+Monitor
+Tool
+Cadence
+Threshold
+Automatic action /
+alert
+Sev
+Uptime
+(homepage,
+/free-ad-audit/, /go
+ogle-ads-managem
+ent/)
+External HTTP probe from 2
+regions (Better Uptime /
+UptimeRobot / Checkly
+[OWNER picks])
+Every 1
+min
+Non-200 or > 5s for 2
+consecutive checks
+Page owner via SMS;
+auto-create incident
+issue
+S1
+SSL certificate
+Same probe
+Daily
+Expiry < 14 days or
+handshake failure
+Issue + email
+S1 if
+failed,
+S2 if
+expiri
+ng
+Form synthetic
+test
+Playwright job submits the audit
+form with a flagged test email
+(test+synthetic@) and verifies
+(a) 200, (b) thank-you state, (c)
+generate_lead event fired in
+GA4 DebugView/measurement
+protocol, (d) contact appears in
+GoHighLevel via API with UTMs
+intact
+Every 6
+hours
+Any step fails
+SMS + issue with the
+failing step
+S1
+Phone link and
+booking link
+Playwright checks href, tel:
+format, and that the
+Calendly/GHL calendar loads
+Daily
+Broken or not loading
+Issue + email
+S2
+Core Web Vitals
+(field)
+CrUX API for origin and top 10
+URLs; PSI API lab run on
+mobile
+Daily
+(CrUX),
+weekly
+(PSI)
+Any metric leaves 'good'
+at p75 for 7 days; or PSI
+mobile performance < 85
+Issue with the failing
+URL and metric; digest
+S2
+Indexing and
+coverage
+Search Console URL Inspection
+API on all canonical URLs;
+sitemap status
+Weekly
+Any canonical URL not
+indexed for 14 days
+post-publish; any
+'noindex detected' on a
+page that should be
+indexed; sitemap errors
+Issue; digest
+S2
+Accidental noindex
+/ robots block
+Crawl of production comparing
+robots meta and X-Robots-Tag
+against the canonical route list
+Daily
+Mismatch
+SMS (this is a
+revenue-killing failure)
+S1
+Rankings by query
+group
+Search Console average
+position and clicks per cluster;
+SERP provider for map pack
+Weekly
+Cluster position worsens
+3+ places for 2 weeks;
+map-pack drop
+Digest with diagnosis
+S3
+Broken links
+(internal +
+external)
+Crawler script on the sitemap
+Weekly
+Any 4xx/5xx internal; > 3
+external
+Auto-PR fixing internal;
+issue for external
+S3
+
+===== PAGE 22 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 22
+Monitor
+Tool
+Cadence
+Threshold
+Automatic action /
+alert
+Sev
+Redirect health
+Test the redirect map file
+against production
+Weekly
+Chains > 1 hop, loops, or
+302 where 301 expected
+Auto-PR
+S3
+404 spike
+Server logs / Vercel analytics
+Daily
+> 50 unique 404
+paths/day or a 3x
+increase
+Issue with top paths
+S2
+Tracking integrity
+GTM container export diff +
+GA4 realtime check that key
+events (cta_click, form_start,
+generate_lead, phone_click)
+fired in the last 24h
+Daily
+Container changed
+without a matching PR;
+or zero events for 24h on
+a page with traffic
+SMS for zero-events;
+issue for container drift
+S1 /
+S2
+Consent behavior
+Playwright runs with consent
+denied and asserts no
+ad/analytics cookies set before
+consent
+Weekly
+Any violation
+Issue
+S2
+Schema validity
+Validate all JSON-LD against
+schema.org types and Google's
+structured-data rules (via the
+Rich Results Test API where
+available or a validator library)
+On every
+PR +
+weekly
+Any error
+Block PR / issue
+S2
+Metadata
+uniqueness
+Script over the built HTML:
+unique title, description, H1,
+canonical present, OG tags
+present
+On every
+PR
+Duplicates or missing
+Block PR
+S3
+Citation drift
+Fetch each core citation and
+compare NAP to
+content/citations.json
+Quarterly
+Mismatch
+Issue with correction
+instructions
+S3
+Partner badge
+status
+Owner-confirmed field in
+content/proof.json with an
+expiry date
+Monthly
+Expiry within 30 days
+Digest
+S3
+Dependency
+security
+GitHub Dependabot + npm
+audit
+Daily
+High/critical vulnerability
+Auto-PR; issue
+S2
+Backups
+Repo is the backup; additionally
+export GHL contacts and GA4
+config monthly to a private
+bucket
+Monthly
+Export failed
+Issue
+S2
+Domain + DNS
+WHOIS expiry check; DNS
+record diff vs infra/dns.json
+Weekly
+Expiry < 60 days; record
+drift
+SMS if < 30 days; issue
+otherwise
+S1 /
+S2
+GBP anomalies
+GBP Performance API (calls,
+direction requests, website
+clicks) if available; otherwise
+monthly manual export
+Weekly
+Drop of 40%+ week over
+week; profile suspension
+Digest; SMS on
+suspension
+S3 /
+S1
+Alert routing
+
+S1 alerts go through GoHighLevel to the owner's SMS and email simultaneously, and open a GitHub issue labeled
+'incident' with a runbook link.
+
+===== PAGE 23 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 23
+
+S2 alerts open an issue and send one email the same day. Duplicate alerts for the same condition are suppressed
+for 24 hours.
+
+S3 items appear only in the weekly digest.
+
+Every alert includes: what broke, when it was first detected, what the automation already tried, and the exact next
+step for a human.
+Runbooks (write these into /docs/runbooks/ at build time)
+Runbook
+Covers
+site-down.md
+Check hosting status page, roll back last deploy from the hosting dashboard, verify DNS, escalate to
+developer
+form-broken.md
+Check GHL webhook status, check hosting function logs, replay the synthetic test, temporary fallback to
+mailto capture
+tracking-zero-events.m
+d
+Confirm GTM container published version, confirm consent script not blocking, check GA4
+property/stream IDs, check CSP headers
+noindex-detected.md
+Identify the source (env var, header, meta), fix, redeploy, request re-indexing via Search Console
+cwv-regression.md
+Compare last 3 deploys, check new third-party scripts, check image sizes, run PSI with the failing URL
+gbp-suspended.md
+Common causes, reinstatement form steps, what evidence to gather
+
+===== PAGE 24 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 24
+25 / SCHEDULED JOBS SPECIFICATION
+Every job, its schedule, its output, and its
+approval gate
+All times are America/Chicago. Implement each as a GitHub Actions workflow in .github/workflows/
+with a matching script in /automation/.
+Job
+Schedule
+What it does
+Output
+Gate
+nightly-collect
+Daily 02:00
+Pull GSC (pages, queries, coverage), GA4
+(sessions, events, conversions by source),
+CrUX/PSI, uptime summary, 404s. Write to /data.
+Commit to data branch;
+open issue on provider
+failure
+None (data
+only)
+daily-integrity
+Daily 06:00
+Noindex/robots check, tracking-zero-events
+check, SSL, DNS drift, dependency audit.
+S1/S2 alerts as defined in
+section 24
+None (alerts
+only)
+form-synthetic
+Every 6
+hours
+Playwright end-to-end submission through to
+GoHighLevel and GA4 event verification.
+S1 alert on failure
+None
+weekly-seo-anal
+ysis
+Monday
+04:00
+Decay detection (section 22), cannibalization
+detection, rank-cluster movement, broken links,
+redirect health, coverage.
+Issues labeled
+content-refresh / seo-fix;
+auto-PRs for internal link
+and redirect fixes
+PRs require
+merge
+weekly-digest
+Monday
+07:00
+Compile everything from the week into a
+plain-English digest: wins, problems, PRs
+awaiting approval, [OWNER] questions, numbers
+vs last week.
+Sent via GoHighLevel
+email + short SMS
+summary; archived in
+/docs/digests/
+None (read
+only)
+content-draft
+1st and
+15th, 05:00
+Take the next calendar item (section 21),
+assemble the outline, pull any approved account
+data from /data/approved-facts.json, draft via
+Claude Code Action, run the no-fabrication linter.
+PR with preview
+deployment and a
+checklist of [OWNER]
+inputs still needed
+PR merge =
+publish
+platform-update-
+watch
+Every 4
+hours
+Poll RSS feeds for Google Ads, Search Central,
+Meta for Business, Microsoft Advertising. Match
+against material-change keywords.
+Draft explainer PR with the
+mandatory 'what we are
+changing' section left as
+[OWNER] placeholder
+PR merge
+case-study-trigg
+er
+Daily 05:30
+Query GoHighLevel for clients tagged
+'results-verified' without a matching case study.
+Draft case-study PR from
+template
+PR merge +
+client
+permission
+field set
+gbp-post-draft
+Thursday
+05:00
+Draft next week's GBP post from the most recent
+published Insight or case study.
+Included in weekly digest
+for one-click approval;
+posted via API if available,
+else queued for owner
+Approval
+monthly-competi
+tive
+1st, 03:00
+Section 19 SERP scan and competitor page
+profiling.
+docs/competitive/YYYY-M
+M.md + competitive-gap
+issues
+None
+monthly-report
+1st, 07:00
+Full monthly report (section 27) with leads,
+booked calls, source attribution, rankings, CWV,
+content shipped, and next month's calendar.
+PDF + Looker Studio
+refresh; sent via GHL
+None
+monthly-keywor
+d-refresh
+1st, 03:30
+Re-pull volume/CPC/difficulty for the keyword
+map; flag new query opportunities from GSC
+(queries with impressions but no target page).
+Updated
+data/keywords.json PR;
+opportunity issues
+PR merge
+
+===== PAGE 25 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 25
+Job
+Schedule
+What it does
+Output
+Gate
+quarterly-citation
+s
+Jan/Apr/Jul/
+Oct 1st
+Citation drift check; partner-badge expiry;
+pruning candidates; calculator default
+recalibration.
+Issues + digest section
+Owner
+decisions
+quarterly-bench
+mark
+Jan/Apr/Jul/
+Oct 5th
+If approved-facts contains enough anonymized
+account data (minimum sample rule in section
+26), rebuild benchmark tables and draft the
+update.
+PR
+PR merge +
+owner
+confirms
+numbers
+backup-export
+1st, 01:00
+Export GHL contacts/pipelines, GA4 admin
+config, GTM container, DNS zone to private
+storage.
+Issue on failure
+None
+Implementation notes for Claude Code
+
+Put all provider calls behind /automation/providers/* with a common interface (search console, analytics, vitals,
+serp, crm, notify). The owner may swap SERP or uptime vendors without touching job logic.
+
+Use a single /automation/config.ts for thresholds so the owner (or a future developer) can tune sensitivity in one
+place. Ship the thresholds from section 24 as defaults.
+
+Every job writes /data/runs//.json with status, duration, counts, and errors. The weekly digest includes a one-line
+'all jobs ran' or lists the ones that did not.
+
+Prefer the Claude Code GitHub Action for drafting and narrative tasks; pass it CLAUDE.md, docs/voice.md,
+data/approved-facts.json, and the target outline. Never pass it credentials.
+
+GitHub Actions scheduled workflows can be delayed under load; do not depend on exact minute timing. Jobs must
+tolerate running late or twice.
+
+Keep third-party API usage within free/low tiers where possible and log cost estimates in the run log; the owner
+should never get a surprise bill.
+
+===== PAGE 26 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 26
+26 / AI CONTENT GUARDRAILS
+Automation writes drafts. Humans own claims.
+The site's authority depends on original experience. These rules keep AI-assisted production from
+turning into a content farm.
+Hard rules
+1.
+No AI-drafted content publishes without a named human reviewer recorded in the content's frontmatter
+(reviewedBy, reviewedAt).
+2.
+Every published Insight must contain at least one 'first-hand block': an observation, screenshot, number, or
+lesson from an actual Bold Clicks or Stoneridge account (anonymized as needed). The linter fails a draft that has
+none.
+3.
+Numbers appear only if they exist in data/approved-facts.json (owner-confirmed) or are cited to a public source
+with a URL. Any other number is a linter failure.
+4.
+Benchmarks require a disclosed methodology, minimum sample size (at least 10 accounts or 90 days of data per
+segment, whichever the owner sets), and a date range.
+5.
+No draft may claim certifications, partner status, client names, awards, or results not present in
+content/proof.json.
+6.
+Drafts follow docs/voice.md (the Volume 1 voice rules plus a banned-phrase list). The linter flags banned
+phrases; reviewers reject 'could be any agency' copy.
+7.
+Publishing volume is capped in config (default: 4 Insights per month). Exceeding the cap requires an owner
+override, which is logged.
+The no-fabrication linter (build this)
+Check
+Rule
+On failure
+Unsourced
+numbers
+Any digit sequence with %, $, x, ROAS, CPL, CAC, leads, or spend context must
+trace to approved-facts.json (by fact id in frontmatter) or a citation URL
+Block
+Proof claims
+Words like 'certified', 'partner', 'award', 'clients include', 'ranked #1' must match
+proof.json entries
+Block
+Placeholders
+[OWNER], TODO, lorem, TBD, XX in any publishable file
+Block
+First-hand block
+Insight articles must contain a component with non-empty content
+Block
+Banned phrases
+docs/voice.md banned list (unlock your potential, cutting-edge, 360-degree,
+results-driven without proof, synergy, game-changing, etc.)
+Warn (reviewer
+decides)
+Duplication
+Any 40-word window shared with another page on the site
+Warn; block if > 30%
+of the page
+Lastmod abuse
+lastmod/dateModified changed with < 5% content diff and no material-update tag
+Block
+Metadata
+Title 45-65 chars, description 120-160 chars, unique across the site, H1 present and
+single
+Block
+
+===== PAGE 27 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 27
+WHY THIS MATTERS FOR RANKING
+Google's scaled-content and spam policies target unoriginal content produced primarily for rankings regardless of
+how it was made. The defense is not 'hide that AI helped'; it is publishing content that contains things only Bold
+Clicks could know. The first-hand block requirement is the single most important ranking control in this document.
+
+===== PAGE 28 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 28
+27 / OWNER REPORTING
+One weekly digest, one monthly report, one
+dashboard
+The owner should be able to answer 'is the site working and is it growing?' in under a minute, any day.
+Weekly digest (Monday 07:00 CT, email + SMS summary)
+Block
+Content
+Status line
+'All systems normal' or the list of anything that is not, in one sentence each
+Leads
+Form submissions, booked calls, phone clicks - this week vs last week vs 4-week average; by source
+(organic, paid, GBP, direct, referral)
+Needs your decision
+PRs awaiting approval with preview links and a one-line description each; [OWNER] questions from drafts;
+GBP post to approve
+Rankings
+Movement by cluster (core, platform, measurement, industry, local) with the top 3 gainers and losers;
+map-pack position for tracked Austin terms
+Site health
+CWV status, indexing coverage, any refresh tasks opened
+Shipped this week
+Merged PRs, published pages
+Coming next
+Next calendar item and its due date
+Monthly report (1st of month, PDF in Bold Clicks branding)
+
+Business outcomes first: leads, qualified leads, booked calls, and closed clients attributed to the site (from
+GoHighLevel pipeline stages), with source and campaign attribution.
+
+Organic growth: clicks, impressions, CTR, average position by cluster and by geography tier; brand-query trend;
+pages entering top 10 / top 3.
+
+Local: GBP calls, direction requests, website clicks; review count and rating; map-pack positions.
+
+Technical health: CWV field data, coverage, errors resolved, uptime.
+
+Content: shipped, refreshed, pruned; calendar adherence; owner-input backlog.
+
+Authority: new referring domains, notable mentions, citation status.
+
+Competitive: two-paragraph summary from the monthly scan with the one gap that matters most.
+
+Next month: calendar, planned experiments, tier-unlock status against the criteria in section 00.
+Dashboard (Looker Studio, always on)
+Sources: GA4 (events and conversions), Search Console (queries, pages), a Google Sheet or BigQuery table fed
+nightly from /data (rankings by cluster, CWV, uptime, job status), and GoHighLevel pipeline exports (leads by stage).
+Pages: Overview, Leads and Attribution, Organic by Cluster, Local, Technical Health, Content Pipeline. The
+dashboard link is in every digest.
+
+===== PAGE 29 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 29
+28 / TECHNICAL STACK AND REPOSITORY LAYOUT
+Static first, typed content, no page builder
+Volume 1 allowed Claude Code to choose the framework. This section makes the recommendation
+concrete so the automation layer has a stable target.
+Recommended stack
+Concern
+Choice
+Why
+Framework
+Next.js (App Router) with static generation for all
+marketing routes; ISR only if a route genuinely needs it
+Server-rendered HTML for crawlers, strong image/font
+tooling, first-class Vercel previews, huge maintainer
+pool
+Alternative
+Astro (if the owner prefers near-zero JS by default)
+Equivalent SEO outcome; slightly less ecosystem for
+forms/serverless. Either is acceptable; do not use
+WordPress/Elementor for this property - the automation
+layer depends on content in Git.
+Language
+TypeScript, strict mode
+Content schemas are types; broken content fails the
+build, not production
+Styling
+Tailwind CSS with design tokens defined once in
+tailwind.config (section 29)
+Small CSS, consistent tokens, no runtime styling library
+Content
+MDX for Insights/case studies; JSON/TS objects for
+nav, services, industries, FAQs, proof, testimonials,
+SEO metadata
+Diffable, reviewable in PRs, lintable, no CMS
+dependency
+Forms
+Route handler (serverless) that validates server-side,
+checks anti-spam (Turnstile or hCaptcha invisible
+mode), forwards to GoHighLevel inbound webhook, and
+returns the thank-you state
+Keeps secrets server-side; deterministic event firing
+Hosting
+Vercel (Pro) or Cloudflare Pages + Workers
+Preview deploys per PR, atomic deploys, rollback, edge
+caching
+Analytics
+GTM (web container) + GA4 + Google Ads tags with
+Consent Mode v2; optional server-side GTM later
+Section 32
+Booking
+GoHighLevel calendar (preferred, keeps data in one
+CRM) or Calendly; loaded on interaction
+Attribution continuity
+Images
+next/image with AVIF/WebP, explicit dimensions, hero
+preloaded
+CWV
+Fonts
+Two self-hosted WOFF2 files max (one headline
+weight, one body weight) via next/font, with a system
+fallback stack
+CWV, no layout shift
+Search
+provider
+Adapter: Semrush API / DataForSEO / SerpApi
+[OWNER picks]
+Section 19-20
+Uptime
+Adapter: Checkly / Better Uptime / UptimeRobot
+[OWNER picks]
+Section 24
+
+===== PAGE 30 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 30
+Repository layout
+bold-clicks/
+  CLAUDE.md                     # operating instructions for Claude Code (section 36)
+  README.md                     # setup, deploy, rotate secrets, run jobs locally
+  app/                          # Next.js App Router
+    (marketing)/                # layout with header/footer/nav
+      page.tsx                  # /
+      services/page.tsx
+      google-ads-management/page.tsx   ... other platform pages
+      conversion-tracking/page.tsx
+      industries/[slug]/page.tsx
+      case-studies/[slug]/page.tsx
+      insights/[slug]/page.tsx
+      austin-ppc-agency/page.tsx
+      about/page.tsx  contact/page.tsx  privacy/page.tsx  terms/page.tsx
+    (landing)/                  # minimal layout, no nav
+      free-ad-audit/page.tsx
+      lp/[slug]/page.tsx        # paid campaign variants (noindex by default)
+      thank-you/page.tsx        # noindex
+    api/lead/route.ts           # form handler -> GoHighLevel
+    sitemap.ts  robots.ts       # generated from the canonical route registry
+  components/                   # Hero, ProofStrip, ServiceCard, CaseStudyCard, ProcessSteps,
+                                # CTASection, FAQAccordion, LeadForm, Breadcrumbs, AuthorCard,
+                                # FirstHand, Calculator, StickyMobileCTA
+  content/
+    nav.ts  services.ts  industries.ts  faqs.ts  proof.json  testimonials.json
+    citations.json  seo.ts (metadata registry)  routes.ts (canonical route registry)
+    insights/*.mdx  case-studies/*.mdx
+  lib/
+    seo.ts (metadata + JSON-LD helpers)  analytics.ts (dataLayer helpers)
+    schema.ts (Zod content schemas)  attribution.ts (UTM/click-id capture)
+  automation/
+    providers/  collect/  analyze/  generate/  report/  config.ts
+    lint/no-fabrication.ts
+  data/
+    keywords.json  approved-facts.json  serp/  gsc/  ga4/  vitals/  runs/
+  docs/
+    voice.md  runbooks/  digests/  competitive/  decisions.md
+  infra/
+    dns.json  redirects.json  headers.json
+  tests/
+    e2e/ (Playwright)  unit/  lighthouse/  a11y/
+  .github/workflows/            # ci.yml + one workflow per job in section 25
+Content schemas (Zod, enforced at build)
+Service       { slug, title, h1, metaTitle, metaDescription, intro, forWho[], deliverables[],
+                measurement[], process[], faqs[], proofRefs[], relatedIndustries[], cta }
+Industry      { slug, title, metaTitle, metaDescription, audienceBehavior, campaignStructure,
+                wastePatterns[], kpis[], objections[], faqs[], proofRefs[], firstHand, publishable: boolean }
+CaseStudy     { slug, clientProfile {industry, geography, model, nameWithPermission?},
+                startingPoint, objective, changes[], outcome {metrics[{name, value, definition, dateRange}]},
+                context, permissionOnFile: boolean, verifiedBy, verifiedAt }
+Insight       { slug, title, metaTitle, metaDescription, author, reviewedBy, reviewedAt,
+                publishedAt, updatedAt?, materialUpdate?: boolean, targetQuery, supportsRoute, factIds[] }
+Proof         { id, type: logo|testimonial|badge|metric, source, permissionOnFile, expiresAt?, value }
+Fact          { id, statement, value, unit, dateRange, source: 'accounts'|'public', approvedBy, approvedAt }
+Location      { slug, metro, marketCommentary, localProofRefs[], localFaqs[], serviceRadius, publishable }
+
+===== PAGE 31 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 31
+Environment variables and secrets (document each in README)
+Name
+Used by
+Where stored
+GHL_WEBHOOK_URL, GHL_API_KEY,
+GHL_LOCATION_ID
+Lead route handler, case-study trigger, digest
+sender
+Hosting env + Actions secrets
+GTM_CONTAINER_ID,
+GA4_MEASUREMENT_ID,
+GA4_PROPERTY_ID, GA4_API_SECRET
+Layout, analytics collector, synthetic form test
+Hosting env (public IDs) / Actions
+secrets
+GOOGLE_SERVICE_ACCOUNT_JSON
+Search Console, GA4 Data API, Indexing
+checks
+Actions secret (base64)
+PSI_API_KEY
+Vitals collector
+Actions secret
+SERP_PROVIDER, SERP_API_KEY
+Competitive + rank collectors
+Actions secret
+UPTIME_PROVIDER, UPTIME_API_KEY
+Uptime summary collector
+Actions secret
+TURNSTILE_SECRET (or
+HCAPTCHA_SECRET)
+Lead route handler
+Hosting env
+ANTHROPIC_API_KEY
+Claude Code GitHub Action
+Actions secret
+NEXT_PUBLIC_SITE_URL, NOINDEX
+(true on staging)
+Metadata, robots, canonical
+Hosting env per environment
+Security headers (infra/headers.json)
+
+Strict-Transport-Security with preload; Content-Security-Policy that allows only self, GTM/GA/Ads, the booking
+provider, and the anti-spam provider (nonce-based for inline GTM bootstrap); X-Content-Type-Options nosniff;
+Referrer-Policy strict-origin-when-cross-origin; Permissions-Policy limiting camera/microphone/geolocation;
+X-Frame-Options SAMEORIGIN (except the landing layout if it must be embedded - it should not).
+
+Staging: Basic Auth or Vercel password protection plus NOINDEX=true plus X-Robots-Tag: noindex. The
+daily-integrity job fails if NOINDEX is true on production.
+
+===== PAGE 32 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 32
+29 / DESIGN SYSTEM TOKENS AND COMPONENTS
+Same DNA as Stoneridge, sharper, darker
+These tokens implement Volume 1 section 02. Define them once; every component reads from them.
+Color tokens and usage rules
+Token
+Hex
+Use
+Never
+--bc-black
+#0B0D0C
+Page background for hero and CTA sections, headline text on light
+sections, primary cards on light backgrounds
+As body-text color on forest
+--bc-forest
+#2F4428
+Primary button on light/cream, section labels, links on cream, icon fills
+Large text blocks (contrast
+with black is poor)
+--bc-sage
+#6C815F
+Dividers, chart secondary series, hover states, subtle backgrounds at
+8-12% opacity
+Body text; small text under
+14px
+--bc-cream
+#F3F2E7
+Default light section background, button text on black, card surfaces
+Text on white
+--bc-gold
+#C6A15B
+1-2px rules, eyebrow labels, the cursor/click micro-accent, active nav
+indicator, focus ring accent (paired with a dark outline)
+Buttons, body text,
+backgrounds
+--bc-ink
+#1C1F1D
+Body text on light backgrounds (softer than pure black)
+-
+--bc-mist
+#C9CCC
+6
+Secondary text on black backgrounds
+Primary text
+Contrast: every text/background pair must pass WCAG AA (4.5:1 body, 3:1 large text). Cream on black, ink on
+cream, and cream on forest all pass. Gold on black passes only at large sizes; gold on cream does not pass for text -
+use it for non-text accents only.
+Typography scale
+Role
+Size / line-height (desktop)
+Mobile
+Weight
+Display (H1 hero)
+64 / 1.02
+40 / 1.05
+Headline font, bold
+H1 (interior)
+44 / 1.08
+32 / 1.1
+Bold
+H2
+32 / 1.15
+26 / 1.2
+Bold
+H3
+22 / 1.25
+20 / 1.3
+Semibold
+Body
+18 / 1.6
+17 / 1.6
+Regular
+Body small / captions
+15 / 1.5
+14 / 1.5
+Regular
+Eyebrow
+13 / 1.2, letter-spacing 0.12em,
+uppercase
+12
+Bold, gold or sage
+Button
+16 / 1
+16
+Semibold
+Font choice: one geometric/grotesk headline family and one highly legible body family, both self-hosted WOFF2, or a
+single variable font used at two weights. Fallback stack: system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+Arial, sans-serif. Load headline weight with preload; body weight swap.
+
+===== PAGE 33 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 33
+Spacing, layout, motion
+
+Spacing scale: 4, 8, 12, 16, 24, 32, 48, 64, 96, 128 px. Section padding 96px desktop / 64px mobile. Container
+max width 1200px; text measure max 68ch.
+
+Breakpoints: 640, 768, 1024, 1280. Mobile first. Grid: 12 columns desktop, 4 mobile.
+
+Corners: 6px on cards and buttons; 0 on full-bleed sections. Shadows: one subtle elevation for cards on cream;
+none on black.
+
+Motion: 150-250ms ease-out for hover lift (2px) and reveal (opacity + 8px translate) on first viewport entry only;
+honor prefers-reduced-motion by disabling transforms. No parallax, no autoplay video, no continuous animation.
+
+Ridge motif: a single thin angled line or a cropped ridge silhouette used in the hero and the final CTA only. Never
+repeat the logo mountain as decoration.
+
+===== PAGE 34 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 34
+Component specifications
+Component
+Content and behavior
+Rules
+Header
+Logo (approved asset, cream panel on black or on cream), 5
+nav items, primary CTA button; collapses to logo + CTA +
+menu button under 1024px
+Sticky; shrinks on scroll; CTA always visible;
+keyboard operable; aria-expanded on menu
+Hero
+Eyebrow, H1, subhead, primary + secondary CTA, optional
+single proof line; black background
+LCP element is the H1 text (no hero image
+required); if an image is used, it is preloaded
+and sized
+ProofStrip
+Row of proof items from proof.json with
+permissionOnFile=true only; renders process proof if empty
+Never renders placeholders; hidden entirely if
+no verified proof
+ServiceCard
+Icon, title, 2-line description, link
+Whole card clickable with a single accessible
+link; hover lift
+ProcessSteps
+5 steps (Audit, Build/Rebuild, Launch, Optimize, Scale) each
+with 'what you get'
+Ordered list semantics
+CaseStudyCard
+Client type, starting problem, action, verified outcome with
+metric definition and date range, link
+Renders only when permissionOnFile and
+verifiedAt exist
+IndustryGrid
+Cards for industries with publishable=true
+Unpublishable industries do not appear
+anywhere
+MeasurementBl
+ock
+Diagram of lead -> qualified -> booked -> closed with tracking
+layer explanation
+Inline SVG, accessible description
+FAQAccordion
+Visible questions/answers; expanded by default on mobile for
+the first item
+Native details/summary or button + region with
+aria-controls; content in HTML regardless of
+state (crawlable)
+CTASection
+Black section, headline, one-line supporting copy, form or
+button
+Fires cta_click with location attribute
+LeadForm
+Fields per section 31; inline validation; hidden attribution
+fields; submit state; error summary
+Labels always visible; autocomplete attributes;
+error messages linked with aria-describedby;
+no CAPTCHA challenge visible unless risk
+score demands
+StickyMobileCT
+A
+Appears after scrolling past hero on mobile; single button
+Does not cover content; respects safe-area
+insets; dismissible; not shown on the audit
+page (form is already there)
+Breadcrumbs
+Home > Section > Page
+BreadcrumbList JSON-LD generated from the
+same data
+AuthorCard /
+FirstHand
+Named operator with role and short bio; FirstHand renders a
+visually distinct block with a 'From our accounts' label
+FirstHand is required on Insights (linter)
+Calculator
+Break-even CPL/CAC: inputs (close rate, average revenue,
+margin, target ROAS), outputs (max CPL, CAC),
+methodology link
+Works without JS for the explanation; results
+computed client-side; accessible form controls;
+fires pricing_or_qualifier_interaction
+Footer
+Legal name, address (if public), phone, email, nav, legal links,
+social links, Stoneridge family line
+Real details only [OWNER]
+
+===== PAGE 35 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 35
+30 / PAGE COPY DRAFTS
+Working copy, written to the voice rules
+Implement as-is, then let the owner edit in the content files. Anything in [brackets] is an owner input,
+not copy.
+Homepage
+Section
+Draft copy
+Eyebrow
+PAID MEDIA, BUILT TO PERFORM
+H1
+We run ads. That's it.
+Subhead
+Google, Meta, Microsoft and YouTube campaigns built around qualified leads, booked calls and revenue -
+with tracking that shows what actually worked.
+CTAs
+Primary: Get My Free Ad Audit. Secondary: See How We Work.
+Proof line (only if
+verified)
+[Managing $X/month across Y accounts] or, pre-proof: 'Specialists in paid media for healthcare, legal and
+home-services businesses across Texas.'
+The problem (H2)
+Most ad accounts leak money in the same five places.
+The problem (body)
+Search terms nobody reviews. Conversions that count every dial as a lead. Landing pages that don't
+match the ad. Budgets spread across campaigns that never had a chance. Reports that stop at clicks. We
+fix those first, because that's where the money is.
+Section (continued)
+Draft copy
+What we manage (H2)
+Four platforms. One job: leads that close.
+Cards
+Google Ads - Search and Performance Max built around your highest-value services. / Meta Ads -
+Creative testing and audiences that produce leads, not likes. / Microsoft Ads - Cheaper clicks from an
+audience most agencies ignore. / YouTube Ads - Video that fills the top of the funnel and gets measured
+like everything else. / Conversion Tracking - Calls, forms, CRM outcomes and offline conversions wired
+back to the platforms.
+Why Bold Clicks (H2)
+Specialists, not generalists.
+Why (bullets)
+Ads are the only thing we do, so we get very good at them. / You own your ad accounts and your data -
+always. / Every call, form and booked meeting is tracked to its source. / We report on qualified leads and
+revenue, not impressions. / One accountable operator, direct access, no account-manager layer.
+How it works (H2)
+Audit. Build. Launch. Optimize. Scale.
+Steps
+Audit - We review your accounts, tracking and landing pages and show you exactly where spend is
+leaking. / Build or rebuild - Campaign structure, conversion tracking, negatives, creative and landing
+pages set up right. / Launch - Live within [X] days of kickoff with tracking verified before the first dollar is
+spent. / Optimize - Weekly search-term, bid, creative and budget work tied to lead quality feedback from
+your CRM. / Scale - When cost per qualified lead is proven, we add budget and platforms deliberately.
+Case studies (H2)
+Proof, with the numbers defined.
+Industries (H2)
+Built for businesses where a lead is worth real money.
+Measurement (H2)
+A lead is not the finish line.
+Measurement (body)
+We track the click, the call, the form, the booked appointment and - where your CRM allows - the closed
+customer. Then we send that back to Google and Meta so the algorithms optimize for people who actually
+buy.
+
+===== PAGE 36 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 36
+Section (continued)
+Draft copy
+FAQ (H2)
+Straight answers.
+Final CTA (H2)
+Want to know where your ad spend is leaking?
+Final CTA (body)
+Request a free audit. You'll get a written review of your accounts, tracking and landing pages - whether or
+not you hire us.
+Homepage FAQ (visible; answers are owner-editable)
+Question
+Draft answer
+What's the minimum ad spend you
+work with?
+[OWNER: state the real minimum] We're honest when a budget is too small to produce
+reliable data, and we'll tell you what to do instead.
+Who owns the ad accounts?
+You do. We work inside accounts you own, and if we ever part ways you keep everything -
+campaigns, history, data.
+How do you charge?
+[OWNER: flat monthly management fee / percentage / hybrid]. No long-term contracts;
+month to month after the initial [X]-day build period.
+How fast can campaigns launch?
+Typically [X] days from kickoff, and never before conversion tracking is verified.
+Which platforms do you manage?
+Google Ads (Search, Performance Max, Shopping where relevant), Meta (Facebook and
+Instagram), Microsoft Ads and YouTube. We don't do SEO, web design or social
+management - our sister agency Stoneridge Digital does.
+What will I see in reports?
+Leads, qualified leads, booked calls, cost per qualified lead, and revenue where your CRM
+allows - by platform and campaign. Plus what we changed and why.
+Do you work with businesses
+outside Austin?
+Yes. We're based in Austin and work with businesses across Texas and neighboring states,
+and remotely nationwide.
+
+===== PAGE 37 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 37
+Free Ad Audit page (/free-ad-audit/)
+Element
+Draft
+Layout
+Landing layout: logo, no nav, form above the fold on desktop, form directly after the headline block on
+mobile
+Title tag
+Free PPC / Ad Account Audit | Bold Clicks
+H1
+Find out where your ad spend is leaking.
+Subhead
+A written review of your Google, Meta, Microsoft or YouTube accounts - campaign structure, tracking,
+search terms, creative and landing pages - delivered in [X] business days. No pitch deck. No obligation.
+What you get (list)
+A score for each of the five leak points. / The specific search terms, audiences or placements wasting
+budget. / Whether your conversion tracking counts real leads or noise. / Landing-page fixes ranked by
+impact. / A plain-English plan you can act on with or without us.
+Who it's for
+Businesses spending [OWNER: real threshold] or more per month on ads, or ready to start. Healthcare,
+legal, home services and other lead-driven businesses in Texas and beyond.
+How it works
+1. Request the audit. 2. Grant read-only access (we'll show you how - takes two minutes). 3. Get your
+written audit and a 30-minute walkthrough call.
+Trust
+You own your accounts. Read-only access only. We never make changes during an audit. [Named
+operator] reviews every account personally.
+Form CTA
+Get My Free Ad Audit
+Thank-you
+Got it. [Name], we'll review [company] and be in touch within one business day. Want to lock in your
+walkthrough call now? [Calendar]. Fires generate_lead exactly once.
+Google Ads Management page (/google-ads-management/) - structure and
+key copy
+
+Title: Google Ads Management | Bold Clicks. H1: Google Ads management that's measured in qualified leads, not
+clicks.
+
+Above the fold: For lead-driven businesses spending [threshold]+ per month. We manage Search, Performance
+Max and Shopping campaigns, own the tracking, and report on what booked and what closed. CTA: Get My Free
+Ad Audit.
+
+Sections (H2s): What's included / How we structure accounts / Search vs Performance Max: when we use each /
+Negatives and search-term hygiene / Tracking that counts real leads / Landing-page alignment / What the first 30
+days look like / Reporting / Case studies / FAQ / CTA.
+
+First-hand block: [OWNER/operator: one real account observation, e.g., a search-term waste pattern found in a
+Texas home-services account and what changed].
+
+Internal links: /conversion-tracking/, /industries/home-services/, /industries/legal/, /austin-ppc-agency/, the PMax
+vs Search Insight, the audit checklist Insight.
+
+FAQ topics: account ownership, budget minimums, PMax risk, how long until results, what happens to existing
+campaigns, Local Services Ads.
+
+===== PAGE 38 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 38
+Austin page (/austin-ppc-agency/)
+Element
+Draft
+Title tag
+Austin PPC Agency - Google & Meta Ads Management | Bold Clicks
+H1
+Austin's paid-media specialists.
+Intro
+Bold Clicks is an Austin-based agency that does one thing: run ads that produce qualified leads for
+local businesses. We work from [neighborhood/area] with clients across the metro - Round Rock,
+Cedar Park, Georgetown, Pflugerville, Leander, Lakeway and San Marcos - and across Texas.
+H2: What advertising in
+Austin actually looks like
+Austin is one of the most competitive local ad markets in the country for home services, med spas,
+dental and legal. [FirstHand: real CPC/competition observations from Bold Clicks or Stoneridge
+accounts, with date and vertical. Until available: qualitative observations only.]
+H2: Industries we serve in
+Austin
+Cards linking to publishable industry pages, each with one Austin-specific sentence.
+H2: Austin case studies
+CaseStudyCards filtered to Austin metro; if none yet, render 'Austin account lessons' from approved
+first-hand facts instead - never an empty section, never fake cards.
+H2: Local FAQs
+Minimum spend for Austin campaigns; whether Local Services Ads make sense for Austin home
+services; how service-radius targeting works for the suburbs; whether we meet in person.
+Local trust
+Real address (if public) with embedded map, phone, hours, GBP link, Austin Chamber membership
+badge (only if real), named operator.
+Schema
+Organization/ProfessionalService with address only if public; areaServed listing Austin metro cities;
+sameAs to GBP and profiles.
+About page outline
+
+H1: The paid-media arm of the Stoneridge family.
+
+Sections: Why we only run ads / Who does the work (named operators with real bios and photos) / Our
+relationship to Stoneridge Digital and Stoneridge Equity (accurate description [OWNER]) / How we work with
+clients (ownership, access, reporting) / Platform experience (only claims from proof.json) / Where we are (Austin,
+Texas) / CTA.
+
+No stock photos, no invented team members, no 'award-winning' without the award in proof.json.
+
+===== PAGE 39 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 39
+31 / LEAD CAPTURE, ROUTING AND CRM
+Every lead arrives in GoHighLevel with its
+source attached
+The form is short. The data model behind it is complete. Nothing is lost between the click and the
+pipeline.
+Form fields
+Field
+Type
+Required
+Validation / notes
+Full name
+text,
+autocomplete=name
+Yes
+2-80 chars
+Business email
+email,
+autocomplete=email
+Yes
+Syntax check; warn (not block) on free-mail domains
+Company or website
+text, autocomplete=org
+anization
+Yes
+Normalize URL if it looks like one
+What do you need help
+with?
+select
+Yes
+Google Ads / Meta Ads / Microsoft Ads / YouTube Ads /
+Tracking & attribution / Not sure - audit everything
+Monthly ad spend
+(approx.)
+select
+No
+(recommended)
+Not running ads yet / Under $2k / $2k-5k / $5k-15k /
+$15k-50k / $50k+ [OWNER may adjust bands]
+Industry
+select
+No
+Dental / Ortho / Med spa / Healthcare (other) / Legal /
+Home services / Other
+Phone
+tel, autocomplete=tel
+No
+E.164 normalization; SMS consent checkbox appears only
+if phone entered
+Consent
+checkbox
+Yes (where
+required)
+Privacy policy link; SMS consent separate and unchecked
+by default
+Hidden attribution fields (captured client-side, validated server-side)
+On first visit, lib/attribution.ts stores first-touch values in a first-party cookie (365 days) and session values in
+sessionStorage: utm_source, utm_medium, utm_campaign, utm_content, utm_term, gclid, gbraid, wbraid, fbclid,
+msclkid, landing_page, referrer, first_touch_timestamp. On submit, both first-touch and last-touch sets are attached,
+plus page_url, device type, GA4 client_id (read from the _ga cookie), and a server-generated lead_id.
+Webhook payload to GoHighLevel (inbound webhook, JSON)
+{
+  "lead_id": "bc_01J...",              "submitted_at": "2026-09-18T15:04:05-05:00",
+  "form": "free-ad-audit",            "page_url": "https://bold-clicks.com/free-ad-audit/",
+  "name": "...", "email": "...", "phone": "+1512...", "company": "...",
+  "need": "google_ads", "spend_band": "5k-15k", "industry": "home_services",
+  "consent_privacy": true, "consent_sms": false,
+  "first_touch": { "source": "google", "medium": "cpc", "campaign": "...", "content": "...", "term": "...",
+                   "gclid": "...", "landing_page": "...", "referrer": "...", "timestamp": "..." },
+  "last_touch":  { "source": "google", "medium": "organic", "campaign": "gbp", "landing_page": "..." },
+  "ga_client_id": "GA1.1.123.456", "device": "mobile", "geo_hint": "Austin, TX (from request headers)"
+}
+
+===== PAGE 40 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 40
+Map every field to a GoHighLevel custom field. Tag the contact with the form name, need, and spend band. Trigger
+the 'New website lead' workflow: instant SMS + email to the owner, autoresponder to the lead with the calendar link,
+task created for follow-up within 1 business hour, and pipeline stage 'New'.
+Routing and speed-to-lead
+
+Spend band $15k+ or industries Legal/Med spa: flag 'priority' and send an additional SMS to the owner.
+
+'Not running ads yet' with spend under $2k: autoresponder includes the budget-planning guide and calculator; still
+enters pipeline, lower priority.
+
+Owner SLA: first human response within 1 business hour, 9am-6pm CT. GHL workflow escalates to Jay [OWNER
+confirm] if untouched after 2 hours.
+
+Pipeline stages must include Qualified and Closed so automation can compute qualified-lead and close attribution
+for the monthly report and feed offline conversions (section 32).
+Anti-spam and failure handling
+
+Honeypot field + Turnstile/hCaptcha invisible mode + rate limiting by IP. No visible challenge unless the risk score
+demands it.
+
+If the GHL webhook fails, the route handler queues the payload (hosting KV/queue) and retries with backoff for 24
+hours, emails the raw lead to the owner immediately, and the synthetic test alert fires. The visitor still sees the
+thank-you state.
+
+All payloads are logged (redacted) for 30 days so a lost lead can always be recovered.
+
+===== PAGE 41 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 41
+32 / ANALYTICS, TAG MANAGER AND ATTRIBUTION
+Track outcomes, feed them back, respect
+consent
+Implements Volume 1 section 11 concretely.
+Data layer event schema
+dataLayer.push({ event: 'cta_click',   cta_location: 'hero|header|sticky|section-|footer', cta_text: '...' });
+dataLayer.push({ event: 'form_start',  form_id: 'free-ad-audit' });
+dataLayer.push({ event: 'generate_lead', form_id: 'free-ad-audit', lead_id: 'bc_...', need: 'google_ads',
+                 spend_band: '5k-15k', value: 0, currency: 'USD' });
+dataLayer.push({ event: 'phone_click', phone_location: 'header|footer|austin-page' });
+dataLayer.push({ event: 'calendar_open', provider: 'ghl|calendly' });
+dataLayer.push({ event: 'appointment_booked', lead_id: 'bc_...' });  // from booking callback or thank-you para
+m
+dataLayer.push({ event: 'case_study_view', case_study: '' });
+dataLayer.push({ event: 'pricing_or_qualifier_interaction', tool: 'calculator|spend_band', value_bucket: '...' 
+});
+GTM container blueprint
+Tag
+Trigger
+Notes
+GA4 Configuration (Google tag)
+Consent initialization -> All
+pages
+Consent Mode v2 defaults set before the tag loads;
+server_container_url if server-side GTM is added later
+GA4 Event: each data-layer event
+above
+Custom event trigger matching
+the event name
+Mark generate_lead and appointment_booked as key
+events in GA4
+Google Ads Conversion: Lead
+generate_lead
+Enhanced conversions enabled with hashed email/phone
+from the data layer, only when ad_user_data consent
+granted
+Google Ads Conversion: Booked
+appointment
+appointment_booked
+Secondary conversion; optimize to Lead initially
+Google Ads Remarketing
+All pages
+Consent-gated
+Meta Pixel + CAPI (via GHL or
+server-side)
+PageView; Lead on
+generate_lead
+Deduplicate with event_id = lead_id
+Microsoft UET
+All pages; Lead goal on
+generate_lead
+Consent-gated
+Call tracking (optional: CallRail
+or GHL numbers)
+All pages
+Dynamic number insertion only if a call-tracking vendor is
+chosen; count calls over 60s or tagged qualified as
+conversions
+Consent management platform
+First
+Cookie banner appropriate to jurisdictions [OWNER:
+primarily US; add GDPR handling if EU traffic is meaningful]
+Offline conversion feedback loop
+1.
+GoHighLevel pipeline stage changes (Qualified, Closed) fire a GHL webhook to an automation endpoint with
+lead_id, gclid/wbraid/gbraid, email/phone (hashed), stage, timestamp, and deal value if known.
+
+===== PAGE 42 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 42
+2.
+Automation writes the row to data/offline-conversions/ (private) and uploads to Google Ads via the Data Manager
+/ enhanced conversions for leads route (API or scheduled sheet upload) and to Meta via CAPI. Follow current
+Google documentation at build time; the exact upload mechanism changes.
+3.
+The monthly report shows lead -> qualified -> closed rates by campaign so the owner can see which campaigns
+produce customers, not just forms.
+4.
+If consent for ad_user_data was not granted for that lead, skip the upload and record why.
+Verification (built into CI and the daily-integrity job)
+
+Playwright test with GA4 DebugView enabled asserts each event fires once with the right parameters on the right
+page.
+
+GTM container is exported to infra/gtm-container.json after every published change (via GTM API); the daily job
+diffs live vs repo and flags drift.
+
+Consent test: with consent denied, assert no _ga, _gcl, _fbp, or _uetsid cookies before interaction.
+
+===== PAGE 43 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 43
+33 / CI/QA PIPELINE AND PRE-LAUNCH CRAWL
+If it matters, it is a failing check
+Required checks on every pull request. A PR cannot merge (and therefore cannot publish) until all
+pass.
+Check
+Tool
+Passing condition
+Lint + typecheck
+ESLint, tsc --noEmit
+Zero errors
+Content schema
+validation
+Zod schemas over /content
+All content parses; unpublishable items excluded from routes
+No-fabrication lint
+automation/lint/no-fabrication.ts
+Zero blocks (section 26)
+Build
+next build
+Succeeds; route registry matches generated pages
+Metadata audit
+Script over build output
+Unique titles/descriptions/H1; canonical + OG on every indexable
+page; noindex on landing variants, thank-you, staging
+Structured data
+Validator over JSON-LD
+Zero errors; Organization on home; BreadcrumbList on
+hierarchical pages; Article on Insights; no FAQPage rich-result
+assumptions
+Lighthouse CI (mobile)
+lhci with budgets
+Performance >= 90, Accessibility >= 95, Best Practices >= 95,
+SEO = 100 on /, /free-ad-audit/, one service page, one industry
+page, one Insight
+Performance budgets
+lhci budgets.json
+JS <= 150 KB gzipped on marketing routes; total page weight <=
+600 KB above fold; LCP <= 2.0s lab mobile (headroom for 2.5s
+field)
+Accessibility
+axe-core via Playwright
+Zero serious/critical violations; keyboard traversal test of header,
+form, accordion, mobile menu
+Link check
+Crawler over the built site
+Zero internal 4xx/5xx; external links checked weekly, not per PR
+Redirects
+Test infra/redirects.json
+Every rule resolves in one hop with 301
+E2E
+Playwright
+Form submit -> thank-you -> generate_lead; phone link; calendar
+loads; sticky CTA behavior; reduced-motion respected
+Visual regression
+Playwright screenshots
+(Percy/Chromatic optional)
+No unapproved diffs on key pages at 375px and 1280px
+Preview deploy
+Vercel
+Preview URL posted to the PR (used in the weekly digest)
+Pre-launch crawl (run once before DNS cutover and monthly afterward)
+n
+Every canonical URL in content/routes.ts returns 200 on production and appears in sitemap.xml exactly once.
+n
+No URL outside the registry is reachable through internal links (no orphan or accidental routes).
+n
+robots.txt allows all public assets; disallows /api/, /thank-you/, /lp/ (or lp variants carry noindex meta).
+n
+X-Robots-Tag and meta robots agree with the intended index state on every URL.
+n
+HTTP -> HTTPS, www <-> non-www (one chosen host), trailing-slash policy: each resolves in a single 301.
+n
+404 page returns a real 404 status, not 200.
+n
+Hero H1 and primary copy present in initial HTML (view-source test), not injected by JS.
+n
+Images: explicit width/height, modern formats, below-fold lazy, hero not lazy.
+
+===== PAGE 44 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 44
+n
+Fonts: two files max, preload on headline weight, font-display swap on body.
+n
+Third-party scripts: inventory documented in docs/decisions.md with load strategy for each.
+n
+Search Console property verified (DNS TXT), sitemap submitted, and URL Inspection shows 'URL is on Google'
+for the homepage within the first week.
+
+===== PAGE 45 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 45
+34 / LAUNCH PLAN AND POST-LAUNCH 30/60/90
+Eight weeks to launch. Then the system takes
+over.
+Assumes one Claude Code-driven build with the owner supplying inputs from section 35 in week 1.
+Wee
+k
+Build
+Owner
+Exit criteria
+1
+Repo, CLAUDE.md, design tokens, component
+library, route registry, content schemas, CI
+skeleton
+Deliver section 35 inputs; approve
+font choice and homepage copy
+Storybook-style component
+preview approved on mobile
+2
+Homepage + free-audit page + lead route handler
++ GHL webhook + thank-you; attribution capture
+Confirm GHL fields/workflow; test a
+lead end to end
+Synthetic form test green;
+Lighthouse budgets met
+3
+Services hub + 5 platform pages +
+conversion-tracking page; FAQ system;
+breadcrumbs; metadata + JSON-LD helpers
+Provide first-hand blocks for each
+service page
+No-fabrication lint green with
+real first-hand content
+4
+Austin page; About; Contact; legal pages; industry
+template + publishable industry pages (home
+services, legal, med spa, dental at minimum)
+Confirm which industries are
+publishable; supply proof.json entries
+Doorway test passes on
+Austin page
+5
+GTM container, GA4, Ads conversions, Consent
+Mode, call/booking tracking; offline conversion
+pipeline; dashboard
+Provide account IDs; grant
+GA4/Ads/GSC access to service
+account
+Events verified in DebugView;
+consent test green
+6
+Automation: collectors, analyzers, no-fabrication
+linter, weekly digest, synthetic tests, integrity job,
+alert routing via GHL
+Receive first test digest; confirm SMS
+routing
+All section 25 jobs run green
+on schedule for 3 days on
+staging
+7
+Case-study and Insight templates; first two
+Insights (calendar month 1); calculator; GBP setup
+Review and approve first two Insights;
+verify GBP
+Drafts reviewed by a named
+human; GBP verified
+8
+Pre-launch crawl; accessibility pass; performance
+pass; runbooks; README; DNS cutover plan;
+backup
+Approve launch; supply DNS access
+or apply records
+Section 33 crawl checklist
+complete; rollback plan
+documented
+DNS cutover procedure
+1.
+Lower TTL on existing records to 300s at least 24 hours before cutover (if any records exist).
+2.
+Verify staging is password-protected and NOINDEX=true; verify production env has NOINDEX=false.
+3.
+Add the hosting provider's A/CNAME records; confirm certificate issuance; test HTTPS on both host variants.
+4.
+Flip production; run daily-integrity job manually; run the pre-launch crawl against the live domain.
+5.
+Submit sitemap in Search Console; request indexing for the homepage, audit page, and Austin page.
+6.
+Publish GBP website link with UTM; publish social profile links.
+7.
+Watch uptime and tracking for 24 hours; send the first real weekly digest the following Monday.
+
+===== PAGE 46 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 46
+Post-launch 30 / 60 / 90
+Window
+Focus
+Success signal
+Days 1-30
+Indexing coverage, tracking accuracy, first leads, GBP reviews from existing
+Stoneridge-family clients (only where appropriate and real), citations built, first
+4 Insights live, first case study if data allows
+All canonical pages indexed; at
+least one organic lead; digest
+running clean 4 weeks straight
+Days 31-60
+Decay/opportunity loop producing its first refresh PRs; Austin map-pack
+tracking; competitive scan #2; paid campaigns for Bold Clicks itself using the
+/lp/ template (the agency should run its own ads well)
+Austin cluster terms entering top
+20; CWV field data appearing in
+CrUX; cost per qualified lead
+known for Bold Clicks' own
+campaigns
+Days 61-90
+Second and third case studies; first benchmark asset if sample allows; link
+outreach on the calculator and audit checklist; Texas hub page assessment
+against unlock criteria
+Tier 1 unlock criteria in section 00
+met or a written plan for the gap
+
+===== PAGE 47 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 47
+35 / OWNER-SUPPLIED INPUTS CHECKLIST
+What Claude Code cannot invent
+Deliver these in week 1. Anything missing becomes a labeled placeholder and is listed in the hand-off
+report; the site launches with those sections hidden, never faked.
+Brand and legal
+n
+Approved logo files: SVG master, PNG on cream, PNG on black, square mark for favicon/social - exactly as
+supplied, no redraws.
+n
+Legal entity name for footer/terms/privacy; registered address; whether a public office address exists for Austin
+(and if so, the exact address); public phone; public email.
+n
+Accurate one-paragraph description of the relationship to Stoneridge Digital and Stoneridge Equity for the About
+page.
+n
+Named operators: names, roles, headshots, 2-3 sentence bios, LinkedIn URLs, platform experience that can be
+stated truthfully.
+Offer and pricing
+n
+Final primary CTA phrase (default: Get My Free Ad Audit).
+n
+Real minimum monthly ad spend; pricing model; contract terms; typical launch timeline; audit turnaround time.
+n
+Spend-band options for the form; which industries are publishable at launch.
+Proof (all with permission on file)
+n
+Client logos cleared for use; testimonials with attribution; any partner/certification badges with expiry dates; any
+metrics for the proof strip with definitions and date ranges.
+n
+First case study data (or confirmation that none is ready - the site ships with process proof instead).
+n
+First-hand blocks: at least one real account observation per service page and per publishable industry page
+(bullet points are enough; automation drafts around them).
+Accounts and access
+n
+Domain registrar and DNS access (or willingness to apply records); hosting account (Vercel/Cloudflare) [OWNER
+creates; Claude Code never creates accounts].
+n
+GoHighLevel: location ID, inbound webhook URL, API key, calendar link, custom fields created per section 31,
+pipeline stages including Qualified and Closed.
+n
+Google: GA4 property + stream, Google Ads account ID + conversion actions, GTM container, Search Console
+(service-account access), Business Profile ownership.
+n
+Meta Business Manager pixel/dataset ID; Microsoft Ads UET tag ID (if used).
+n
+Choice of SERP/keyword provider and uptime provider, with API keys; anti-spam provider keys; Anthropic API
+key for the Claude Code Action.
+n
+Alert contacts: owner mobile and email; backup contact (Jay) for escalation.
+
+===== PAGE 48 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 48
+Content decisions
+n
+Approve docs/voice.md banned-phrase list additions.
+n
+Approve the 12-month calendar or reorder it.
+n
+Set the publishing cap and the benchmark minimum-sample rule.
+n
+Confirm consent/privacy jurisdictions and whether EU traffic matters.
+
+===== PAGE 49 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 49
+36 / CLAUDE CODE OPERATING INSTRUCTIONS
+How the build agent should work in this
+repository
+Put the CLAUDE.md below at the repo root verbatim (adjusting paths if the structure changes). It
+governs the initial build and every automated run afterward.
+CLAUDE.md (repo root)
+# Bold Clicks - CLAUDE.md
+## What this is
+Marketing site for Bold Clicks, an ads-only paid-media agency in Austin, TX (Stoneridge family).
+Primary conversion: free ad audit. Ranking strategy: Austin -> Texas -> surrounding states -> national.
+Two governing documents live in /docs/brief/: Volume 1 (brand, sitemap, templates, launch checklist)
+and Volume 2 (ranking, content, automation). Volume 1 wins on brand/no-fabrication; Volume 2 wins on
+SEO/automation/implementation.
+## Non-negotiables
+- Use the approved logo assets in /public/brand exactly. Never redraw, recolor, or generate a logo.
+- Never invent numbers, clients, testimonials, badges, awards, addresses, or prices. Use [OWNER]
+  placeholders in content files; the linter blocks placeholders from publishing.
+- Ads only. Do not describe Bold Clicks as SEO, web design, social, email, or automation agency.
+- Static/server-rendered HTML for all primary copy. No copy behind clicks or client-side fetches.
+- One location page per real market; never templated city pages. Run the doorway test (Volume 2 s.18).
+- Automation drafts and proposes via PRs. It never publishes or changes tracking without a merge.
+## Commands
+pnpm dev | pnpm build | pnpm lint | pnpm typecheck | pnpm test (unit) | pnpm e2e (Playwright)
+pnpm lint:content (schemas + no-fabrication) | pnpm audit:meta | pnpm audit:schema | pnpm audit:links
+pnpm lhci | pnpm crawl:prelaunch | pnpm job  (runs an automation job locally with .env.local)
+## Working rules
+- Read /docs/voice.md before writing any copy. Every Insight needs a  block.
+- Content lives in /content. Do not hard-code copy in components.
+- Add every new route to /content/routes.ts (sitemap, robots, canonical, breadcrumbs derive from it).
+- Add every new event to /lib/analytics.ts and to docs/tracking-plan.md in the same PR.
+- Any change to tracking, consent, redirects, or robots requires a PR labeled 'tracking' or 'seo-critical'
+  and a note in docs/decisions.md.
+- Prefer small PRs with a preview link and a one-paragraph 'why' for the owner's digest.
+- When a required input is missing, do not guess: write the placeholder, add it to
+  docs/owner-inputs.md, and continue.
+## Definition of done (any task)
+Build passes; all CI checks green; content schemas valid; no placeholders in publishable files;
+metadata unique; a11y and Lighthouse budgets met; e2e green; docs updated; PR description written
+for a non-technical reader.
+
+===== PAGE 50 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 50
+Phase prompts (use these to start each build phase)
+Phase
+Prompt for Claude Code
+1 Foundation
+Read docs/brief/volume-1.pdf and volume-2.pdf. Create the repo layout in Volume 2 s.28, design tokens in
+s.29, the component library, content schemas, route registry, and CI skeleton in s.33. Do not write page copy
+yet. Open a PR with a component preview.
+2 Conversion
+core
+Build the homepage and /free-ad-audit/ from Volume 2 s.30 copy and s.31 form spec, including the lead route
+handler, GoHighLevel webhook, attribution capture (s.31), thank-you state, and data-layer events (s.32). Add
+the Playwright synthetic form test. Meet Lighthouse budgets on mobile.
+3 Service pages
+Build /services/ and the five platform pages plus /conversion-tracking/ using the Volume 1 s.05 template and
+Volume 2 s.20 keyword map. Insert placeholders where owner input is pending and list them in
+docs/owner-inputs.md.
+4 Local +
+industries +
+about
+Build /austin-ppc-agency/ per s.18 and s.30, the industry template, publishable industry pages, About, Contact,
+legal pages. Run the doorway test and document results.
+5 Measurement
+Implement the GTM container blueprint (s.32) as an exportable container JSON, Consent Mode v2, Ads
+conversions with enhanced conversions, the offline-conversion webhook endpoint, and the verification tests.
+Document the tracking plan.
+6 Automation
+Implement every job in s.25 with the provider adapter pattern, thresholds from s.24 in automation/config.ts, run
+logs, the no-fabrication linter (s.26), the weekly digest (s.27), and alert routing through GoHighLevel. Provide
+runbooks (s.24).
+7 Content
+Implement Insight and case-study MDX templates, the calculator, and draft calendar month-1 items with
+FirstHand blocks left for the owner. Open one PR per piece.
+8 Launch
+Run the pre-launch crawl (s.33), fix everything it finds, write README and DNS cutover steps, generate the
+hand-off report listing all outstanding owner inputs and the launch acceptance checklist from Volume 1 s.15
+with pass/fail status.
+Hand-off report (required output of phase 8)
+
+Launch acceptance checklist (Volume 1 s.15) with pass/fail and evidence links.
+
+Outstanding [OWNER] inputs and which sections are hidden until they arrive.
+
+Job schedule table with the last run status of each job.
+
+Access inventory: every secret, where it lives, how to rotate it.
+
+Tier-1 unlock criteria (s.00) and the current status of each.
+
+First-month digest preview.
+
+===== PAGE 51 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 51
+37 / RISK REGISTER AND ANTI-PATTERNS
+What would quietly ruin this
+Each risk lists the control that prevents it. If a control is missing from the build, the build is not done.
+Risk
+Impact
+Control
+Fabricated proof slips
+into copy
+Credibility and potential legal
+exposure; permanent trust loss
+No-fabrication linter (s.26); proof.json permission flags;
+ProofStrip renders nothing rather than placeholders
+City-page sprawl to 'rank
+everywhere'
+Doorway-page manual action;
+sitewide ranking loss
+Location page rules and doorway test (s.18); route registry
+review in PRs
+AI content farm drift
+Scaled-content policy action; brand
+becomes generic
+First-hand block requirement; publishing cap; named
+reviewer; banned-phrase lint
+Tracking silently breaks
+Ads optimize to nothing; leads
+unattributed; wrong decisions
+Synthetic form test every 6h; zero-events check; GTM drift
+diff; S1 alerts
+Accidental noindex on
+production
+Total organic loss
+Daily integrity check; CI env assertion; SMS alert
+Performance regression
+from third-party scripts
+CWV leaves 'good'; Ads
+landing-page quality drops
+Budgets in CI; script inventory; load-on-interaction rule;
+weekly PSI
+Fake freshness
+Trust loss; wasted crawl budget
+Lastmod lint; material-update tagging
+Owner overwhelmed by
+alerts
+Alerts ignored; real incidents missed
+One weekly digest; S1 only for outages/forms/tracking; 24h
+suppression
+Vendor lock-in or API
+changes
+Automation stops working
+Provider adapters; run logs flag provider failures; README
+rotation docs
+Single point of failure
+(one person)
+Site unmaintainable
+README, runbooks, decisions log, escalation contact
+GBP suspension
+Map-pack loss
+No keyword stuffing in name; real address rules; runbook
+Consent violations
+Legal and platform policy exposure
+Consent Mode v2; weekly consent test
+Anti-patterns (reject in code review)
+
+Any page whose body could be pasted onto another agency's site unchanged.
+
+Hero sliders, autoplay video, popups before content, chat widgets on first paint.
+
+A 'Locations' dropdown listing cities without pages that meet the s.18 standard.
+
+Meta descriptions or titles generated in bulk without the uniqueness audit.
+
+Numbers in copy without a fact id.
+
+Publishing-date changes without content changes.
+
+Tracking changes merged without the 'tracking' label and decisions-log entry.
+
+Automation that can only be run by hand, or that fails silently.
+
+===== PAGE 52 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 52
+APPENDIX A
+Geography reference
+Used by the collectors to classify queries and by content authors for natural local references. Not a list
+of pages to build.
+Area
+Places to recognize in queries and content
+Austin metro (Tier 1)
+Austin, Round Rock, Cedar Park, Georgetown, Pflugerville, Leander, Lakeway, Bee Cave, Dripping
+Springs, Kyle, Buda, San Marcos, Hutto, Manor, Elgin, Bastrop; Travis, Williamson, Hays, Bastrop
+counties
+Dallas-Fort Worth (Tier 2)
+Dallas, Fort Worth, Plano, Frisco, McKinney, Arlington, Irving, Denton, Southlake, Grapevine,
+Richardson, Garland
+Houston (Tier 2)
+Houston, The Woodlands, Katy, Sugar Land, Pearland, Cypress, Spring, League City, Conroe,
+Baytown
+San Antonio (Tier 2)
+San Antonio, New Braunfels, Boerne, Schertz, Seguin
+Other Texas
+El Paso, Corpus Christi, Lubbock, Waco, Killeen, Temple, College Station, Tyler, Midland, Odessa,
+Amarillo, McAllen, Brownsville, Laredo
+Oklahoma (Tier 3)
+Oklahoma City, Tulsa, Norman, Edmond, Broken Arrow
+Louisiana (Tier 3)
+New Orleans, Baton Rouge, Lafayette, Shreveport, Lake Charles
+Arkansas (Tier 3)
+Little Rock, Fayetteville, Bentonville, Rogers, Springdale, Fort Smith
+New Mexico (Tier 3)
+Albuquerque, Santa Fe, Las Cruces, Rio Rancho
+Search Console geo-classification rule
+A query is assigned to a tier if it contains any place name above (case-insensitive, with common abbreviations: dfw,
+okc, nola, atx, htx, satx). Queries with no place name are 'unlocalized' and tracked separately; their localized SERPs
+are sampled through the SERP provider with an Austin location setting.
+
+===== PAGE 53 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 53
+APPENDIX B
+Event and schema reference
+Structured data by route
+Route
+JSON-LD types
+Notes
+/
+Organization (or ProfessionalService) +
+WebSite
+name, url, logo (approved asset URL), sameAs,
+contactPoint, address only if public, areaServed
+/services/ and platform
+pages
+Service + BreadcrumbList
+provider -> Organization; serviceType; areaServed
+/industries/*
+Service + BreadcrumbList
+audience.audienceType
+/case-studies/*
+Article + BreadcrumbList
+author = named operator; datePublished; about
+/insights/*
+Article or BlogPosting + BreadcrumbList
+author, reviewedBy (as contributor), datePublished,
+dateModified only on material update
+/austin-ppc-agency/
+LocalBusiness/ProfessionalService (only
+with a real public address) or
+Organization with areaServed
+geo only if address is public
+/free-ad-audit/
+WebPage
+No Offer markup unless the audit is a genuine free offer
+with terms stated
+FAQs everywhere
+None required
+Visible FAQs for users; FAQPage schema optional and
+not expected to produce rich results
+GA4 key events and Ads conversion mapping
+GA4 event
+Key event
+Google Ads conversion
+Meta / Microsoft
+generate_lead
+Yes
+Lead (primary)
+Lead / Lead goal
+appointment_booked
+Yes
+Booked appointment (secondary)
+Schedule
+phone_click
+Yes
+Phone click (secondary, low value)
+Contact
+qualify_lead (from CRM)
+Yes
+Qualified lead (offline upload)
+CAPI custom
+close_convert_lead (from CRM)
+Yes
+Closed customer (offline upload,
+value)
+CAPI Purchase/custom
+cta_click, form_start, calendar_open,
+case_study_view,
+pricing_or_qualifier_interaction
+No
+-
+-
+
+===== PAGE 54 =====
+BOLD CLICKS  /  WEBSITE BUILD BRIEF  -  VOLUME 2: RANKING, CONTENT & AUTOMATION
+bold-clicks.com  |  Prepared September 18, 2026  |  Companion to the Master Website Build Brief
+Page 54
+APPENDIX C
+KPI glossary and definitions
+Definitions are fixed here so reports, case studies, and benchmarks all mean the same thing.
+Term
+Definition used on bold-clicks.com
+Lead
+A form submission, tracked call over the qualifying duration, or booked appointment from a unique
+contact, deduplicated within 30 days
+Qualified lead
+A lead the client (or Bold Clicks on the client's behalf) has marked as a fit in the CRM: right service,
+right area, real intent
+Booked call / appointment
+A calendar event created by the lead or the intake team, tied to a lead_id
+Closed customer
+A CRM opportunity marked won, with value when known
+Cost per lead (CPL)
+Ad spend / leads, for a stated platform, campaign set, and date range
+Cost per qualified lead
+(CPQL)
+Ad spend / qualified leads, same scope
+CAC
+Ad spend (plus management fee if stated) / closed customers
+ROAS
+Attributed revenue / ad spend; always stated with the attribution model and date range
+Wasted spend
+Spend on search terms, placements, or audiences that produced zero leads over a stated window
+and were subsequently excluded
+Message match
+The ad's promise, keyword/audience, headline, proof, and CTA are consistent on the landing page
+Core Web Vitals 'good'
+At the 75th percentile of field data: LCP <= 2.5s, INP <= 200ms, CLS <= 0.1
+Tier unlock
+The measurable conditions in section 00 that permit expanding pages and targeting to the next
+geography
+CLOSING DIRECTIVE FOR CLAUDE CODE
+Build bold-clicks.com as specified in Volume 1 and this Volume 2. Sequence the ranking effort Austin first, then
+Texas, then the surrounding states. Produce fewer, stronger pages with first-hand evidence on every one. Wire
+every form, call, and booking to GoHighLevel with source data intact and feed qualified and closed outcomes back to
+the ad platforms. Implement every monitor and scheduled job so the owner receives one weekly digest and is alerted
+immediately only when revenue-critical systems fail. Draft content and fixes as pull requests; never publish or alter
+tracking without a merge. Fabricate nothing. When an input is missing, leave a labeled placeholder and keep
+building.
+

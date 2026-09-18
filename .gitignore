@@ -1,0 +1,26 @@
+node_modules/
+.next/
+out/
+build/
+coverage/
+.vercel/
+*.tsbuildinfo
+next-env.d.ts
+
+# Local secrets. Every variable is documented in README.md; none are committed.
+.env
+.env.local
+.env*.local
+
+# Playwright / Lighthouse artifacts
+test-results/
+playwright-report/
+blob-report/
+.lighthouseci/
+
+# Private automation output that must never be public (Volume 2 s.32).
+data/offline-conversions/
+data/private/
+
+.DS_Store
+Thumbs.db

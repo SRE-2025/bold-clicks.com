@@ -1,0 +1,36 @@
+{
+  "_comment": "NAP consistency register - Volume 2 s.18. The quarterly citation-drift job fetches each listing and compares name, address and phone against content/site.ts, opening an issue with correction instructions on mismatch. `status` is one of: pending (not created), live (created and verified), na (not applicable). The owner creates these; automation only checks them.",
+  "nap": {
+    "name": "Bold Clicks",
+    "addressPolicy": "service-area-business-until-owner-confirms-staffed-office",
+    "phone": "[OWNER: public phone]"
+  },
+  "listings": [
+    { "priority": "core", "name": "Google Business Profile", "url": "", "status": "pending", "notes": "Primary category: Advertising agency. Secondary: Marketing agency, Internet marketing service. Website link carries the GBP UTM." },
+    { "priority": "core", "name": "Bing Places", "url": "", "status": "pending" },
+    { "priority": "core", "name": "Apple Business Connect", "url": "", "status": "pending" },
+    { "priority": "core", "name": "Yelp", "url": "", "status": "pending" },
+    { "priority": "core", "name": "Better Business Bureau", "url": "", "status": "pending" },
+    { "priority": "core", "name": "LinkedIn Company Page", "url": "", "status": "pending" },
+    { "priority": "core", "name": "Facebook Page", "url": "", "status": "pending" },
+    { "priority": "core", "name": "Instagram", "url": "", "status": "pending" },
+
+    { "priority": "agency-directory", "name": "Clutch", "url": "", "status": "pending", "notes": "Ranks for 'best ppc agency austin' itself - verified client reviews here are worth more than the profile." },
+    { "priority": "agency-directory", "name": "UpCity", "url": "", "status": "pending", "notes": "Same reasoning as Clutch." },
+    { "priority": "agency-directory", "name": "DesignRush", "url": "", "status": "pending" },
+    { "priority": "agency-directory", "name": "GoodFirms", "url": "", "status": "pending" },
+    { "priority": "agency-directory", "name": "Sortlist", "url": "", "status": "pending" },
+    { "priority": "agency-directory", "name": "The Manifest", "url": "", "status": "pending" },
+    { "priority": "agency-directory", "name": "Agency Spotter", "url": "", "status": "pending" },
+
+    { "priority": "platform", "name": "Google Partners directory", "url": "", "status": "pending", "notes": "Only once Partner status is actually earned. The monthly badge monitor flags expiry; never claim status that is not current." },
+    { "priority": "platform", "name": "Meta Business Partners", "url": "", "status": "pending", "notes": "Only if earned." },
+    { "priority": "platform", "name": "Microsoft Advertising Partners", "url": "", "status": "pending", "notes": "Only if earned." },
+
+    { "priority": "local", "name": "Austin Chamber of Commerce", "url": "", "status": "pending", "notes": "Membership typically includes a directory link - a legitimate local link." },
+    { "priority": "local", "name": "Greater Austin Black Chamber", "url": "", "status": "pending", "notes": "[OWNER] confirm applicability." },
+    { "priority": "local", "name": "Greater Austin Hispanic Chamber", "url": "", "status": "pending", "notes": "[OWNER] confirm applicability." },
+    { "priority": "local", "name": "Austin Business Journal Book of Lists", "url": "", "status": "pending" },
+    { "priority": "local", "name": "Texas Association of Business", "url": "", "status": "pending" }
+  ]
+}

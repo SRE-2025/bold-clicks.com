@@ -1,0 +1,4 @@
+{
+  "_comment": "Volume 2 s.24/s.33: every rule must resolve in a single hop with 301. The weekly redirect-health job tests this file against production and opens an auto-PR on chains, loops, or a 302 where 301 was expected. Host-level canonicalisation (http->https, www->apex) is handled by the hosting provider, not here.",
+  "rules": []
+}

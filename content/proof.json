@@ -1,0 +1,4 @@
+{
+  "_comment": "Volume 2 s.26 rule 5: no draft may claim certifications, partner status, client names, awards or results that are not present here. Every entry needs permissionOnFile=true before it renders. The array is empty on purpose - the site ships with process proof rather than invented proof (Volume 1 s.04). The owner adds entries per docs/owner-inputs.md; ProofStrip and CaseStudyCard render nothing until then.",
+  "items": []
+}
