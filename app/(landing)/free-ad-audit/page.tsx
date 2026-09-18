@@ -55,8 +55,19 @@ export default function FreeAdAuditPage() {
 
       <div className="bg-black py-16 md:py-24">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
-            <div className="max-w-measure">
+          {/*
+            Volume 2 s.30 layout rule: form above the fold on desktop, and
+            directly after the headline block on mobile.
+
+            DOM order is headline -> form -> supporting copy, which is what
+            mobile renders. On large screens explicit grid placement puts the
+            headline and the supporting copy in column one and floats the form
+            into column two, spanning both rows. Ordering this way rather than
+            with CSS `order` keeps the reading order and the tab order the same
+            as the visual order at every width.
+          */}
+          <div className="grid gap-12 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-x-16 lg:gap-y-8">
+            <div className="max-w-measure lg:col-start-1 lg:row-start-1">
               <Eyebrow>FREE AD AUDIT</Eyebrow>
               <h1 className="mt-4 text-display text-cream md:text-display-lg">
                 Find out where your ad spend is leaking.
@@ -65,8 +76,20 @@ export default function FreeAdAuditPage() {
                 A written review of your Google, Meta, Microsoft or YouTube accounts &mdash; campaign structure,
                 tracking, search terms, creative and landing pages. No pitch deck. No obligation.
               </p>
+            </div>
 
-              <GoldRule className="mt-8" />
+            <div className="h-fit rounded-card bg-cream p-6 shadow-card md:p-8 lg:col-start-2 lg:row-start-1 lg:row-end-3">
+              <h2 className="text-h2 text-black">Request your audit</h2>
+              <p className="mt-2 text-small-lg text-ink/70">
+                We&rsquo;ll confirm by email and tell you exactly what access we need.
+              </p>
+              <div className="mt-6">
+                <LeadForm formId="free-ad-audit" />
+              </div>
+            </div>
+
+            <div className="max-w-measure lg:col-start-1 lg:row-start-2">
+              <GoldRule />
 
               <h2 className="mt-8 text-h3 text-cream md:text-h3-lg">What you get</h2>
               <ul className="mt-4 space-y-3">
@@ -101,17 +124,6 @@ export default function FreeAdAuditPage() {
               <p className="mt-8 border-l-2 border-gold pl-4 text-small-lg text-mist">
                 You own your accounts. Read-only access only. We never make changes during an audit.
               </p>
-            </div>
-
-            {/* Form: beside the headline on desktop, directly beneath it on mobile. */}
-            <div className="rounded-card bg-cream p-6 shadow-card md:p-8">
-              <h2 className="text-h2 text-black">Request your audit</h2>
-              <p className="mt-2 text-small-lg text-ink/70">
-                We&rsquo;ll confirm by email and tell you exactly what access we need.
-              </p>
-              <div className="mt-6">
-                <LeadForm formId="free-ad-audit" />
-              </div>
             </div>
           </div>
         </Container>
