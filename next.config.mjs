@@ -1,5 +1,13 @@
-import headers from './infra/headers.json' with { type: 'json' };
-import redirects from './infra/redirects.json' with { type: 'json' };
+import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+
+// Read rather than `import ... with { type: 'json' }`: import attributes are
+// version-sensitive across Node releases, and a config that only fails on the
+// CI runner is the worst place to discover that.
+const readJson = (path) => JSON.parse(readFileSync(fileURLToPath(new URL(path, import.meta.url)), 'utf8'));
+
+const headers = readJson('./infra/headers.json');
+const redirects = readJson('./infra/redirects.json');
 
 /**
  * Staging and preview deployments set NOINDEX=true. The daily-integrity job
