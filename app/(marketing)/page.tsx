@@ -81,7 +81,7 @@ export default function HomePage() {
 
       {/* 3. The problem */}
       <Section tone="cream" labelledBy="problem-heading">
-        <Eyebrow className="text-forest">THE PROBLEM</Eyebrow>
+        <Eyebrow on="light">THE PROBLEM</Eyebrow>
         <SectionHeading id="problem-heading" className="mt-4">
           Most ad accounts leak money in the same five places.
         </SectionHeading>
@@ -96,7 +96,7 @@ export default function HomePage() {
 
       {/* 4. What we manage */}
       <Section tone="white" labelledBy="services-heading">
-        <Eyebrow className="text-forest">WHAT WE MANAGE</Eyebrow>
+        <Eyebrow on="light">WHAT WE MANAGE</Eyebrow>
         <SectionHeading id="services-heading" className="mt-4">
           Four platforms. One job: leads that close.
         </SectionHeading>
@@ -107,7 +107,7 @@ export default function HomePage() {
 
       {/* 5. Why Bold Clicks */}
       <Section tone="cream" labelledBy="why-heading">
-        <Eyebrow className="text-forest">WHY BOLD CLICKS</Eyebrow>
+        <Eyebrow on="light">WHY BOLD CLICKS</Eyebrow>
         <SectionHeading id="why-heading" className="mt-4">
           Specialists, not generalists.
         </SectionHeading>
@@ -131,7 +131,7 @@ export default function HomePage() {
         entry with permissionOnFile and verifiedAt.
       */}
       <Section tone="white" labelledBy="proof-heading">
-        <Eyebrow className="text-forest">CASE STUDIES</Eyebrow>
+        <Eyebrow on="light">CASE STUDIES</Eyebrow>
         <SectionHeading id="proof-heading" className="mt-4">
           Proof, with the numbers defined.
         </SectionHeading>
@@ -150,7 +150,7 @@ export default function HomePage() {
 
       {/* 8. Industries */}
       <Section tone="cream" labelledBy="industries-heading">
-        <Eyebrow className="text-forest">INDUSTRIES</Eyebrow>
+        <Eyebrow on="light">INDUSTRIES</Eyebrow>
         <SectionHeading id="industries-heading" className="mt-4">
           Built for businesses where a lead is worth real money.
         </SectionHeading>
@@ -161,7 +161,7 @@ export default function HomePage() {
 
       {/* 9. Measurement */}
       <Section tone="white" labelledBy="measurement-heading">
-        <Eyebrow className="text-forest">MEASUREMENT</Eyebrow>
+        <Eyebrow on="light">MEASUREMENT</Eyebrow>
         <SectionHeading id="measurement-heading" className="mt-4">
           A lead is not the finish line.
         </SectionHeading>
@@ -177,7 +177,7 @@ export default function HomePage() {
 
       {/* 10. FAQ */}
       <Section tone="cream" labelledBy="faq-heading">
-        <Eyebrow className="text-forest">FAQ</Eyebrow>
+        <Eyebrow on="light">FAQ</Eyebrow>
         <SectionHeading id="faq-heading" className="mt-4">
           Straight answers.
         </SectionHeading>

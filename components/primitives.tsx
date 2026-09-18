@@ -44,9 +44,39 @@ export function Section({
   );
 }
 
-export function Eyebrow({ children, className }: { children: ReactNode; className?: string }) {
+/**
+ * Eyebrow label.
+ *
+ * `on` names the background, and it decides the colour, because the two are not
+ * interchangeable: Volume 2 s.29 is explicit that gold on cream does not pass
+ * contrast for text and is for non-text accents only. Gold on black is ~7.5:1
+ * and fine; forest on cream is ~9.8:1.
+ *
+ * This is a prop rather than a `className` override on purpose. Passing
+ * `className="text-forest"` against a hard-coded `text-gold` leaves both
+ * classes on the element, and which one wins depends on their order in the
+ * generated stylesheet rather than on the class attribute - which is how the
+ * gold-on-cream contrast failure got in.
+ */
+export function Eyebrow({
+  children,
+  className,
+  on = 'dark',
+}: {
+  children: ReactNode;
+  className?: string;
+  on?: 'dark' | 'light';
+}) {
   return (
-    <p className={cx('text-eyebrow uppercase text-gold md:text-eyebrow-lg', className)}>{children}</p>
+    <p
+      className={cx(
+        'text-eyebrow uppercase md:text-eyebrow-lg',
+        on === 'dark' ? 'text-gold' : 'text-forest',
+        className,
+      )}
+    >
+      {children}
+    </p>
   );
 }
 

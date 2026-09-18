@@ -63,7 +63,7 @@ export default function CaseStudiesPage() {
       </div>
 
       <Section tone="cream" labelledBy="status">
-        <Eyebrow className="text-forest">CURRENT STATUS</Eyebrow>
+        <Eyebrow on="light">CURRENT STATUS</Eyebrow>
         <SectionHeading id="status" className="mt-4">
           Our first case studies are in progress.
         </SectionHeading>
@@ -80,7 +80,7 @@ export default function CaseStudiesPage() {
       </Section>
 
       <Section tone="white" labelledBy="standard">
-        <Eyebrow className="text-forest">THE STANDARD</Eyebrow>
+        <Eyebrow on="light">THE STANDARD</Eyebrow>
         <SectionHeading id="standard" className="mt-4">
           What will be in every study we publish.
         </SectionHeading>

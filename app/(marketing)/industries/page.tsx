@@ -37,7 +37,7 @@ export default function IndustriesPage() {
       </div>
 
       <Section tone="cream" labelledBy="verticals">
-        <Eyebrow className="text-forest">WHERE WE WORK</Eyebrow>
+        <Eyebrow on="light">WHERE WE WORK</Eyebrow>
         <SectionHeading id="verticals" className="mt-4">
           Four verticals, in depth.
         </SectionHeading>
@@ -47,7 +47,7 @@ export default function IndustriesPage() {
       </Section>
 
       <Section tone="white" labelledBy="why-short">
-        <Eyebrow className="text-forest">WHY THE LIST IS SHORT</Eyebrow>
+        <Eyebrow on="light">WHY THE LIST IS SHORT</Eyebrow>
         <SectionHeading id="why-short" className="mt-4">
           We publish a vertical page when we have something specific to say.
         </SectionHeading>

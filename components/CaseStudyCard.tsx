@@ -38,14 +38,14 @@ export function CaseStudyCard({ caseStudy }: { caseStudy: CaseStudy }) {
           <div key={metric.factId}>
             <dt className="text-small text-ink/70">{metric.name}</dt>
             <dd className="font-display text-h3 text-black">{metric.value}</dd>
-            <dd className="text-small text-ink/60">
+            <dd className="text-small text-ink/70">
               {metric.definition} &middot; {metric.dateRange}
             </dd>
           </div>
         ))}
       </dl>
 
-      <p className="mt-6 text-small text-ink/60">{caseStudy.context}</p>
+      <p className="mt-6 text-small text-ink/70">{caseStudy.context}</p>
     </article>
   );
 }

@@ -50,7 +50,7 @@ export function FirstHand({ children, label = 'From our accounts' }: { children:
 
   return (
     <aside className="my-8 rounded-card border-l-2 border-gold bg-white p-6 shadow-card">
-      <Eyebrow className="text-forest">{label}</Eyebrow>
+      <Eyebrow on="light">{label}</Eyebrow>
       <div className="prose-bc mt-3 text-ink">
         <p>{children}</p>
       </div>

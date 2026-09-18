@@ -32,5 +32,12 @@ export default defineConfig({
         url: 'http://127.0.0.1:3000',
         reuseExistingServer: !process.env.CI,
         timeout: 120_000,
+        env: {
+          // Every test submits from 127.0.0.1, so the production per-IP limit
+          // trips partway through a parallel run. The limiter itself is covered
+          // by tests/unit/rate-limit.test.ts; raising it here keeps the
+          // functional tests deterministic instead of intermittently 429ing.
+          LEAD_RATE_LIMIT_MAX: '1000',
+        },
       },
 });

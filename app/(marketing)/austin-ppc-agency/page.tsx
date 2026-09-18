@@ -89,7 +89,7 @@ export default function AustinPage() {
       </div>
 
       <Section tone="cream" labelledBy="market">
-        <Eyebrow className="text-forest">THE AUSTIN MARKET</Eyebrow>
+        <Eyebrow on="light">THE AUSTIN MARKET</Eyebrow>
         <SectionHeading id="market" className="mt-4">
           What advertising in Austin actually looks like.
         </SectionHeading>
@@ -117,7 +117,7 @@ export default function AustinPage() {
       </Section>
 
       <Section tone="white" labelledBy="industries">
-        <Eyebrow className="text-forest">INDUSTRIES WE SERVE IN AUSTIN</Eyebrow>
+        <Eyebrow on="light">INDUSTRIES WE SERVE IN AUSTIN</Eyebrow>
         <SectionHeading id="industries" className="mt-4">
           Where a lead here is worth real money.
         </SectionHeading>
@@ -133,7 +133,7 @@ export default function AustinPage() {
         states the standard rather than showing placeholder cards.
       */}
       <Section tone="cream" labelledBy="austin-proof">
-        <Eyebrow className="text-forest">AUSTIN PROOF</Eyebrow>
+        <Eyebrow on="light">AUSTIN PROOF</Eyebrow>
         <SectionHeading id="austin-proof" className="mt-4">
           Austin account lessons.
         </SectionHeading>
@@ -150,7 +150,7 @@ export default function AustinPage() {
       </Section>
 
       <Section tone="white" labelledBy="services-links">
-        <Eyebrow className="text-forest">WHAT WE MANAGE</Eyebrow>
+        <Eyebrow on="light">WHAT WE MANAGE</Eyebrow>
         <SectionHeading id="services-links" className="mt-4">
           Every platform, from Austin.
         </SectionHeading>
@@ -176,7 +176,7 @@ export default function AustinPage() {
       </Section>
 
       <Section tone="cream" labelledBy="service-area">
-        <Eyebrow className="text-forest">SERVICE AREA</Eyebrow>
+        <Eyebrow on="light">SERVICE AREA</Eyebrow>
         <SectionHeading id="service-area" className="mt-4">
           Where our Austin clients are.
         </SectionHeading>
@@ -211,7 +211,7 @@ export default function AustinPage() {
       </Section>
 
       <Section tone="white" labelledBy="local-faq">
-        <Eyebrow className="text-forest">LOCAL FAQ</Eyebrow>
+        <Eyebrow on="light">LOCAL FAQ</Eyebrow>
         <SectionHeading id="local-faq" className="mt-4">
           Questions from Austin businesses.
         </SectionHeading>

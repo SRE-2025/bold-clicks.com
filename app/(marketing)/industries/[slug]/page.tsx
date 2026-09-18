@@ -76,7 +76,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
       </div>
 
       <Section tone="cream" labelledBy="audience">
-        <Eyebrow className="text-forest">HOW BUYERS BEHAVE</Eyebrow>
+        <Eyebrow on="light">HOW BUYERS BEHAVE</Eyebrow>
         <SectionHeading id="audience" className="mt-4">
           What search looks like in this vertical.
         </SectionHeading>
@@ -87,7 +87,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
       </Section>
 
       <Section tone="white" labelledBy="structure">
-        <Eyebrow className="text-forest">CAMPAIGN STRUCTURE</Eyebrow>
+        <Eyebrow on="light">CAMPAIGN STRUCTURE</Eyebrow>
         <SectionHeading id="structure" className="mt-4">
           How we build the account.
         </SectionHeading>
@@ -95,7 +95,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
       </Section>
 
       <Section tone="cream" labelledBy="waste">
-        <Eyebrow className="text-forest">WASTE PATTERNS</Eyebrow>
+        <Eyebrow on="light">WASTE PATTERNS</Eyebrow>
         <SectionHeading id="waste" className="mt-4">
           Where the money goes in accounts we audit.
         </SectionHeading>
@@ -103,7 +103,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
       </Section>
 
       <Section tone="white" labelledBy="kpis">
-        <Eyebrow className="text-forest">WHAT WE REPORT</Eyebrow>
+        <Eyebrow on="light">WHAT WE REPORT</Eyebrow>
         <SectionHeading id="kpis" className="mt-4">
           The numbers that decide whether this worked.
         </SectionHeading>
@@ -133,7 +133,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
       </Section>
 
       <Section tone="cream" labelledBy="faq">
-        <Eyebrow className="text-forest">FAQ</Eyebrow>
+        <Eyebrow on="light">FAQ</Eyebrow>
         <SectionHeading id="faq" className="mt-4">
           Questions from {industry.title.toLowerCase()} businesses.
         </SectionHeading>

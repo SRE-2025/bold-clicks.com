@@ -7,6 +7,43 @@ Newest first.
 
 ---
 
+## 2026-09-18 — Lead rate limit is best-effort, and set to 10/min
+
+Found by the E2E suite returning 429 mid-run. Two problems with the original
+5/min: it is tight enough to turn away real enquiries from a shared office or
+clinic NAT, and it made the parallel test run non-deterministic.
+
+Now 10 per minute per IP, overridable with `LEAD_RATE_LIMIT_MAX` (the Playwright
+web server sets it high so functional tests are deterministic; the limiter
+itself is covered by `tests/unit/rate-limit.test.ts`).
+
+It remains **best-effort**. On serverless hosting the counter lives in one
+instance's memory, so the real limit across a fleet is a multiple of this and
+resets on cold start. The honeypot and Turnstile do the actual spam work. A hard
+limit would need shared state (hosting KV or Redis); that is a deliberate
+non-goal for launch rather than an oversight.
+
+## 2026-09-18 — Lead form posts to `/api/lead/`, with the trailing slash
+
+`trailingSlash: true` makes `/api/lead` return a 308, and the browser's
+re-POST after that redirect did not carry through — the form silently failed in
+production while the E2E test passed, because the test waited on the *request*
+rather than the response. Both are fixed: the client calls the canonical path,
+and the test asserts a 200.
+
+**Label:** seo-critical (the trailing-slash policy is what caused it).
+
+## 2026-09-18 — `Eyebrow` takes a tone prop instead of a className override
+
+axe found gold eyebrow text on cream at 2.15:1, against a 4.5:1 requirement —
+and Volume 2 s.29 already says gold on cream fails for text. The cause was a
+hard-coded `text-gold` with call sites passing `className="text-forest"`: both
+classes land on the element and the winner depends on stylesheet order, not
+attribute order. The colour is now a prop, so the two cannot both be applied.
+
+Muted body text also moved from `text-ink/60` (4.23:1 on cream) to
+`text-ink/70` (5.83:1).
+
 ## 2026-09-18 — Third-party script inventory
 
 Required by the pre-launch crawl (Volume 2 s.33).

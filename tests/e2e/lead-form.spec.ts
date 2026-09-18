@@ -99,7 +99,9 @@ test.describe('free ad audit form', () => {
     await page.getByRole('button', { name: 'Get My Free Ad Audit' }).click();
 
     await expect(page).not.toHaveURL(/\/thank-you\//);
-    const alert = page.getByRole('alert');
+    // Scoped to the form: Next renders its own route announcer with role=alert,
+    // so an unscoped getByRole('alert') matches two elements.
+    const alert = page.locator('form').getByRole('alert');
     await expect(alert).toBeVisible();
     await expect(alert).toContainText('Please fix');
   });
@@ -107,6 +109,10 @@ test.describe('free ad audit form', () => {
   test('carries UTM and gclid through to the submission', async ({ page }) => {
     await page.goto('/free-ad-audit/?utm_source=google&utm_medium=cpc&utm_campaign=austin-ppc&gclid=TEST123');
 
+    // Waits on the response, not just the request. An earlier version waited on
+    // the request alone and passed while the POST was 308-redirecting and the
+    // submission was actually failing.
+    const responsePromise = page.waitForResponse((res) => res.url().includes('/api/lead'));
     const requestPromise = page.waitForRequest((req) => req.url().includes('/api/lead'));
 
     await page.getByLabel('Full name').fill('Synthetic Test');
@@ -115,6 +121,9 @@ test.describe('free ad audit form', () => {
     await page.getByLabel('What do you need help with?').selectOption('not_sure');
     await page.getByLabel(/I agree to the/).check();
     await page.getByRole('button', { name: 'Get My Free Ad Audit' }).click();
+
+    const response = await responsePromise;
+    expect(response.status(), 'the lead POST must succeed, not redirect').toBe(200);
 
     const body = JSON.parse((await requestPromise).postData() ?? '{}');
     expect(body.first_touch?.source).toBe('google');

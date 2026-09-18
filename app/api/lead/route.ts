@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
 import { INDUSTRY_VALUES, NEED_VALUES, SPEND_VALUES, isPriorityLead } from '@/lib/lead-options';
+import { rateLimited } from '@/lib/rate-limit';
 
 /**
  * Lead route handler - Volume 2 s.31.
@@ -55,22 +56,6 @@ const leadSchema = z.object({
   device: z.enum(['mobile', 'tablet', 'desktop']).optional(),
   page_url: z.string().max(2048).optional(),
 });
-
-/** Crude in-process rate limit. Adequate for a marketing site behind a CDN. */
-const RATE_LIMIT_WINDOW_MS = 60_000;
-const RATE_LIMIT_MAX = 5;
-const hits = new Map<string, { count: number; resetAt: number }>();
-
-function rateLimited(ip: string): boolean {
-  const now = Date.now();
-  const entry = hits.get(ip);
-  if (!entry || now > entry.resetAt) {
-    hits.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
-    return false;
-  }
-  entry.count += 1;
-  return entry.count > RATE_LIMIT_MAX;
-}
 
 /** E.164 for US numbers, so GoHighLevel and the platforms agree on the format. */
 function normalisePhone(raw: string): string {

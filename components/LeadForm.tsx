@@ -93,7 +93,10 @@ export function LeadForm({ formId = 'free-ad-audit' }: { formId?: string }) {
     };
 
     try {
-      const response = await fetch('/api/lead', {
+      // Trailing slash matters: next.config sets `trailingSlash: true`, so
+      // posting to '/api/lead' returns a 308 and the redirected re-POST does
+      // not survive. Always call the canonical path.
+      const response = await fetch('/api/lead/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
@@ -245,7 +248,7 @@ export function LeadForm({ formId = 'free-ad-audit' }: { formId?: string }) {
       <div>
         <label htmlFor={fieldId('spend_band')} className={labelClass}>
           Monthly ad spend (approx.)
-          <span className="ml-2 font-normal text-ink/60">Optional, but it helps us prepare</span>
+          <span className="ml-2 font-normal text-ink/70">Optional, but it helps us prepare</span>
         </label>
         <select
           id={fieldId('spend_band')}
@@ -265,7 +268,7 @@ export function LeadForm({ formId = 'free-ad-audit' }: { formId?: string }) {
 
       <div>
         <label htmlFor={fieldId('industry')} className={labelClass}>
-          Industry <span className="ml-2 font-normal text-ink/60">Optional</span>
+          Industry <span className="ml-2 font-normal text-ink/70">Optional</span>
         </label>
         <select id={fieldId('industry')} name="industry" defaultValue="" className={controlClass}>
           <option value="">Prefer not to say</option>
@@ -279,7 +282,7 @@ export function LeadForm({ formId = 'free-ad-audit' }: { formId?: string }) {
 
       <div>
         <label htmlFor={fieldId('phone')} className={labelClass}>
-          Phone <span className="ml-2 font-normal text-ink/60">Optional</span>
+          Phone <span className="ml-2 font-normal text-ink/70">Optional</span>
         </label>
         <input
           id={fieldId('phone')}
@@ -345,7 +348,7 @@ export function LeadForm({ formId = 'free-ad-audit' }: { formId?: string }) {
         {submitting ? 'Sending…' : 'Get My Free Ad Audit'}
       </button>
 
-      <p className="text-small text-ink/60">
+      <p className="text-small text-ink/70">
         Read-only access only. We never make changes to your accounts during an audit.
       </p>
     </form>

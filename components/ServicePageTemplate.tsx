@@ -49,7 +49,7 @@ export function ServicePageTemplate({ service }: { service: Service }) {
       </div>
 
       <Section tone="cream" labelledBy="for-who">
-        <Eyebrow className="text-forest">WHO IT&rsquo;S FOR</Eyebrow>
+        <Eyebrow on="light">WHO IT&rsquo;S FOR</Eyebrow>
         <SectionHeading id="for-who" className="mt-4">
           This page is written for a specific situation.
         </SectionHeading>
@@ -57,7 +57,7 @@ export function ServicePageTemplate({ service }: { service: Service }) {
       </Section>
 
       <Section tone="white" labelledBy="deliverables">
-        <Eyebrow className="text-forest">WHAT&rsquo;S INCLUDED</Eyebrow>
+        <Eyebrow on="light">WHAT&rsquo;S INCLUDED</Eyebrow>
         <SectionHeading id="deliverables" className="mt-4">
           What we actually do.
         </SectionHeading>
@@ -65,7 +65,7 @@ export function ServicePageTemplate({ service }: { service: Service }) {
       </Section>
 
       <Section tone="cream" labelledBy="measurement">
-        <Eyebrow className="text-forest">MEASUREMENT</Eyebrow>
+        <Eyebrow on="light">MEASUREMENT</Eyebrow>
         <SectionHeading id="measurement" className="mt-4">
           How this gets measured.
         </SectionHeading>
@@ -82,7 +82,7 @@ export function ServicePageTemplate({ service }: { service: Service }) {
       </Section>
 
       <Section tone="white" labelledBy="faq">
-        <Eyebrow className="text-forest">FAQ</Eyebrow>
+        <Eyebrow on="light">FAQ</Eyebrow>
         <SectionHeading id="faq" className="mt-4">
           Questions we get asked on sales calls.
         </SectionHeading>

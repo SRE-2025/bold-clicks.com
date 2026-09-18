@@ -24,3 +24,6 @@ data/private/
 
 .DS_Store
 Thumbs.db
+
+# Local Playwright artifacts
+/test-results/

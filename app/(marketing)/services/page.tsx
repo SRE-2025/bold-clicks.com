@@ -46,7 +46,7 @@ export default function ServicesPage() {
       </div>
 
       <Section tone="cream" labelledBy="what-we-do">
-        <Eyebrow className="text-forest">WHAT WE MANAGE</Eyebrow>
+        <Eyebrow on="light">WHAT WE MANAGE</Eyebrow>
         <SectionHeading id="what-we-do" className="mt-4">
           Pick the platform, or let the audit decide.
         </SectionHeading>
@@ -63,7 +63,7 @@ export default function ServicesPage() {
       </Section>
 
       <Section tone="white" labelledBy="pricing">
-        <Eyebrow className="text-forest">WHAT IT COSTS</Eyebrow>
+        <Eyebrow on="light">WHAT IT COSTS</Eyebrow>
         <SectionHeading id="pricing" className="mt-4">
           How paid-media pricing actually works.
         </SectionHeading>
@@ -86,7 +86,7 @@ export default function ServicesPage() {
       </Section>
 
       <Section tone="cream" labelledBy="process">
-        <Eyebrow className="text-forest">HOW WE WORK</Eyebrow>
+        <Eyebrow on="light">HOW WE WORK</Eyebrow>
         <SectionHeading id="process" className="mt-4">
           Audit. Build. Launch. Optimize. Scale.
         </SectionHeading>
@@ -94,7 +94,7 @@ export default function ServicesPage() {
       </Section>
 
       <Section tone="white" labelledBy="measurement">
-        <Eyebrow className="text-forest">THE STANDARD</Eyebrow>
+        <Eyebrow on="light">THE STANDARD</Eyebrow>
         <SectionHeading id="measurement" className="mt-4">
           Every service is measured the same way.
         </SectionHeading>

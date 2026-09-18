@@ -42,7 +42,7 @@ export default function AboutPage() {
       </div>
 
       <Section tone="cream" labelledBy="why-ads">
-        <Eyebrow className="text-forest">WHY WE ONLY RUN ADS</Eyebrow>
+        <Eyebrow on="light">WHY WE ONLY RUN ADS</Eyebrow>
         <SectionHeading id="why-ads" className="mt-4">
           Specialisation is the whole argument.
         </SectionHeading>
@@ -61,7 +61,7 @@ export default function AboutPage() {
 
       {operators.length > 0 ? (
         <Section tone="white" labelledBy="team">
-          <Eyebrow className="text-forest">WHO DOES THE WORK</Eyebrow>
+          <Eyebrow on="light">WHO DOES THE WORK</Eyebrow>
           <SectionHeading id="team" className="mt-4">
             The people in your account.
           </SectionHeading>
@@ -78,7 +78,7 @@ export default function AboutPage() {
       ) : null}
 
       <Section tone="white" labelledBy="how-we-work">
-        <Eyebrow className="text-forest">HOW WE WORK WITH CLIENTS</Eyebrow>
+        <Eyebrow on="light">HOW WE WORK WITH CLIENTS</Eyebrow>
         <SectionHeading id="how-we-work" className="mt-4">
           Ownership, access and reporting.
         </SectionHeading>
@@ -101,7 +101,7 @@ export default function AboutPage() {
       </Section>
 
       <Section tone="cream" labelledBy="family">
-        <Eyebrow className="text-forest">THE STONERIDGE FAMILY</Eyebrow>
+        <Eyebrow on="light">THE STONERIDGE FAMILY</Eyebrow>
         <SectionHeading id="family" className="mt-4">
           Where Bold Clicks sits.
         </SectionHeading>
@@ -122,7 +122,7 @@ export default function AboutPage() {
       </Section>
 
       <Section tone="white" labelledBy="where">
-        <Eyebrow className="text-forest">WHERE WE ARE</Eyebrow>
+        <Eyebrow on="light">WHERE WE ARE</Eyebrow>
         <SectionHeading id="where" className="mt-4">
           Austin, Texas.
         </SectionHeading>

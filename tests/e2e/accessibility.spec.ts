@@ -48,7 +48,10 @@ test('mobile menu is keyboard operable and reports its state', async ({ page }) 
   await page.setViewportSize({ width: 375, height: 812 });
   await page.goto('/');
 
-  const toggle = page.getByRole('button', { name: /Open menu/ });
+  // Located by aria-controls, not by name: the accessible name flips between
+  // "Open menu" and "Close menu", so a name-based locator stops matching the
+  // moment the control does its job.
+  const toggle = page.locator('button[aria-controls="mobile-menu"]');
   await expect(toggle).toHaveAttribute('aria-expanded', 'false');
 
   await toggle.click();

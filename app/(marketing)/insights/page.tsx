@@ -48,7 +48,7 @@ export default function InsightsPage() {
       </div>
 
       <Section tone="cream" labelledBy="standard">
-        <Eyebrow className="text-forest">THE RULE</Eyebrow>
+        <Eyebrow on="light">THE RULE</Eyebrow>
         <SectionHeading id="standard" className="mt-4">
           Every article contains something only we could write.
         </SectionHeading>
@@ -66,7 +66,7 @@ export default function InsightsPage() {
       </Section>
 
       <Section tone="white" labelledBy="upcoming">
-        <Eyebrow className="text-forest">COMING FIRST</Eyebrow>
+        <Eyebrow on="light">COMING FIRST</Eyebrow>
         <SectionHeading id="upcoming" className="mt-4">
           What we&rsquo;re writing.
         </SectionHeading>
@@ -74,7 +74,7 @@ export default function InsightsPage() {
           {upcoming.map((item) => (
             <li key={item.title} className="py-4">
               <p className="text-h3 text-black">{item.title}</p>
-              <p className="mt-1 text-small text-ink/60">Supports: {item.supports}</p>
+              <p className="mt-1 text-small text-ink/70">Supports: {item.supports}</p>
             </li>
           ))}
         </ul>

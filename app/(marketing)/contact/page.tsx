@@ -36,7 +36,7 @@ export default function ContactPage() {
       <Section tone="cream" labelledBy="contact-heading">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
-            <Eyebrow className="text-forest">GET IN TOUCH</Eyebrow>
+            <Eyebrow on="light">GET IN TOUCH</Eyebrow>
             <SectionHeading id="contact-heading" className="mt-4">
               Start with the audit.
             </SectionHeading>

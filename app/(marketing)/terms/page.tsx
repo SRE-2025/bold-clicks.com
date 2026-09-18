@@ -32,7 +32,7 @@ export default function TermsPage() {
       </div>
 
       <Section tone="cream">
-        <Eyebrow className="text-forest">LEGAL</Eyebrow>
+        <Eyebrow on="light">LEGAL</Eyebrow>
         <h1 className="mt-4 text-h1 md:text-h1-lg">Terms of use</h1>
 
         <div className="prose-bc mt-8">
