@@ -73,8 +73,10 @@ export default function FreeAdAuditPage() {
                 Find out where your ad spend is leaking.
               </h1>
               <p className="mt-6 text-body text-mist md:text-body-lg">
-                A written review of your Google, Meta, Microsoft or YouTube accounts &mdash; campaign structure,
-                tracking, search terms, creative and landing pages. No pitch deck. No obligation.
+                A written review of your Google, Meta, Microsoft or YouTube accounts.
+              </p>
+              <p className="mt-2 text-body text-mist md:text-body-lg">
+                Campaign structure, tracking, search terms, creative and landing pages. No pitch deck. No obligation.
               </p>
             </div>
 

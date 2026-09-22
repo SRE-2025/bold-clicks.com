@@ -15,7 +15,7 @@ import { buildMetadata } from '@/lib/seo';
  *
  * Section order follows the blueprint exactly: hero, proof, problem, what we
  * manage, why, how it works, case studies, industries, measurement, FAQ, CTA.
- * No hero image, no slider, no modal. The H1 is the LCP element.
+ * The exact owner-supplied logo appears beside the desktop hero. No slider or modal.
  */
 
 export const metadata: Metadata = buildMetadata('/');
