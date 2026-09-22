@@ -22,20 +22,15 @@ const config: Config = {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
-      // --bc-black: hero/CTA backgrounds, headline text on light sections.
-      black: '#0B0D0C',
-      // --bc-forest: primary button on light/cream, section labels, icon fills.
-      forest: '#2F4428',
-      // --bc-sage: dividers, hover states, subtle backgrounds at 8-12%.
-      sage: '#6C815F',
-      // --bc-cream: default light section background, button text on black.
-      cream: '#F3F2E7',
-      // --bc-gold: 1-2px rules, eyebrows, active nav indicator. Non-text accents.
-      gold: '#C6A15B',
-      // --bc-ink: body text on light backgrounds (softer than pure black).
-      ink: '#1C1F1D',
-      // --bc-mist: secondary text on black backgrounds.
-      mist: '#C9CCC6',
+      // The approved logo establishes a forest, sage and cream palette.
+      // Legacy token names keep existing components on the same system.
+      black: '#1E3220',
+      forest: '#2D472E',
+      sage: '#7D9274',
+      cream: '#FAF8F0',
+      gold: '#A9BC9C',
+      ink: '#223025',
+      mist: '#DFE6D8',
       white: '#FFFFFF',
     },
     // Volume 2 s.29 spacing scale. Tailwind's default scale is replaced so an

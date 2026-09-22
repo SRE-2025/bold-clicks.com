@@ -23,14 +23,12 @@ export const metadata: Metadata = {
   },
   description: site.positioning,
   applicationName: site.name,
-  // No icons declared: Volume 1 s.15 requires the favicon to be generated from
-  // the approved mark, which has not been supplied. Declaring a path to a file
-  // that does not exist would ship a 404 on every page. Add
-  // `icons: { icon: '/favicon.svg' }` once /public/brand holds the real asset.
+  // No favicon yet: the supplied square image includes the full wordmark,
+  // which would be illegible at tab-icon size. A mark-only export is pending.
 };
 
 export const viewport: Viewport = {
-  themeColor: '#0B0D0C',
+  themeColor: '#1E3220',
   width: 'device-width',
   initialScale: 1,
 };

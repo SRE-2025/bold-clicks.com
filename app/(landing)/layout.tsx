@@ -13,15 +13,13 @@ import { site } from '@/content/site';
 export default function LandingLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <header className="bg-black py-4">
+      <header className="border-b border-sage/30 bg-cream py-2">
         <Container>
           <div className="flex items-center justify-between">
-            {/* See components/Logo.tsx: the visible wordmark is the accessible
-                name; an aria-label here would override it and fail WCAG 2.5.3. */}
             <Link href="/">
-              <Logo tone="light" />
+              <Logo />
             </Link>
-            <p className="hidden text-small-lg text-mist sm:block">{site.tagline}</p>
+            <p className="hidden text-small-lg text-forest sm:block">{site.tagline}</p>
           </div>
         </Container>
       </header>

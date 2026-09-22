@@ -121,11 +121,21 @@ emitted, and `npm run audit:schema` fails if it ever appears.
 
 **Label:** seo-critical.
 
-## 2026-09-18 — Logo is a typographic wordmark until the approved asset arrives
+## 2026-09-22 — Use the owner-supplied logo and its palette
+
+The owner provided a shared ChatGPT image showing the mountain/cursor mark and
+"BOLD CLICKS" wordmark on a light background. The original PNG is stored in
+`public/brand/` and rendered unchanged. CSS clips only the empty outer margin
+in compact header placements. On dark sections, the original light background
+remains visible. The site palette now uses the image's forest green, sage and
+cream instead of black and gold. The vector master and a reversed variant were
+not supplied.
+
+## 2026-09-18 — Interim typographic wordmark
 
 Volume 1 forbids redrawing or generating a logo, and none was supplied. The
-site ships a plain text wordmark. `components/Logo.tsx` has a single flag to
-switch to the real asset once it is in `public/brand/`.
+site originally shipped a plain text wordmark. This was superseded when the
+owner supplied the image on September 22.
 
 ## 2026-09-18 — Four industry pages, not eight
 

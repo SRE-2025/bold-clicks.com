@@ -19,6 +19,37 @@
     @apply bg-cream font-body text-body text-ink antialiased;
   }
 
+  /* Crop only the empty outer margin of the supplied square image. The mark
+     and wordmark inside it remain exactly as provided. */
+  .brand-logo {
+    display: block;
+    width: 132px;
+    height: 82px;
+    overflow: hidden;
+    background: #fffef8;
+  }
+
+  .brand-logo img {
+    display: block;
+    width: 146px;
+    height: 146px;
+    max-width: none;
+    transform: translate(-7px, -30px);
+  }
+
+  @media (max-width: 639px) {
+    .brand-logo {
+      width: 100px;
+      height: 63px;
+    }
+
+    .brand-logo img {
+      width: 110px;
+      height: 110px;
+      transform: translate(-5px, -23px);
+    }
+  }
+
   @screen md {
     body {
       @apply text-body-lg;
@@ -43,13 +74,13 @@
      with a dark offset. */
   :focus-visible {
     @apply outline-none ring-2 ring-gold ring-offset-2 ring-offset-cream;
-    box-shadow: 0 0 0 4px #0b0d0c;
+    box-shadow: 0 0 0 4px #1e3220;
   }
 
   .bg-black :focus-visible,
   .bg-forest :focus-visible {
     @apply ring-offset-black;
-    box-shadow: 0 0 0 4px #f3f2e7;
+    box-shadow: 0 0 0 4px #faf8f0;
   }
 
   /* Volume 2 s.29: honour prefers-reduced-motion by disabling transforms. */

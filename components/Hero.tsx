@@ -1,16 +1,13 @@
 import type { ReactNode } from 'react';
+import Image from 'next/image';
 import { CtaButton } from './CtaButton';
 import { Container, Eyebrow, cx } from './primitives';
 
 /**
  * Hero - Volume 2 s.29.
  *
- * Black background. The LCP element is the H1 text, so no hero image is
- * required and none is used: that keeps LCP to a text paint and removes the
- * largest single performance risk on the page.
- *
- * The "ridge motif" from the brand system appears here and in the final CTA
- * only - a single thin angled rule, never a repeated mountain graphic.
+ * The homepage shows the exact owner-supplied logo beside the message.
+ * Interior pages keep the text-led composition.
  */
 export function Hero({
   eyebrow,
@@ -31,16 +28,8 @@ export function Hero({
 }) {
   return (
     <section className="relative overflow-hidden bg-black py-16 md:py-24">
-      {/* Ridge motif: one thin angled gold line. Decorative. */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-24 top-0 h-full w-1/2 opacity-40"
-        style={{
-          background: 'linear-gradient(115deg, transparent 49.9%, #C6A15B 49.9%, #C6A15B 50.1%, transparent 50.1%)',
-        }}
-      />
-
-      <Container className="relative">
+      <Container>
+        <div className={cx('grid items-center gap-12', size === 'home' && 'lg:grid-cols-[minmax(0,1fr)_minmax(280px,360px)]')}>
         <div className="max-w-measure">
           <Eyebrow>{eyebrow}</Eyebrow>
 
@@ -72,6 +61,20 @@ export function Hero({
               )}
             </div>
           )}
+        </div>
+        {size === 'home' && (
+          <div className="mx-auto w-full max-w-[280px] rounded-card bg-cream p-2 shadow-card lg:max-w-[360px]">
+            <Image
+              src="/brand/bold-clicks-original.png"
+              alt=""
+              width={1254}
+              height={1254}
+              sizes="(max-width: 1023px) 280px, 360px"
+              priority
+              className="block h-auto w-full"
+            />
+          </div>
+        )}
         </div>
       </Container>
     </section>

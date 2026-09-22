@@ -47,13 +47,13 @@ export function Header() {
   return (
     <header
       className={cx(
-        'sticky top-0 z-40 bg-black transition-[padding] duration-200',
-        scrolled ? 'py-2' : 'py-4',
+        'sticky top-0 z-40 border-b border-sage/30 bg-cream transition-[padding] duration-200',
+        scrolled ? 'py-1' : 'py-2',
       )}
     >
       <Container>
         <div className="flex items-center justify-between gap-4">
-          <LogoLink tone="light" />
+          <LogoLink />
 
           <nav aria-label="Primary" className="hidden lg:block">
             <ul className="flex items-center gap-8">
@@ -66,7 +66,7 @@ export function Header() {
                       aria-current={active ? 'page' : undefined}
                       className={cx(
                         'inline-block border-b-2 py-2 text-small-lg transition',
-                        active ? 'border-gold text-cream' : 'border-transparent text-mist hover:text-cream',
+                        active ? 'border-forest text-forest' : 'border-transparent text-ink/70 hover:text-forest',
                       )}
                     >
                       {item.label}
@@ -81,7 +81,7 @@ export function Header() {
             <Link
               href={headerCta.href}
               onClick={() => track.ctaClick('header', headerCta.label)}
-              className="inline-flex min-h-[44px] items-center rounded bg-cream px-4 py-2 text-small-lg font-semibold text-black transition hover:bg-gold"
+              className="inline-flex min-h-[44px] items-center rounded bg-forest px-2 py-2 text-small font-semibold text-cream transition hover:bg-black sm:px-4 sm:text-small-lg"
             >
               {headerCta.label}
             </Link>
@@ -92,7 +92,7 @@ export function Header() {
               onClick={() => setOpen((v) => !v)}
               aria-expanded={open}
               aria-controls="mobile-menu"
-              className="inline-flex h-12 w-12 items-center justify-center rounded text-cream lg:hidden"
+              className="inline-flex h-12 w-12 items-center justify-center rounded text-forest lg:hidden"
             >
               <span className="sr-only">{open ? 'Close menu' : 'Open menu'}</span>
               <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2">
@@ -114,7 +114,7 @@ export function Header() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="block py-3 text-body-lg text-cream"
+                    className="block py-3 text-body-lg text-forest"
                     aria-current={pathname.startsWith(item.href) ? 'page' : undefined}
                   >
                     {item.label}
