@@ -7,14 +7,17 @@ site either renders nothing for that element (the usual case) or shows a plain
 pending note (legal pages only, where silence would be worse). No bracketed
 placeholder is visible to a visitor - `npm run crawl:prelaunch` fails if one is.
 
-Status: the owner supplied a square logo image for the website. Other launch
-inputs remain outstanding.
+Status: the owner supplied the square logo and explicitly approved putting the
+site on the public domain before the remaining inputs were ready. AWS Amplify
+and GoDaddy DNS are connected. The unresolved items below are post-launch
+risks, not hidden assumptions.
 
 ---
 
-## Blocks launch
+## Post-launch priorities
 
-These must be resolved before DNS cutover.
+These were listed as pre-launch blockers in the brief. The domain is now live
+at the owner's direction; resolve them before promoting the site.
 
 | # | Input | Where it lands | What happens without it today |
 |---|-------|----------------|-------------------------------|
@@ -24,10 +27,10 @@ These must be resolved before DNS cutover.
 | 4 | **Public office address — or confirmation there is none** | `content/site.ts` → `contact.address.isPublic` | Treated as a service-area business. No address is published and `LocalBusiness` schema is not emitted. Volume 2 s.18: never list a virtual office or co-working mailbox. |
 | 5 | **Privacy jurisdictions** and consent-banner configuration, reviewed by counsel | `app/(marketing)/privacy/page.tsx` | A pending note is shown. The rest of the policy is accurate to the actual tracking footprint. |
 | 6 | **Governing law and venue**, reviewed by counsel | `app/(marketing)/terms/page.tsx` | A pending note is shown. |
-| 7 | **GoHighLevel**: location ID, inbound webhook URL, API key, calendar link, custom fields per Volume 2 s.31, pipeline stages incl. Qualified and Closed | `GHL_*` env vars | Leads are captured and logged server-side but do not reach the CRM. The booking button does not render. |
+| 7 | **GoHighLevel**: location ID, inbound webhook URL, API key, calendar link, custom fields per Volume 2 s.31, pipeline stages incl. Qualified and Closed | `GHL_*` env vars | The audit form now returns a delivery error instead of a false success. Contact details are redacted in logs and cannot be recovered there. The booking button does not render. |
 | 8 | **GTM container ID**, GA4 property + stream, Google Ads account and conversion actions | `NEXT_PUBLIC_GTM_CONTAINER_ID`, `GA4_*` | No tags load. `dataLayer` events still fire and are testable. |
 | 9 | **Consent management platform** choice | GTM container | Consent Mode v2 defaults are set to denied; no banner exists yet to grant consent. |
-| 10 | **Domain registrar / DNS access**, hosting account (Vercel or Cloudflare) | `infra/dns.json` | Cannot deploy. Claude Code never creates accounts. |
+| 10 | **Domain registrar / DNS access**, hosting account | `infra/dns.json` | Done: GoDaddy DNS and AWS Amplify app `dbxhe6dmcsatw`; apex permanently forwards to `www`. Mail records were preserved. |
 
 ## Blocks specific sections
 
