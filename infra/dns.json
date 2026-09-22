@@ -1,12 +1,15 @@
 {
-  "_comment": "Expected DNS state for bold-clicks.com. The weekly domain+DNS monitor (Volume 2 s.24) diffs live records against this file and opens an issue on drift. [OWNER] fills the record values during the DNS cutover (Volume 2 s.34).",
+  "_comment": "Expected website DNS state at GoDaddy. This is a subset, not a full zone export; preserve the existing Google Workspace MX, SPF, verification and DMARC records. The weekly monitor in Volume 2 s.24 is not implemented yet.",
   "domain": "bold-clicks.com",
-  "canonicalHost": "bold-clicks.com",
-  "registrar": "[OWNER]",
+  "canonicalHost": "www.bold-clicks.com",
+  "registrar": "GoDaddy",
+  "hosting": "AWS Amplify app dbxhe6dmcsatw, us-east-1",
+  "forwarding": { "from": "https://bold-clicks.com", "to": "https://www.bold-clicks.com", "type": 301 },
   "expiryCheck": { "warnDays": 60, "smsDays": 30 },
   "records": [
-    { "type": "A", "name": "@", "value": "[OWNER: hosting provider A record]", "ttl": 3600 },
-    { "type": "CNAME", "name": "www", "value": "[OWNER: hosting provider CNAME]", "ttl": 3600 },
-    { "type": "TXT", "name": "@", "value": "[OWNER: Search Console verification]", "ttl": 3600 }
+    { "type": "A", "name": "@", "value": "15.197.225.128", "ttl": 3600 },
+    { "type": "A", "name": "@", "value": "3.33.251.168", "ttl": 3600 },
+    { "type": "CNAME", "name": "www", "value": "d1k8znb8cj8n4e.cloudfront.net.", "ttl": 3600 },
+    { "type": "CNAME", "name": "_03fc36841c445ababb47d9bacf30df98", "value": "_4951e08527ae6420841b0abc4e7367c6.wzccmgtwzk.acm-validations.aws.", "ttl": 3600 }
   ]
 }
