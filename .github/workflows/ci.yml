@@ -15,8 +15,9 @@ concurrency:
 
 env:
   NODE_VERSION: '22'
-  # Previews and CI builds must never be indexable.
-  NOINDEX: 'true'
+  # Audit production-like metadata. Hosted preview environments set this to
+  # true in their own environment so they remain non-indexable.
+  NOINDEX: 'false'
 
 jobs:
   static:
