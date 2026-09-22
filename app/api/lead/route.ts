@@ -10,10 +10,8 @@ import { rateLimited } from '@/lib/rate-limit';
  * webhook, and returns the thank-you state. Secrets stay on the server; the
  * browser never sees the webhook URL.
  *
- * Failure handling: if the webhook is unreachable the visitor still sees the
- * thank-you state, the raw lead is emitted to the logs for recovery, and the
- * synthetic form test (every 6 hours) raises an S1 alert. A lead is never lost
- * silently and never shown an error caused by a downstream outage.
+ * The visitor only sees a success state when the CRM accepts the lead. Logs
+ * redact contact details, so they are not a reliable fallback for recovery.
  */
 
 export const runtime = 'nodejs';
@@ -168,10 +166,8 @@ export async function POST(request: Request) {
   const webhookUrl = process.env.GHL_WEBHOOK_URL;
 
   if (!webhookUrl) {
-    // Not configured yet. The lead is still captured in the logs and the
-    // visitor still gets a confirmation; docs/owner-inputs.md tracks the gap.
-    console.warn('[lead] GHL_WEBHOOK_URL is not set; lead captured in logs only', redact(payload));
-    return NextResponse.json({ ok: true, lead_id: leadId }, { status: 200 });
+    console.error('[lead] GHL_WEBHOOK_URL is not set; lead was not delivered', redact(payload));
+    return NextResponse.json({ ok: false, error: 'lead_delivery_unavailable' }, { status: 503 });
   }
 
   try {
@@ -184,13 +180,12 @@ export async function POST(request: Request) {
 
     if (!response.ok) throw new Error(`GHL responded ${response.status}`);
   } catch (error) {
-    // The visitor is not made to pay for a downstream outage. The raw lead is
-    // logged for recovery and the synthetic test raises the S1 alert.
-    console.error('[lead] GHL webhook failed - lead retained for manual recovery', {
+    console.error('[lead] GHL webhook failed; lead was not delivered', {
       lead_id: leadId,
       error: error instanceof Error ? error.message : 'unknown',
       payload: redact(payload),
     });
+    return NextResponse.json({ ok: false, error: 'lead_delivery_unavailable' }, { status: 503 });
   }
 
   return NextResponse.json({ ok: true, lead_id: leadId }, { status: 200 });

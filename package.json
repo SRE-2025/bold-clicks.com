@@ -21,24 +21,24 @@
     "job": "tsx automation/run-job.ts"
   },
   "dependencies": {
-    "next": "15.5.4",
-    "react": "19.1.1",
-    "react-dom": "19.1.1",
+    "next": "15.5.26",
+    "react": "19.1.9",
+    "react-dom": "19.1.9",
     "zod": "3.25.76"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.13.0",
     "@eslint/eslintrc": "^3.3.7",
     "@lhci/cli": "^0.15.1",
-    "@playwright/test": "1.55.0",
+    "@playwright/test": "1.63.0",
     "@types/node": "22.15.3",
     "@types/react": "19.1.9",
     "@types/react-dom": "19.1.7",
     "autoprefixer": "10.4.21",
     "eslint": "9.36.0",
-    "eslint-config-next": "15.5.4",
+    "eslint-config-next": "15.5.26",
     "glob": "11.0.3",
-    "postcss": "8.5.6",
+    "postcss": "8.5.28",
     "tailwindcss": "3.4.17",
     "tsx": "4.20.5",
     "typescript": "5.9.2",
@@ -47,5 +47,8 @@
   "engines": {
     "node": ">=20.9.0"
   },
-  "packageManager": "pnpm@10.15.0"
+  "packageManager": "pnpm@10.15.0",
+  "overrides": {
+    "next": {}
+  }
 }

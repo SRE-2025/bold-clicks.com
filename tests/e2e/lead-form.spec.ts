@@ -3,8 +3,9 @@ import { expect, test, type Page } from '@playwright/test';
 /**
  * Lead form E2E - Volume 2 s.33.
  *
- * Covers the conversion path end to end: form submit -> thank-you ->
- * generate_lead fired exactly once with the right parameters.
+ * Covers the browser conversion path: accepted lead -> thank-you ->
+ * generate_lead fired exactly once with the right parameters. Local success
+ * tests mock CRM acceptance; deployed synthetic checks use the real endpoint.
  *
  * The same file is the basis for the every-6-hours synthetic monitor (Volume 2
  * s.24), which runs it against production with a flagged test address and adds
@@ -12,6 +13,17 @@ import { expect, test, type Page } from '@playwright/test';
  */
 
 const TEST_EMAIL = 'test+synthetic@bold-clicks.com';
+
+async function mockAcceptedLead(page: Page) {
+  if (process.env.E2E_BASE_URL) return;
+  await page.route('**/api/lead/', async (route) => {
+    await route.fulfill({
+      status: 200,
+      contentType: 'application/json',
+      body: JSON.stringify({ ok: true, lead_id: 'bc_SYNTHETIC' }),
+    });
+  });
+}
 
 /** Captures dataLayer pushes so events can be asserted, not assumed. */
 async function captureDataLayer(page: Page) {
@@ -41,6 +53,7 @@ test.describe('free ad audit form', () => {
   });
 
   test('submits and reaches the thank-you state', async ({ page }) => {
+    await mockAcceptedLead(page);
     await page.goto('/free-ad-audit/');
 
     await expect(page.getByRole('heading', { level: 1 })).toContainText('ad spend is leaking');
@@ -59,6 +72,7 @@ test.describe('free ad audit form', () => {
   });
 
   test('fires generate_lead exactly once with the right parameters', async ({ page }) => {
+    await mockAcceptedLead(page);
     await page.goto('/free-ad-audit/');
 
     await page.getByLabel('Full name').fill('Synthetic Test');
@@ -107,6 +121,7 @@ test.describe('free ad audit form', () => {
   });
 
   test('carries UTM and gclid through to the submission', async ({ page }) => {
+    await mockAcceptedLead(page);
     await page.goto('/free-ad-audit/?utm_source=google&utm_medium=cpc&utm_campaign=austin-ppc&gclid=TEST123');
 
     // Waits on the response, not just the request. An earlier version waited on
@@ -130,5 +145,23 @@ test.describe('free ad audit form', () => {
     expect(body.first_touch?.medium).toBe('cpc');
     expect(body.first_touch?.campaign).toBe('austin-ppc');
     expect(body.first_touch?.gclid).toBe('TEST123');
+  });
+
+  test('shows an error instead of success when no CRM is configured locally', async ({ page }) => {
+    test.skip(Boolean(process.env.E2E_BASE_URL), 'Only the local server is expected to have no CRM.');
+    await page.goto('/free-ad-audit/');
+
+    await page.getByLabel('Full name').fill('Synthetic Test');
+    await page.getByLabel('Business email').fill(TEST_EMAIL);
+    await page.getByLabel('Company or website').fill('Bold Clicks Synthetic Check');
+    await page.getByLabel('What do you need help with?').selectOption('google_ads');
+    await page.getByLabel(/I agree to the/).check();
+    const responsePromise = page.waitForResponse((res) => res.url().includes('/api/lead/'));
+    await page.getByRole('button', { name: 'Get My Free Ad Audit' }).click();
+
+    expect((await responsePromise).status()).toBe(503);
+    await expect(page).not.toHaveURL(/\/thank-you\//);
+    await expect(page.locator('form').getByRole('alert')).toContainText('your details have not been delivered');
+    expect((await readEvents(page)).filter((e) => e.event === 'generate_lead')).toHaveLength(0);
   });
 });

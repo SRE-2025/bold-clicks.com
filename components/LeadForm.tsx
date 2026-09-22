@@ -120,7 +120,7 @@ export function LeadForm({ formId = 'free-ad-audit' }: { formId?: string }) {
     } catch {
       setSubmitting(false);
       setSubmitError(
-        'Something went wrong sending your request. Please try again, or email us directly and we’ll pick it up.',
+        'We could not send your request. Please try again later; your details have not been delivered.',
       );
       summaryRef.current?.focus();
     }
