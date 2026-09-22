@@ -1,0 +1,20 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm ci
+    build:
+      commands:
+        # Expose only non-secret deployment settings to Next.js at runtime.
+        # Production switches NOINDEX to false only at the domain cutover.
+        - printf 'NEXT_PUBLIC_SITE_URL=%s\nNOINDEX=%s\n' "${NEXT_PUBLIC_SITE_URL:-https://bold-clicks.com}" "${NOINDEX:-true}" > .env.production
+        - npm run build
+  artifacts:
+    baseDirectory: .next
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
+      - .next/cache/**/*
