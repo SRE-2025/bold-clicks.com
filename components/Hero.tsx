@@ -20,7 +20,7 @@ export function Hero({
 }: {
   eyebrow: string;
   headline: ReactNode;
-  subhead: string;
+  subhead: string | [string, string];
   primaryCta?: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
   proofLine?: string | null;
@@ -42,7 +42,14 @@ export function Hero({
             {headline}
           </h1>
 
-          <p className="mt-6 text-body text-mist md:text-body-lg">{subhead}</p>
+          {Array.isArray(subhead) ? (
+            <>
+              <p className="mt-6 text-body text-mist md:text-body-lg">{subhead[0]}</p>
+              <p className="mt-2 text-body text-mist md:text-body-lg">{subhead[1]}</p>
+            </>
+          ) : (
+            <p className="mt-6 text-body text-mist md:text-body-lg">{subhead}</p>
+          )}
 
           {proofLine && <p className="mt-6 text-small-lg text-gold">{proofLine}</p>}
 

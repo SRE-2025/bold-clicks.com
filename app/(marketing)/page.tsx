@@ -69,9 +69,10 @@ export default function HomePage() {
         size="home"
         eyebrow="PAID MEDIA, BUILT TO PERFORM"
         headline={site.tagline}
-        subhead={
-          'Google, Meta, Microsoft and YouTube campaigns built around qualified leads, booked calls and revenue — with tracking that shows what actually worked.'
-        }
+        subhead={[
+          'Google, Meta, Microsoft and YouTube campaigns built around qualified leads,',
+          'booked calls and revenue — with tracking that shows what actually worked.',
+        ]}
         primaryCta={site.primaryCta}
         secondaryCta={site.secondaryCta}
         proofLine={proofLine}
