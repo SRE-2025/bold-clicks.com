@@ -63,14 +63,13 @@ export function Hero({
           )}
         </div>
         {size === 'home' && (
-          <div className="mx-auto w-full max-w-[280px] rounded-card bg-cream p-2 shadow-card lg:max-w-[360px]">
+          <div className="mx-auto hidden w-full max-w-[360px] rounded-card bg-cream p-2 shadow-card lg:block">
             <Image
               src="/brand/bold-clicks-original.png"
               alt=""
               width={1254}
               height={1254}
-              sizes="(max-width: 1023px) 280px, 360px"
-              priority
+              sizes="360px"
               className="block h-auto w-full"
             />
           </div>
