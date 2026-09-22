@@ -13,7 +13,7 @@ export function Logo({ tone = 'dark', className }: { tone?: 'dark' | 'light'; cl
         width={1254}
         height={1254}
         sizes="(max-width: 639px) 110px, 146px"
-        priority={tone === 'dark'}
+        loading={tone === 'dark' ? 'eager' : 'lazy'}
       />
     </span>
   );
