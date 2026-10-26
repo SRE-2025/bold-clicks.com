@@ -3,7 +3,8 @@ import { site } from './site';
 /**
  * Navigation - Volume 1 s.03.
  *
- * Five items plus the CTA. Desktop nav stays compact; the conversion action is
+ * Five items plus the CTA; ChatGPT Ads replaces the general services link.
+ * The conversion action is
  * never buried in a mega-menu. There is deliberately no "Locations" dropdown:
  * Volume 2 s.37 lists one as an anti-pattern.
  */
@@ -14,7 +15,7 @@ export interface NavItem {
 }
 
 export const primaryNav: readonly NavItem[] = [
-  { label: 'Services', href: '/services/' },
+  { label: 'ChatGPT Ads', href: '/chatgpt-ads/' },
   { label: 'Industries', href: '/industries/' },
   { label: 'Case Studies', href: '/case-studies/' },
   { label: 'Insights', href: '/insights/' },
@@ -27,6 +28,8 @@ export const footerNav: readonly { heading: string; items: readonly NavItem[] }[
   {
     heading: 'Services',
     items: [
+      { label: 'ChatGPT Advertising', href: '/chatgpt-ads/' },
+      { label: 'All Paid Media Services', href: '/services/' },
       { label: 'Google Ads Management', href: '/google-ads-management/' },
       { label: 'Meta Ads Management', href: '/meta-ads-management/' },
       { label: 'Microsoft Ads Management', href: '/microsoft-ads-management/' },

@@ -14,12 +14,14 @@ export function CTASection({
   ctaLabel = site.primaryCta.label,
   ctaHref = site.primaryCta.href,
   location = 'section-final-cta',
+  eyebrow = 'FREE AD AUDIT',
 }: {
   headline?: string;
   body?: string;
   ctaLabel?: string;
   ctaHref?: string;
   location?: `section-${string}`;
+  eyebrow?: string;
 }) {
   return (
     <section className="relative overflow-hidden bg-black py-16 md:py-24" aria-labelledby="final-cta-heading">
@@ -32,7 +34,7 @@ export function CTASection({
       />
       <Container className="relative">
         <div className="max-w-measure">
-          <Eyebrow>FREE AD AUDIT</Eyebrow>
+          <Eyebrow>{eyebrow}</Eyebrow>
           <h2 id="final-cta-heading" className="mt-4 text-h1 text-cream md:text-h1-lg">
             {headline}
           </h2>

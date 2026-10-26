@@ -96,6 +96,24 @@ export const serviceSchema = z.object({
    */
   firstHand: z.string(),
   cta: z.string().min(1),
+  ctaHref: z.string().startsWith('/').optional(),
+  scopeNote: z.string().optional(),
+  sectionHeadings: z.object({
+    deliverables: z.string(),
+    process: z.string(),
+    faq: z.string(),
+  }).optional(),
+  references: z.object({
+    heading: z.string(),
+    note: z.string(),
+    items: z.array(z.object({ label: z.string(), url: z.string().url() })).min(1),
+  }).optional(),
+  finalCta: z.object({
+    headline: z.string(),
+    body: z.string(),
+    label: z.string(),
+    href: z.string().startsWith('/'),
+  }).optional(),
 });
 
 /** Volume 1 s.06 / Volume 2 s.28 industry page. */

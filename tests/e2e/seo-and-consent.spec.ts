@@ -45,14 +45,29 @@ test('primary copy is in the server-rendered HTML', async ({ request }) => {
   const response = await request.get('/');
   const html = await response.text();
 
-  expect(html).toContain('We run ads');
+  expect(html).toContain('ChatGPT ads agency');
   expect(html).toMatch(/<h1[^>]*>/);
-  expect(html).toContain('Most ad accounts leak money');
+  expect(html).toContain('A new ad channel still needs a business case');
+  expect(html).toContain('href="/chatgpt-ads/"');
 });
 
 test('a missing page returns a real 404 status', async ({ request }) => {
   const response = await request.get('/this-page-does-not-exist/');
   expect(response.status()).toBe(404);
+});
+
+test('ChatGPT planning is crawlable without claiming a campaign launch timeline', async ({ request }) => {
+  const response = await request.get('/chatgpt-ads/');
+  const html = await response.text();
+
+  expect(response.status()).toBe(200);
+  expect(html).toContain('ChatGPT Advertising Strategy &amp; Planning | Bold Clicks');
+  expect(html).toContain('Campaign management is scoped only after advertiser access');
+  expect(html).toContain('From an initial brief to a launch decision.');
+  expect(html).not.toContain('What the first 30 days look like.');
+  expect(html).not.toContain('[OWNER');
+  expect(html).toContain('https://help.openai.com/en/articles/20001245-ads-manager-availability');
+  expect(html).toMatch(/rel="canonical"[^>]+chatgpt-ads\//);
 });
 
 test('sitemap contains only indexable routes', async ({ request }) => {
@@ -61,6 +76,7 @@ test('sitemap contains only indexable routes', async ({ request }) => {
 
   expect(response.status()).toBe(200);
   expect(xml).toContain('/free-ad-audit/');
+  expect(xml).toContain('/chatgpt-ads/');
   expect(xml).not.toContain('/thank-you/');
 });
 

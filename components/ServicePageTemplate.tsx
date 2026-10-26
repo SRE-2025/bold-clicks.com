@@ -39,7 +39,8 @@ export function ServicePageTemplate({ service }: { service: Service }) {
         eyebrow={service.eyebrow}
         headline={service.h1}
         subhead={service.intro}
-        primaryCta={{ label: service.cta, href: site.primaryCta.href }}
+        primaryCta={{ label: service.cta, href: service.ctaHref ?? site.primaryCta.href }}
+        proofLine={service.scopeNote}
       />
 
       <div className="bg-cream">
@@ -59,7 +60,7 @@ export function ServicePageTemplate({ service }: { service: Service }) {
       <Section tone="white" labelledBy="deliverables">
         <Eyebrow on="light">WHAT&rsquo;S INCLUDED</Eyebrow>
         <SectionHeading id="deliverables" className="mt-4">
-          What we actually do.
+          {service.sectionHeadings?.deliverables ?? 'What we actually do.'}
         </SectionHeading>
         <DeliverablesList items={service.deliverables} />
       </Section>
@@ -76,7 +77,7 @@ export function ServicePageTemplate({ service }: { service: Service }) {
       <Section tone="black" labelledBy="process">
         <Eyebrow>PROCESS</Eyebrow>
         <SectionHeading id="process" tone="light" className="mt-4">
-          What the first 30 days look like.
+          {service.sectionHeadings?.process ?? 'What the first 30 days look like.'}
         </SectionHeading>
         <ProcessSteps steps={service.process} tone="dark" />
       </Section>
@@ -84,10 +85,26 @@ export function ServicePageTemplate({ service }: { service: Service }) {
       <Section tone="white" labelledBy="faq">
         <Eyebrow on="light">FAQ</Eyebrow>
         <SectionHeading id="faq" className="mt-4">
-          Questions we get asked on sales calls.
+          {service.sectionHeadings?.faq ?? 'Questions we get asked on sales calls.'}
         </SectionHeading>
         <FAQAccordion faqs={service.faqs} />
       </Section>
+
+      {service.references && (
+        <Section tone="cream" labelledBy="sources">
+          <SectionHeading id="sources">{service.references.heading}</SectionHeading>
+          <p className="mt-6 max-w-measure text-body text-ink/80">{service.references.note}</p>
+          <ul className="mt-6 space-y-3">
+            {service.references.items.map((source) => (
+              <li key={source.url}>
+                <a href={source.url} className="text-body-lg text-forest underline underline-offset-4 hover:text-black">
+                  {source.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </Section>
+      )}
 
       {related.length > 0 && (
         <Section tone="cream" labelledBy="related">
@@ -107,7 +124,14 @@ export function ServicePageTemplate({ service }: { service: Service }) {
         </Section>
       )}
 
-      <CTASection location={`section-${service.slug}`} />
+      <CTASection
+        location={`section-${service.slug}`}
+        headline={service.finalCta?.headline}
+        body={service.finalCta?.body}
+        ctaLabel={service.finalCta?.label}
+        ctaHref={service.finalCta?.href}
+        eyebrow={service.finalCta ? service.eyebrow : undefined}
+      />
     </>
   );
 }

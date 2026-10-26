@@ -2,6 +2,23 @@
 
 Everything Claude Code cannot invent. Volume 2 s.35 asks for these in week 1.
 
+## ChatGPT-first review — October 26, 2026
+
+This work is prepared on `codex/chatgpt-first-seo-2026-10-26` only. The current
+owner instruction supersedes the historical launch authorization below:
+**no deployment without new authorization**.
+
+| Input | Exact next action | Current treatment |
+|-------|-------------------|-------------------|
+| ChatGPT operating access | Confirm the advertiser account, permitted campaign work and responsible operator; verify the available features without creating or activating a campaign. | Public copy describes planning and makes campaign management conditional on access and eligibility. No access or affiliation claim is made. |
+| ChatGPT case evidence | Supply an approved, permission-cleared observation or result with definitions and dates. | No invented case study, result, client or badge. |
+| Article review | Supply a real author, named reviewer and a first-hand block for each draft in `content/drafts/`. | Drafts are outside the route registry, sitemap and page rendering. |
+| Lead delivery for the new enquiry option | Confirm an active receiving workflow and map `need=chatgpt_ads` in that workflow before promotion. | Form option and server validator use the existing shared option list; no CRM or tracking configuration is changed. Existing missing-webhook behavior is preserved. |
+| Deployment approval | Review the branch and verification notes, then explicitly authorize the production release. | No merge, push to `main`, cloud preview, DNS change or deployment. |
+
+Existing public identity, legal, lead-delivery and analytics inputs below remain
+open. This implementation does not assume they were supplied elsewhere.
+
 Nothing here is guessed anywhere in the build. Where an input is missing the
 site either renders nothing for that element (the usual case) or shows a plain
 pending note (legal pages only, where silence would be worse). No bracketed

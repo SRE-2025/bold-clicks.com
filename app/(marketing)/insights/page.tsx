@@ -5,6 +5,7 @@ import { Hero } from '@/components/Hero';
 import { JsonLd } from '@/components/JsonLd';
 import { Container, Eyebrow, Section, SectionHeading } from '@/components/primitives';
 import { site } from '@/content/site';
+import { insightsHub } from '@/content/chatgpt-hubs';
 import { breadcrumbSchema, buildMetadata } from '@/lib/seo';
 
 /**
@@ -20,14 +21,7 @@ import { breadcrumbSchema, buildMetadata } from '@/lib/seo';
 export const metadata: Metadata = buildMetadata('/insights/');
 
 /** Volume 2 s.21, months 1-3. Shown so the hub is useful rather than empty. */
-const upcoming = [
-  { title: 'The Google Ads account audit checklist we actually use', supports: 'Free ad audit' },
-  { title: 'Why your Google Ads leads are low quality — the 7 places we look first', supports: 'Conversion tracking' },
-  { title: 'What PPC management costs: pricing models and what changes the price', supports: 'Services' },
-  { title: 'Austin home services: seasonality, storm spikes and bid timing', supports: 'Home services' },
-  { title: 'Performance Max vs Search: a decision framework from real accounts', supports: 'Google Ads management' },
-  { title: 'How we track qualified leads: GoHighLevel and offline conversions', supports: 'Conversion tracking' },
-];
+const upcoming = insightsHub.upcoming;
 
 export default function InsightsPage() {
   return (
@@ -36,8 +30,8 @@ export default function InsightsPage() {
 
       <Hero
         eyebrow="INSIGHTS"
-        headline="Written by the people in the accounts."
-        subhead="Practical paid-media writing: audit frameworks, tracking guides, platform changes and account teardowns. No recycled listicles."
+        headline={insightsHub.headline}
+        subhead={insightsHub.intro}
         primaryCta={site.primaryCta}
       />
 

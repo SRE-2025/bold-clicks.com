@@ -1,4 +1,5 @@
 import type { Service } from '@/lib/schema';
+import { chatgptService } from './chatgpt';
 
 /**
  * Platform and measurement pages - Volume 1 s.05 template, Volume 2 s.20
@@ -14,6 +15,7 @@ import type { Service } from '@/lib/schema';
 const OWNER_FIRST_HAND = '[OWNER: one real account observation for this service - what we found, what we changed, what happened. Bullet points are enough.]';
 
 export const services: readonly Service[] = [
+  chatgptService,
   {
     slug: 'google-ads-management',
     route: '/google-ads-management/',

@@ -7,6 +7,7 @@ import { ServiceGrid } from '@/components/cards';
 import { MeasurementBlock, ProcessSteps } from '@/components/content-blocks';
 import { Container, Eyebrow, Section, SectionHeading } from '@/components/primitives';
 import { site } from '@/content/site';
+import { servicesHub } from '@/content/chatgpt-hubs';
 import { breadcrumbSchema, buildMetadata } from '@/lib/seo';
 
 /**
@@ -34,8 +35,8 @@ export default function ServicesPage() {
 
       <Hero
         eyebrow="PAID MEDIA SERVICES"
-        headline="Four platforms, one measurement standard."
-        subhead="We manage Google, Meta, Microsoft and YouTube advertising, and we own the conversion tracking underneath all of it. That combination is the whole offer."
+        headline={servicesHub.headline}
+        subhead={servicesHub.intro}
         primaryCta={site.primaryCta}
       />
 
@@ -51,11 +52,7 @@ export default function ServicesPage() {
           Pick the platform, or let the audit decide.
         </SectionHeading>
         <div className="prose-bc mt-6">
-          <p>
-            Most businesses arrive certain they need one platform and leave the audit having changed their mind.
-            Each page below covers what we do, how we measure it, and the questions we get asked about it on
-            sales calls.
-          </p>
+          <p>{servicesHub.scope}</p>
         </div>
         <div className="mt-8">
           <ServiceGrid />
@@ -99,11 +96,7 @@ export default function ServicesPage() {
           Every service is measured the same way.
         </SectionHeading>
         <div className="prose-bc mt-6">
-          <p>
-            Whatever platform the budget sits on, the chain is the same: click, lead, qualified, booked, closed.
-            The tracking layer runs underneath all of it, and the outcomes at the right-hand end are sent back to
-            the platforms so bidding learns from customers rather than from form fills.
-          </p>
+          <p>{servicesHub.measurement}</p>
         </div>
         <MeasurementBlock />
       </Section>

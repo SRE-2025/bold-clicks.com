@@ -21,10 +21,10 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://bold-clicks.com',
   /** Volume 1 s.01 positioning sentence. Reused in GBP description and schema. */
   positioning:
-    'Bold Clicks is the specialist paid-media agency: we run ads, track what happens after the click, and optimize toward real business outcomes - not vanity metrics.',
-  tagline: 'We run ads. That’s it.',
+    'Bold Clicks is an ads-only agency putting ChatGPT advertising planning first, alongside Google, Meta, Microsoft and YouTube paid-media services.',
+  tagline: 'ChatGPT ads agency. Start with a clear plan.',
   /** Volume 1 s.02 preferred brand line. */
-  brandLine: 'We run ads. That’s it. We get obsessive about making them work.',
+  brandLine: 'ChatGPT advertising first. A clear plan before a campaign commitment.',
 
   contact: {
     phone: '[OWNER: public phone]',
@@ -77,8 +77,8 @@ export const site = {
     href: '/free-ad-audit/',
   },
   secondaryCta: {
-    label: 'See How We Work',
-    href: '/services/',
+    label: 'Explore ChatGPT Ads',
+    href: '/chatgpt-ads/',
   },
 
   /** Volume 1 s.01: relationship to the Stoneridge family, stated accurately. */

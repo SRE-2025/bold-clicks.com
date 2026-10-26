@@ -78,7 +78,7 @@ test.describe('free ad audit form', () => {
     await page.getByLabel('Full name').fill('Synthetic Test');
     await page.getByLabel('Business email').fill(TEST_EMAIL);
     await page.getByLabel('Company or website').fill('Bold Clicks Synthetic Check');
-    await page.getByLabel('What do you need help with?').selectOption('google_ads');
+    await page.getByLabel('What do you need help with?').selectOption('chatgpt_ads');
     await page.getByLabel(/I agree to the/).check();
     await page.getByRole('button', { name: 'Get My Free Ad Audit' }).click();
 
@@ -91,7 +91,7 @@ test.describe('free ad audit form', () => {
     expect(leads[0]).toMatchObject({
       event: 'generate_lead',
       form_id: 'free-ad-audit',
-      need: 'google_ads',
+      need: 'chatgpt_ads',
       currency: 'USD',
     });
     expect(String(leads[0]?.lead_id)).toMatch(/^bc_/);
@@ -154,7 +154,7 @@ test.describe('free ad audit form', () => {
     await page.getByLabel('Full name').fill('Synthetic Test');
     await page.getByLabel('Business email').fill(TEST_EMAIL);
     await page.getByLabel('Company or website').fill('Bold Clicks Synthetic Check');
-    await page.getByLabel('What do you need help with?').selectOption('google_ads');
+    await page.getByLabel('What do you need help with?').selectOption('chatgpt_ads');
     await page.getByLabel(/I agree to the/).check();
     const responsePromise = page.waitForResponse((res) => res.url().includes('/api/lead/'));
     await page.getByRole('button', { name: 'Get My Free Ad Audit' }).click();

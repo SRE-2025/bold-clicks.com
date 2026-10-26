@@ -103,6 +103,7 @@ export function organizationSchema(): JsonLd {
     description: site.positioning,
     areaServed: site.areaServed.map((city) => ({ '@type': 'City', name: `${city}, TX` })),
     serviceType: [
+      'ChatGPT advertising planning',
       'Google Ads management',
       'Meta Ads management',
       'Microsoft Ads management',

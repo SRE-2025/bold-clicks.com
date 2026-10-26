@@ -1,5 +1,22 @@
 # Bold Clicks - CLAUDE.md
 
+## Current owner direction — October 26, 2026
+
+- Resume ChatGPT-first SEO implementation; national ChatGPT ads agency intent
+  takes priority over the older Austin-first acquisition order below.
+- Preserve the existing design, approved logo, palette and existing paid-media pages.
+- Do not claim active ChatGPT account access, operator experience, campaign results,
+  special relationships or restricted-format availability without evidence.
+- Prepare changes for review only. Do not deploy, merge into `main`, or push a
+  branch that could trigger an unapproved Amplify deployment.
+- Supporting Insights remain drafts until real first-hand evidence and a named
+  reviewer exist. Do not weaken those gates to publish AI-written material.
+- Do not use the shared desktop browser without first notifying the owner;
+  other chats may be actively using it.
+
+Implementation status and remaining inputs:
+`docs/chatgpt-seo-implementation-2026-10-26.md`.
+
 ## What this is
 Marketing site for Bold Clicks, an ads-only paid-media agency in Austin, TX (Stoneridge family).
 Primary conversion: free ad audit. Ranking strategy: Austin -> Texas -> surrounding states -> national.

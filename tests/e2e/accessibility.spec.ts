@@ -10,6 +10,7 @@ import { expect, test } from '@playwright/test';
 
 const PAGES = [
   '/',
+  '/chatgpt-ads/',
   '/free-ad-audit/',
   '/google-ads-management/',
   '/industries/home-services/',

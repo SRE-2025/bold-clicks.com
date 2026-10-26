@@ -7,6 +7,7 @@
  */
 
 export const NEED_OPTIONS = [
+  { value: 'chatgpt_ads', label: 'ChatGPT advertising planning' },
   { value: 'google_ads', label: 'Google Ads' },
   { value: 'meta_ads', label: 'Meta Ads (Facebook & Instagram)' },
   { value: 'microsoft_ads', label: 'Microsoft Ads' },

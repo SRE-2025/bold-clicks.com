@@ -12,6 +12,18 @@ import type { Faq } from '@/lib/schema';
  */
 export const homepageFaqs: readonly Faq[] = [
   {
+    question: 'Where does ChatGPT advertising fit in your services?',
+    answer:
+      'ChatGPT advertising planning is our priority. Campaign activation is scoped after advertiser eligibility, account access and measurement requirements are confirmed. Google, Meta, Microsoft and YouTube remain part of the wider paid-media offer.',
+    needsOwnerInput: false,
+  },
+  {
+    question: 'Does paying for a ChatGPT ad change its answers?',
+    answer:
+      'OpenAI states that ads are separate from ChatGPT answers. Paid placement does not purchase an organic recommendation or give an advertiser control over the response. The ChatGPT advertising page links to the current OpenAI guidance.',
+    needsOwnerInput: false,
+  },
+  {
     question: 'What’s the minimum ad spend you work with?',
     answer:
       '[OWNER: state the real minimum] We’re honest when a budget is too small to produce reliable data, and we’ll tell you what to do instead.',

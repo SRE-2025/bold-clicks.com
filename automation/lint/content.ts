@@ -6,6 +6,8 @@ import { services } from '../../content/services';
 import { homepageFaqs } from '../../content/faqs';
 import { pageMeta } from '../../content/seo';
 import { routes } from '../../content/routes';
+import { home } from '../../content/home';
+import { insightsHub, servicesHub } from '../../content/chatgpt-hubs';
 import {
   industrySchema,
   locationSchema,
@@ -104,6 +106,11 @@ function collectContent(): Checked[] {
         service.h1,
         service.intro,
         service.cardDescription,
+        service.scopeNote ?? '',
+        ...Object.values(service.sectionHeadings ?? {}),
+        service.references?.note ?? '',
+        ...(service.references?.items.flatMap((source) => [source.label, source.url]) ?? []),
+        ...Object.values(service.finalCta ?? {}),
         ...service.forWho,
         ...service.deliverables.flatMap((d) => [d.name, d.detail]),
         ...service.measurement,
@@ -150,6 +157,21 @@ function collectContent(): Checked[] {
       proofRefs: location.localProofRefs,
     });
   }
+
+  items.push({
+    label: 'home:chatgpt-first',
+    text: JSON.stringify(home),
+    publishable: true,
+    factIds: [],
+    proofRefs: [],
+  });
+  items.push({
+    label: 'hubs:chatgpt-first',
+    text: JSON.stringify({ servicesHub, insightsHub }),
+    publishable: true,
+    factIds: [],
+    proofRefs: [],
+  });
 
   items.push({
     label: 'faqs:homepage',

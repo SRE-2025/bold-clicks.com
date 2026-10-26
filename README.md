@@ -1,5 +1,23 @@
 # Bold Clicks
 
+## Undeployed ChatGPT-first SEO review — October 26, 2026
+
+The owner has requested ChatGPT-first agency positioning and explicitly
+withheld deployment authorization. Work is prepared on the local review
+branch `codex/chatgpt-first-seo-2026-10-26`; do not push `main` or create an
+automatic Amplify preview without authorization.
+
+The homepage, service discovery and metadata now prioritize ChatGPT planning.
+The sourced `/chatgpt-ads/` page describes readiness and planning without
+claiming active advertising access or results. Existing design and paid-media
+pages remain. Three supporting articles are held in `content/drafts/` pending
+real first-hand evidence and named review.
+
+Review [the implementation and verification notes](docs/chatgpt-seo-implementation-2026-10-26.md)
+and [remaining owner inputs](docs/owner-inputs.md) before release. The original
+launch status below describes the prior baseline, not this review branch's
+production status.
+
 Marketing site for Bold Clicks, an ads-only paid-media agency in Austin, TX
 (Stoneridge family). Primary conversion: the free ad audit.
 

@@ -7,6 +7,7 @@ import { ServiceGrid, IndustryGrid } from '@/components/cards';
 import { BulletList, MeasurementBlock, ProcessSteps } from '@/components/content-blocks';
 import { Eyebrow, Section, SectionHeading } from '@/components/primitives';
 import { homepageFaqs } from '@/content/faqs';
+import { home } from '@/content/home';
 import { site } from '@/content/site';
 import { buildMetadata } from '@/lib/seo';
 
@@ -20,62 +21,17 @@ import { buildMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata('/');
 
-/**
- * Volume 2 s.30 offers two hero proof lines: a quantified one
- * ("Managing $X/month across Y accounts") and a pre-proof fallback. The
- * quantified version needs an approved fact id, so the fallback stands until
- * the owner supplies one - stated as capability, not as a measurement.
- */
-const HERO_PROOF_FACT_ID: string | null = null;
-const proofLine = HERO_PROOF_FACT_ID
-  ? null
-  : 'Specialists in paid media for healthcare, legal and home-services businesses across Texas.';
-
-const processSteps = [
-  {
-    name: 'Audit',
-    whatYouGet: 'We review your accounts, tracking and landing pages and show you exactly where spend is leaking.',
-  },
-  {
-    name: 'Build or rebuild',
-    whatYouGet: 'Campaign structure, conversion tracking, negatives, creative and landing pages set up right.',
-  },
-  {
-    name: 'Launch',
-    whatYouGet: 'Live with tracking verified before the first dollar is spent.',
-  },
-  {
-    name: 'Optimize',
-    whatYouGet: 'Weekly search-term, bid, creative and budget work tied to lead-quality feedback from your CRM.',
-  },
-  {
-    name: 'Scale',
-    whatYouGet: 'When cost per qualified lead is proven, we add budget and platforms deliberately.',
-  },
-];
-
-const whyBoldClicks = [
-  'Ads are the only thing we do, so we get very good at them.',
-  'You own your ad accounts and your data — always.',
-  'Every call, form and booked meeting is tracked to its source.',
-  'We report on qualified leads and revenue, not impressions.',
-  'One accountable operator, direct access, no account-manager layer.',
-];
-
 export default function HomePage() {
   return (
     <>
       <Hero
         size="home"
-        eyebrow="PAID MEDIA, BUILT TO PERFORM"
+        eyebrow={home.eyebrow}
         headline={site.tagline}
-        subhead={[
-          'Google, Meta, Microsoft and YouTube campaigns built around qualified leads,',
-          'booked calls and revenue — with tracking that shows what actually worked.',
-        ]}
+        subhead={home.subhead}
         primaryCta={site.primaryCta}
         secondaryCta={site.secondaryCta}
-        proofLine={proofLine}
+        proofLine={home.proofLine}
       />
 
       <ProofStrip />
@@ -84,14 +40,10 @@ export default function HomePage() {
       <Section tone="cream" labelledBy="problem-heading">
         <Eyebrow on="light">THE PROBLEM</Eyebrow>
         <SectionHeading id="problem-heading" className="mt-4">
-          Most ad accounts leak money in the same five places.
+          {home.problemHeading}
         </SectionHeading>
         <div className="prose-bc mt-6 text-body md:text-body-lg">
-          <p>
-            Search terms nobody reviews. Conversions that count every dial as a lead. Landing pages that don&rsquo;t
-            match the ad. Budgets spread across campaigns that never had a chance. Reports that stop at clicks. We fix
-            those first, because that&rsquo;s where the money is.
-          </p>
+          <p>{home.problemBody}</p>
         </div>
       </Section>
 
@@ -99,7 +51,7 @@ export default function HomePage() {
       <Section tone="white" labelledBy="services-heading">
         <Eyebrow on="light">WHAT WE MANAGE</Eyebrow>
         <SectionHeading id="services-heading" className="mt-4">
-          Four platforms. One job: leads that close.
+          {home.servicesHeading}
         </SectionHeading>
         <div className="mt-8">
           <ServiceGrid />
@@ -110,18 +62,18 @@ export default function HomePage() {
       <Section tone="cream" labelledBy="why-heading">
         <Eyebrow on="light">WHY BOLD CLICKS</Eyebrow>
         <SectionHeading id="why-heading" className="mt-4">
-          Specialists, not generalists.
+          {home.whyHeading}
         </SectionHeading>
-        <BulletList items={whyBoldClicks} />
+        <BulletList items={home.why} />
       </Section>
 
       {/* 6. How it works */}
       <Section tone="black" labelledBy="process-heading">
         <Eyebrow>HOW IT WORKS</Eyebrow>
         <SectionHeading id="process-heading" tone="light" className="mt-4">
-          Audit. Build. Launch. Optimize. Scale.
+          {home.processHeading}
         </SectionHeading>
-        <ProcessSteps steps={processSteps} tone="dark" />
+        <ProcessSteps steps={home.process} tone="dark" />
       </Section>
 
       {/*
@@ -142,10 +94,7 @@ export default function HomePage() {
             metric means, over what date range, and what else changed at the same time. No blended percentages
             without a denominator, and no results borrowed from a sister agency.
           </p>
-          <p>
-            Our first case studies are in progress. Until they are verified, the fastest way to judge how we work is
-            to let us audit an account you already know the numbers for.
-          </p>
+          <p>{home.proofStatus}</p>
         </div>
       </Section>
 
@@ -153,8 +102,9 @@ export default function HomePage() {
       <Section tone="cream" labelledBy="industries-heading">
         <Eyebrow on="light">INDUSTRIES</Eyebrow>
         <SectionHeading id="industries-heading" className="mt-4">
-          Built for businesses where a lead is worth real money.
+          {home.industriesHeading}
         </SectionHeading>
+        <p className="mt-6 max-w-measure text-body text-ink/80">{home.industriesNote}</p>
         <div className="mt-8">
           <IndustryGrid />
         </div>
@@ -164,14 +114,10 @@ export default function HomePage() {
       <Section tone="white" labelledBy="measurement-heading">
         <Eyebrow on="light">MEASUREMENT</Eyebrow>
         <SectionHeading id="measurement-heading" className="mt-4">
-          A lead is not the finish line.
+          {home.measurementHeading}
         </SectionHeading>
         <div className="prose-bc mt-6 text-body md:text-body-lg">
-          <p>
-            We track the click, the call, the form, the booked appointment and &mdash; where your CRM allows &mdash;
-            the closed customer. Then we send that back to Google and Meta so the algorithms optimize for people who
-            actually buy.
-          </p>
+          <p>{home.measurementBody}</p>
         </div>
         <MeasurementBlock />
       </Section>
@@ -186,7 +132,13 @@ export default function HomePage() {
       </Section>
 
       {/* 11. Final CTA */}
-      <CTASection />
+      <CTASection
+        eyebrow={home.eyebrow}
+        headline={home.finalCta.headline}
+        body={home.finalCta.body}
+        ctaLabel={home.finalCta.label}
+        ctaHref={home.finalCta.href}
+      />
     </>
   );
 }

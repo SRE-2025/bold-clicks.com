@@ -38,6 +38,7 @@ export const routes: readonly RouteEntry[] = [
 
   // --- Services
   { path: '/services/', label: 'Services', section: 'services', parent: '/', indexable: true, priority: 0.9, changeFrequency: 'monthly', live: true },
+  { path: '/chatgpt-ads/', label: 'ChatGPT Advertising Planning', section: 'services', parent: '/services/', indexable: true, priority: 0.9, changeFrequency: 'monthly', live: true },
   { path: '/google-ads-management/', label: 'Google Ads Management', section: 'services', parent: '/services/', indexable: true, priority: 0.9, changeFrequency: 'monthly', live: true },
   { path: '/meta-ads-management/', label: 'Meta Ads Management', section: 'services', parent: '/services/', indexable: true, priority: 0.9, changeFrequency: 'monthly', live: true },
   { path: '/microsoft-ads-management/', label: 'Microsoft Ads Management', section: 'services', parent: '/services/', indexable: true, priority: 0.8, changeFrequency: 'monthly', live: true },

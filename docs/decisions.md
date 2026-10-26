@@ -7,6 +7,42 @@ Newest first.
 
 ---
 
+## 2026-10-26 — ChatGPT-first SEO prepared without deployment
+
+The owner explicitly requested resuming the unfinished ChatGPT-first work,
+preserving the design and making no unverified advertising claims. The
+repository and connected GitHub default branch were still at the September
+launch commit `ce514f6`; only `main` was returned by the branch inventory.
+
+The review branch changes homepage positioning, metadata, navigation, the
+services and Insights hubs, and the About intro. The existing visual tokens,
+approved logo, CSS, layouts, paid-media routes and free-audit CTA are preserved.
+The `/chatgpt-ads/` page reuses the service template, with optional content
+headings so it does not inherit a claim about the first thirty days of
+campaign management. Planning and activation readiness are stated separately.
+
+OpenAI sources were checked on October 26. Platform facts carry visible source
+links. No campaign experience, outcome, fee, endorsement, privileged access,
+Grok placement or Gemini-app placement is invented. Organization schema adds
+only ChatGPT advertising planning, matching the visible scope.
+
+The enquiry select adds `chatgpt_ads` through its existing shared option list;
+the current form and server use that same list. No analytics event, tag,
+consent behavior, webhook, credential, redirect or robots rule is changed.
+The owner must confirm the receiving CRM mapping before promotion.
+
+Three supporting MDX files are deliberately stored in `content/drafts/`.
+They are not imported, routed or listed in the sitemap. Each is explicitly a
+draft, has `publishable: false`, and retains missing-author, reviewer and
+first-hand-evidence markers. The publishing gates stay in force.
+
+No remote branch is pushed while Amplify auto-branch/preview behavior remains
+unverified. Pushing `main` is known to deploy. Work is verified and committed
+locally for review; deployment requires the owner's explicit authorization.
+
+See `docs/chatgpt-seo-implementation-2026-10-26.md` for evidence, checks and
+remaining actions.
+
 ## 2026-09-18 — Consent defaults live at the top of `<body>`, not in `<head>`
 
 Rendering an explicit `<head>` in the App Router root layout made React drop

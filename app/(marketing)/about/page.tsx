@@ -31,7 +31,7 @@ export default function AboutPage() {
       <Hero
         eyebrow="ABOUT"
         headline="The paid-media arm of the Stoneridge family."
-        subhead="Bold Clicks exists because paid media stopped being something an agency can do on the side. It is the only thing we do."
+        subhead={site.positioning}
         primaryCta={site.primaryCta}
       />
 

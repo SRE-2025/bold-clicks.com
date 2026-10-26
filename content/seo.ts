@@ -18,15 +18,15 @@ export interface PageMeta {
 
 export const pageMeta: Record<string, PageMeta> = {
   '/': {
-    title: 'Paid Media Agency for Lead Generation | Bold Clicks',
+    title: 'ChatGPT Ads Agency & Advertising Strategy | Bold Clicks',
     description:
-      'Google, Meta, Microsoft and YouTube ads managed around qualified leads and booked calls - with tracking that shows what actually worked. Austin, Texas.',
-    primaryIntent: 'paid media agency',
+      'Explore ChatGPT advertising with Bold Clicks: eligibility, offer, creative and measurement planning, alongside Google, Meta, Microsoft and YouTube services.',
+    primaryIntent: 'chatgpt ads agency',
   },
   '/services/': {
     title: 'Paid Media & PPC Management Services | Bold Clicks',
     description:
-      'PPC management across Google, Meta, Microsoft and YouTube, plus the conversion tracking behind it. What we do, how we work, and what you get.',
+      'ChatGPT advertising planning alongside Google, Meta, Microsoft and YouTube PPC services. Explore platform scope, conversion tracking and the next step.',
     primaryIntent: 'ppc management services',
   },
   '/industries/': {
@@ -42,9 +42,9 @@ export const pageMeta: Record<string, PageMeta> = {
     primaryIntent: 'ppc agency case studies',
   },
   '/insights/': {
-    title: 'PPC & Paid Media Insights from Operators | Bold Clicks',
+    title: 'ChatGPT Advertising & Paid Media Insights | Bold Clicks',
     description:
-      'Practical paid-media writing from the people managing the accounts: audit frameworks, tracking guides, platform changes and account teardowns.',
+      'Planned ChatGPT advertising guides and paid-media insights: setup, costs and measurement. Articles publish after first-hand evidence and expert review.',
     primaryIntent: 'ppc insights',
   },
   '/austin-ppc-agency/': {
