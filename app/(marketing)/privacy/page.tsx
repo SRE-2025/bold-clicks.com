@@ -14,21 +14,15 @@ import { breadcrumbSchema, buildMetadata } from '@/lib/seo';
  * refresh task against this page, and adding a tag without updating this list
  * is a consent violation rather than a documentation lapse.
  *
- * NOT LEGAL ADVICE: this is a factual description of the site's data handling,
- * written to be accurate. The owner should have counsel review it before launch,
- * particularly the jurisdictions section.
+ * The owner and counsel still need to review the retention and jurisdiction
+ * sections. Keep vendor claims tied to integrations that actually operate.
  */
 
 export const metadata: Metadata = buildMetadata('/privacy/');
 
 const vendors = [
-  { name: 'Google Analytics 4', purpose: 'Site analytics', data: 'Pseudonymous usage data, client ID', consent: 'analytics_storage' },
-  { name: 'Google Ads', purpose: 'Advertising measurement and remarketing', data: 'Click identifiers, hashed contact data for enhanced conversions', consent: 'ad_storage, ad_user_data' },
-  { name: 'Google Tag Manager', purpose: 'Tag delivery', data: 'No data collected by the container itself', consent: 'n/a' },
-  { name: 'Meta', purpose: 'Advertising measurement', data: 'Click identifiers, pseudonymous event data', consent: 'ad_storage' },
-  { name: 'Microsoft Advertising', purpose: 'Advertising measurement', data: 'Click identifiers, pseudonymous event data', consent: 'ad_storage' },
-  { name: 'GoHighLevel', purpose: 'CRM for enquiries', data: 'Name, email, phone, company, enquiry details, source data', consent: 'Given by submitting the form' },
-  { name: 'Cloudflare Turnstile', purpose: 'Spam prevention on forms', data: 'Device and behavioural signals used to score risk', consent: 'Strictly necessary' },
+  { name: 'AWS Amplify', purpose: 'Website hosting and operation', data: 'Page requests and operational logs', when: 'Necessary to serve the site' },
+  { name: 'GoHighLevel', purpose: 'CRM for accepted enquiries', data: 'Name, email, phone, company, enquiry details and source data', when: 'Only after the form confirms delivery' },
 ];
 
 export default function PrivacyPage() {
@@ -69,19 +63,18 @@ export default function PrivacyPage() {
             first-party cookie for 365 days; last-touch values are stored for the current browser session only.
           </p>
           <p>
-            <strong>Analytics data:</strong> pseudonymous usage data about pages viewed and actions taken, collected
-            only where you have consented to analytics storage.
+            <strong>Analytics data:</strong> optional analytics and advertising tags are not active on this site yet.
+            If they are added, this policy and the consent controls will be updated before they load.
           </p>
 
           <h2 className="text-h2">Consent</h2>
           <p>
-            Advertising and analytics storage are denied by default until you consent. Strictly necessary
-            functionality &mdash; including the first-party attribution cookie the site needs to route your enquiry
-            correctly &mdash; operates without consent, as it is required to deliver the service you asked for.
+            Advertising and analytics storage are denied by default. No optional analytics or advertising tags
+            currently load. The first-party attribution cookie records how you reached the site so that an enquiry
+            can be attributed if delivery succeeds.
           </p>
           <p>
-            Where you do not consent to advertising data being used, we do not upload your details to advertising
-            platforms, and we record that the upload was skipped and why.
+            We do not currently upload form details to advertising platforms.
           </p>
 
           <h2 className="text-h2">Who receives your data</h2>
@@ -89,13 +82,13 @@ export default function PrivacyPage() {
 
         <div className="mt-6 overflow-x-auto">
           <table className="w-full min-w-[640px] border-collapse text-small-lg">
-            <caption className="sr-only">Vendors that receive data from this website</caption>
+            <caption className="sr-only">Hosting and enquiry systems</caption>
             <thead>
               <tr className="border-b border-sage text-left">
                 <th scope="col" className="py-3 pr-4 font-semibold">Vendor</th>
                 <th scope="col" className="py-3 pr-4 font-semibold">Purpose</th>
                 <th scope="col" className="py-3 pr-4 font-semibold">Data</th>
-                <th scope="col" className="py-3 font-semibold">Consent signal</th>
+                <th scope="col" className="py-3 font-semibold">When</th>
               </tr>
             </thead>
             <tbody>
@@ -104,7 +97,7 @@ export default function PrivacyPage() {
                   <th scope="row" className="py-3 pr-4 text-left font-semibold">{vendor.name}</th>
                   <td className="py-3 pr-4">{vendor.purpose}</td>
                   <td className="py-3 pr-4">{vendor.data}</td>
-                  <td className="py-3">{vendor.consent}</td>
+                  <td className="py-3">{vendor.when}</td>
                 </tr>
               ))}
             </tbody>
@@ -114,25 +107,26 @@ export default function PrivacyPage() {
         <div className="prose-bc mt-8">
           <h2 className="text-h2">How long we keep it</h2>
           <p>
-            Enquiry records are retained in our CRM for as long as we have a business relationship or a reasonable
-            prospect of one. Server-side submission logs are retained in redacted form for 30 days so that a lost
-            enquiry can be recovered. The first-touch attribution cookie expires after 365 days.
+            A form submission reaches our CRM only when the form confirms delivery. If delivery fails, the form
+            reports an error and we cannot recover your contact details from the redacted server logs. The
+            first-touch attribution cookie expires after 365 days.
           </p>
+          <PendingNote>
+            The retention period for successfully delivered enquiries and operational logs is under review.
+          </PendingNote>
 
           <h2 className="text-h2">Your choices</h2>
           <p>
-            You can withdraw consent at any time through the consent controls on this site, clear cookies in your
-            browser, and ask us to delete the enquiry data we hold about you.
+            You can clear site cookies in your browser and ask us to delete enquiry data we hold about you. A public
+            contact address for privacy requests is being added below.
           </p>
 
           <h2 className="text-h2">Jurisdictions</h2>
           <p>
-            Bold Clicks operates from Texas and serves businesses in the United States. Consent controls on this
-            site apply to all visitors regardless of location.
+            Bold Clicks operates from Texas and serves businesses in the United States.
           </p>
           <PendingNote>
-            The specific privacy regimes named in this section, and the matching consent-banner configuration, are
-            being finalised with counsel before launch.
+            The applicable privacy regimes and consent controls are being reviewed with counsel.
           </PendingNote>
 
           <h2 className="text-h2">Contact</h2>
@@ -143,7 +137,7 @@ export default function PrivacyPage() {
             </p>
           ) : (
             <PendingNote>
-              A published contact address for privacy requests is being added before launch.
+              A published contact address for privacy requests is being added.
             </PendingNote>
           )}
         </div>

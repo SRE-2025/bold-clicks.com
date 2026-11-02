@@ -12,8 +12,8 @@ import { breadcrumbSchema, buildMetadata } from '@/lib/seo';
  * Covers the website only. Client engagements are governed by a separate
  * services agreement, and conflating the two here would be actively misleading.
  *
- * NOT LEGAL ADVICE: the owner should have counsel review before launch, and the
- * legal entity name and governing-law clause are owner inputs.
+ * The owner and counsel still need to review this page. The legal entity name
+ * and governing-law clause are owner inputs.
  */
 
 export const metadata: Metadata = buildMetadata('/terms/');
@@ -52,7 +52,7 @@ export default function TermsPage() {
             <>
               <p>This site is operated by {site.name}, based in Austin, Texas.</p>
               <PendingNote>
-                The registered legal entity name is being added to this section before launch.
+                The registered legal entity name is being added to this section.
               </PendingNote>
             </>
           )}
@@ -101,7 +101,7 @@ export default function TermsPage() {
 
           <h2 className="text-h2">Governing law</h2>
           <PendingNote>
-            The governing law and venue for these terms are being confirmed with counsel before launch.
+            The governing law and venue for these terms are being confirmed with counsel.
           </PendingNote>
 
           <h2 className="text-h2">Changes</h2>

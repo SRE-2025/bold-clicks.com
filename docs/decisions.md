@@ -7,6 +7,18 @@ Newest first.
 
 ---
 
+## 2026-11-02 — Correct live legal-page status statements
+
+The public site is live while the CRM webhook, analytics tags, public privacy
+contact and counsel review remain open. The privacy page now describes the
+currently inactive tag layer, states that failed enquiries cannot be recovered
+from redacted logs, and avoids an unverified retention period. The privacy and
+terms pending notes no longer say these items will be completed before launch.
+This is a factual correction; the owner and counsel must still approve the
+final legal details and retention terms.
+
+---
+
 ## 2026-10-26 — ChatGPT-first SEO prepared without deployment
 
 The owner explicitly requested resuming the unfinished ChatGPT-first work,
