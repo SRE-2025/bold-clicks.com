@@ -20,6 +20,11 @@ const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   trailingSlash: true,
+  // The small Tailwind stylesheet otherwise blocks the mobile hero text paint.
+  // Inline it on first load to keep the 2s lab LCP budget without changing copy.
+  experimental: {
+    inlineCss: true,
+  },
   images: {
     formats: ['image/avif', 'image/webp'],
   },

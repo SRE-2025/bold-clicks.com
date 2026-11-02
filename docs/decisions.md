@@ -7,6 +7,19 @@ Newest first.
 
 ---
 
+## 2026-11-02 — Test inline CSS against the mobile LCP gate
+
+The November 2 release passed build, content, accessibility and end-to-end
+checks. Its homepage Lighthouse LCP was 2,063 ms against the 2,000 ms lab
+budget; the other audited routes passed. The report identified the 6 KB
+stylesheet as a render-blocking request with about 110 ms potential savings.
+Next.js `experimental.inlineCss` is being tested on a review branch to remove
+that request from the first paint. It duplicates CSS in the initial HTML and
+does not share a cached stylesheet across first-page visits, so the setting
+stays only if CI's full Lighthouse and browser checks pass.
+
+---
+
 ## 2026-10-26 — ChatGPT-first SEO prepared without deployment
 
 The owner explicitly requested resuming the unfinished ChatGPT-first work,
